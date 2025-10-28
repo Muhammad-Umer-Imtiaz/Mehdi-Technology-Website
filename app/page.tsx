@@ -1,4 +1,5 @@
 import HeroSection from "@/Components/LandingPage/HeroSection";
+import WhoWeAre from "@/Components/LandingPage/WhoWeAre";
 import Navbar from "@/Components/Navbar";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="w-full">
       <Navbar />
       <HeroSection />
+      <WhoWeAre/>
     </div>
   );
 }
