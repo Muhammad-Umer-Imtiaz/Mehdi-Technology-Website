@@ -103,7 +103,6 @@ function AnimatedBar({
         transition: { duration: 1.8, ease: "easeOut" },
       });
       numberControls.start({
-        count: item.performance,
         transition: { duration: 1.8, ease: "easeOut" },
       });
     }
