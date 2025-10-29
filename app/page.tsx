@@ -3,6 +3,7 @@ import WhoWeAre from "@/Components/LandingPage/WhoWeAre";
 import Navbar from "@/Components/Navbar";
 import Achivement from "@/Components/LandingPage/Achivement";
 import Services from "@/Components/LandingPage/Services";
+import Testimonial from "@/Components/LandingPage/Testimonial";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <WhoWeAre />
       <Achivement />
       <Services />
+      <Testimonial />
     </div>
   );
 }

@@ -63,7 +63,7 @@ const data = [
 export default function Services() {
   const [current, setCurrent] = useState(0);
   const n = data.length;
-  const idx = (i) => ((i % n) + n) % n;
+  const idx = (i: number) => ((i % n) + n) % n;
 
   // visible: left, center, right
   const visible = useMemo(() => {
@@ -74,7 +74,7 @@ export default function Services() {
 
   const handleNext = () => setCurrent((s) => idx(s + 1));
   const handlePrev = () => setCurrent((s) => idx(s - 1));
-  const goTo = (i) => setCurrent(i);
+  const goTo = (i: number) => setCurrent(i);
 
   const cardHeight = "h-72 sm:h-80 md:h-96";
 
@@ -197,7 +197,9 @@ export default function Services() {
                       className="flex flex-col items-center justify-center px-4 py-2 rounded-xl backdrop-blur-md"
                       style={{ backdropFilter: "blur(0px)" }}
                     >
-                      <div className="text-5xl mb-2 text-[#007BFF]">{item.icon}</div>
+                      <div className="text-5xl mb-2 text-[#007BFF]">
+                        {item.icon}
+                      </div>
                       <p className="text-5xl font-semibold text-center">
                         {item.heading}
                       </p>
