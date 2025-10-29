@@ -9,7 +9,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "Service", href: "#features" },
+  { name: "Service", href: "#service" },
   { name: "Testimonial", href: "#testimonial" },
   { name: "Blogs", href: "#faqs" },
   { name: "FAQs", href: "#about" },

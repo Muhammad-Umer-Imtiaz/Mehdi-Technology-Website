@@ -2,6 +2,7 @@ import HeroSection from "@/Components/LandingPage/HeroSection";
 import WhoWeAre from "@/Components/LandingPage/WhoWeAre";
 import Navbar from "@/Components/Navbar";
 import Achivement from "@/Components/LandingPage/Achivement";
+import Services from "@/Components/LandingPage/Services";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <WhoWeAre />
       <Achivement />
+      <Services />
     </div>
   );
 }
