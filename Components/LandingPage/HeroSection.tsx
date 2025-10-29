@@ -1,3 +1,5 @@
+import { IoMail } from "react-icons/io5";
+
 export default function HeroSection() {
   return (
     <section
@@ -21,6 +23,11 @@ export default function HeroSection() {
           across 14+ countries, we help startups and enterprises build
           future-ready digital products.
         </p>
+
+        <button className="bg-white px-8 py-3 font-semibold text-xl rounded-md  text-[#007BFF] mt-10">
+          <IoMail className=" inline  w-7   h-7 mb-0.5 mr-2 font-semibold  hover:opacity-10 transition-all duration-300" />
+          Our Services
+        </button>
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ export default function Achievement() {
     >
       {/* Left Text Section */}
       <div className="max-w-2xl space-y-6">
-        <h4 className="text-[#007BFF] bg-white border border-[#00000030] px-6 py-1 text-sm inline-block font-light rounded-full tracking-widest">
+        <h4 className="text-[#007BFF] bg-white border border-[#00000030] px-6 py-1 text-sm inline-block font-light rounded-full tracking-[0.5em]">
           PROVEN SUCCESS
         </h4>
         <h2 className="text-5xl font-bold">Achievement</h2>

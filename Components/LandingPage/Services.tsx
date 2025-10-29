@@ -106,15 +106,15 @@ export default function Services() {
       className="mx-auto overflow-x-hidden py-12 px-4 bg-white"
     >
       <div className="text-center mb-8">
-        <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm font-light rounded-full tracking-widest">
+        <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm font-light rounded-full tracking-[0.5em]">
           BEST FEATURES
         </h4>
         <h2 className="text-6xl my-2 font-semibold mt-4 text-black">
           SERVICES
         </h2>
-        <p className="max-w-2xl mx-auto mt-3 text-gray-600">
+        <p className="text-center mt-3 text-gray-600">
           At Mehdi Technologies, we deliver smart digital solutions that empower
-          businesses to grow. From web development to AI automation, our
+          businesses to grow. From web development to AI <br /> automation, our
           services simplify operations, boost performance, and drive lasting
           success.
         </p>
@@ -175,13 +175,13 @@ export default function Services() {
                   <motion.div
                     variants={oldTextVariants}
                     transition={{ duration: 0.9 }}
-                    className="absolute left-0 bottom-4 w-full text-center origin-center"
+                    className="absolute left-0 bottom-8 w-full text-center origin-center"
                   >
                     <motion.p
                       initial={{ scaleX: 1 }}
-                      animate={{ scaleX: 1.4 }} // increases width by 40%
+                      animate={{ scaleX: 1.2 }} // increases width by 40%
                       transition={{ duration: 1, ease: "easeInOut" }}
-                      className="text-white text-lg font-medium drop-shadow-md inline-block"
+                      className="text-white text-xl font-normal  inline-block"
                     >
                       {item.heading}
                     </motion.p>
