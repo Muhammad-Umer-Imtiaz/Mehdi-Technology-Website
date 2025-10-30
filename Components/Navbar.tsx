@@ -8,12 +8,12 @@ import { Menu, X } from "lucide-react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Service", href: "#service" },
-  { name: "Testimonial", href: "#testimonial" },
-  { name: "Blogs", href: "#faqs" },
-  { name: "FAQs", href: "#about" },
-  { name: "About Us", href: "#about" },
+  { name: "Home", href: "/" },
+  { name: "Service", href: "/#service" },
+  { name: "Testimonial", href: "/#testimonial" },
+  { name: "Blogs", href: "/#blogs" },
+  { name: "FAQs", href: "/#faqs" },
+  { name: "About Us", href: "/#about" },
 ];
 
 const Navbar = () => {

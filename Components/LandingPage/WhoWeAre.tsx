@@ -44,7 +44,7 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between py-16 px-10 lg:px-28 gap-10">
+    <section id="about" className="flex flex-col lg:flex-row items-center justify-between py-16 px-10 lg:px-28 gap-10">
       {/* Left side image with circular backdrop */}
       <div className="relative flex-shrink-0">
         <div className="absolute -z-10 bg-[#00BFFF20] rounded-full w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"></div>
