@@ -86,21 +86,21 @@ export default function ContactUs() {
             You
           </h1>
 
-          <p className="text-gray-300 text-lg max-w-md">
+          <p className="text-white text-lg max-w-md">
             Let's bring your vision to life. Connect with our experts today to
             discuss your next project.
           </p>
 
           <div className="space-y-4 pt-8">
             <div className="flex items-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+              <div className="bg-white backdrop-blur-sm p-2 rounded-lg">
                 <Phone className="w-5 h-5 text-blue-500" />
               </div>
               <span className="text-gray-200 text-lg">(+92) 312 310 92 18</span>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+              <div className="bg-white backdrop-blur-sm p-2 rounded-lg">
                 <Mail className="w-5 h-5 text-blue-500" />
               </div>
               <span className="text-gray-200 text-lg">
@@ -109,7 +109,7 @@ export default function ContactUs() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+              <div className="bg-white backdrop-blur-sm p-2 rounded-lg">
                 <MapPin className="w-5 h-5 text-blue-500" />
               </div>
               <div className="text-gray-200 text-lg">

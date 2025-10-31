@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white  pt-16 pb-4 px-6 lg:px-28 w-full" >
+    <footer className="bg-[#0a0a0a] text-white  pt-16 pb-4 px-6 lg:px-28 w-full">
       {/* Top Banner */}
       <div className="max-w-7xl mx-auto mb-12">
         <div className="border-y-2 border-[#58C9EC] rounded-2xl p-6">
@@ -15,7 +15,7 @@ export default function Footer() {
             <img src="/Footer/google.png" alt="Google" className="h-12" />
             <img src="/Footer/UpWork.png" alt="Upwork" className="h-12" />
           </div>
-          <p className="text-center  text-[#ffffff]/70 text-sm md:text-base mt-4">
+          <p className="text-center  text-[#ffffff]/70 text-sm md:text-lg mt-6 tracking-[0.1em]">
             4.7 star rating by 200+ Mehdi Technologies Clients on over 350+
             Projects
           </p>
@@ -23,162 +23,165 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 px-6 py-2">
-        {/* Company Info */}
-        <div>
-          <div className="flex items-baseline gap-2 mb-6">
-            {" "}
-            <img src="/Logo.png" alt="Upwork" className="h-8" />{" "}
-            <span className="text-xl font-semibold">Technologies</span>{" "}
+      <div className="grid-cols-2 grid">
+        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 py-2">
+          {/* Company Info */}
+          <div>
+            <div className="flex items-baseline gap-2 mb-6">
+              {" "}
+              <img src="/Logo.png" alt="Upwork" className="h-8" />{" "}
+              <span className="text-xl font-semibold">Technologies</span>{" "}
+            </div>
+
+            <h3 className="text-2xl font-semibold mb-3">For Jobs</h3>
+            <a
+              href="mailto:hr@mehditechnologies.com"
+              className="inline-flex  text-[#ffffff] hover:text-cyan-400 transition-colors"
+            >
+              <Mail className="w-5 h-5 mr-2 " />
+              <span className="inline text-sm">hr@mehditechnologies.com</span>
+            </a>
+
+            {/* Social Links */}
+            <div className="flex gap-4 mt-6  text-[#ffffff]/70">
+              <a href="#" className="hover:text-cyan-400 transition-colors">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#" className="hover:text-cyan-400 transition-colors">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" className="hover:text-cyan-400 transition-colors">
+                <i className="fab fa-behance"></i>
+              </a>
+              <a href="#" className="hover:text-cyan-400 transition-colors">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </div>
           </div>
 
-          <h3 className="text-lg font-semibold mb-3">For Jobs</h3>
-          <a
-            href="mailto:hr@mehditechnologies.com"
-            className="flex items-center gap-2  text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
-          >
-            <Mail size={16} />
-            hr@mehditechnologies.com
-          </a>
-
-          {/* Social Links */}
-          <div className="flex gap-4 mt-6  text-[#ffffff]/70">
-            <a href="#" className="hover:text-cyan-400 transition-colors">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
-              <i className="fab fa-behance"></i>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
-              <i className="fab fa-facebook-f"></i>
-            </a>
+          {/* Contact Us */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-3  text-[#ffffff]/70">
+              <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
+                <Phone size={16} className="mt-1 flex-shrink-0" />
+                <span>(+92) 312 310 92 18</span>
+              </li>
+              <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
+                <Mail size={16} className="mt-1 flex-shrink-0" />
+                <span>contact@mehditechnologies.com</span>
+              </li>
+              <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
+                <MapPin size={16} className="mt-1 flex-shrink-0" />
+                <span>
+                  Office #09, 2nd Floor, Silver City Plaza, G-11 Markaz,
+                  Islamabad.
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
+        <div className="  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-2 ml-10">
+          {/* Our Services */}
+          <div className="text-right ">
+            <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
+            <ul className="space-y-3  text-[#ffffff]/70">
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Website Development
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Blockchain Web3.0 & NFT Development
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Mobile App Development
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  AI Chatbot Development
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  UI/UX Designing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  SEO & Digital Marketing
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Contact Us */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-          <ul className="space-y-3  text-[#ffffff]/70">
-            <li className="flex gap-3 items-start">
-              <Phone size={16} className="mt-1 flex-shrink-0" />
-              <span>(+92) 312 310 92 18</span>
-            </li>
-            <li className="flex gap-3 items-start">
-              <Mail size={16} className="mt-1 flex-shrink-0" />
-              <span>contact@mehditechnologies.com</span>
-            </li>
-            <li className="flex gap-3 items-start">
-              <MapPin size={16} className="mt-1 flex-shrink-0" />
-              <span>
-                Office #09, 2nd Floor, Silver City Plaza, G-11 Markaz,
-                Islamabad.
-              </span>
-            </li>
-          </ul>
-        </div>
+          {/* Explore */}
+          <div className="text-right">
+            <h3 className="text-2xl font-semibold mb-4">Explore</h3>
+            <ul className="space-y-3  text-[#ffffff]/70">
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Clients
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Tech Stack
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  FAQs
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Blogs
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Our Services */}
-        <div className="text-right ">
-          <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-          <ul className="space-y-3  text-[#ffffff]/70">
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Website Development
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Blockchain Web3.0 & NFT Development
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Mobile App Development
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                AI Chatbot Development
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                UI/UX Designing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                SEO & Digital Marketing
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Explore */}
-        <div className="text-right">
-          <h3 className="text-lg font-semibold mb-4">Explore</h3>
-          <ul className="space-y-3  text-[#ffffff]/70">
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Clients
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Tech Stack
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Blogs
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Industries */}
-        <div className="text-right">
-          <h3 className="text-lg font-semibold mb-4">Industries</h3>
-          <ul className="space-y-3  text-[#ffffff]/70">
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Health Care
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Travel & Hospitality
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Transportation
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Public Sector
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Banking & Financial Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                AI Automation
-              </a>
-            </li>
-          </ul>
+          {/* Industries */}
+          <div className="text-right">
+            <h3 className="text-2xl font-semibold mb-4">Industries</h3>
+            <ul className="space-y-3  text-[#ffffff]/70">
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Health Care
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Travel & Hospitality
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Transportation
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Public Sector
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  Banking & Financial Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-400 transition-colors">
+                  AI Automation
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

@@ -26,11 +26,17 @@ export default function Clients() {
           <br /> partnerships that drive growth and results.
         </p>
       </div>
-      <div className="relative py-4 border-x-2 border-x-gradient-to-t from-[#00000000] via-[#000000] to-[#000000] mx-24 overflow-x-hidden">
+      <div className="relative py-8 mx-24 overflow-x-hidden before:absolute before:inset-y-0 before:left-0 before:w-0.5 before:bg-gradient-to-t before:from-transparent before:via-black before:to-transparent after:absolute after:inset-y-0 after:right-0 after:w-0.5 after:bg-gradient-to-t after:from-transparent after:via-black after:to-transparent">
+        {" "}
         <motion.div
           className="flex gap-12"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 20,
+            ease: "linear",
+            repeatType: "loop",
+          }}
         >
           {logos.concat(logos).map((logo, i) => (
             <img

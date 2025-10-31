@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
+import CountUp from "react-countup";
 
 export default function WhoWeAre() {
   const data = [
@@ -44,7 +45,10 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section id="about" className="flex flex-col lg:flex-row items-center justify-between py-16 px-10 lg:px-28 gap-10">
+    <section
+      id="about"
+      className="flex flex-col lg:flex-row items-center justify-between py-16 px-10 lg:px-28 gap-10"
+    >
       {/* Left side image with circular backdrop */}
       <div className="relative flex-shrink-0">
         <div className="absolute -z-10 bg-[#00BFFF20] rounded-full w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"></div>
@@ -123,16 +127,24 @@ function AnimatedBar({
         </div>
         <div className="flex items-center gap-2">
           {/* Animated bar */}
-          <div className="relative w-36 border h-3 rounded-full overflow-hidden">
-            <div className="absolute inset-0 h-3 bg-gradient-to-r from-[#A020F0]/30 to-[#00D1FF]/30" />
+          <div className="relative w-40 border-3  h-4 rounded-full overflow-hidden">
+            <div className="absolute inset-0 h-4 bg-gradient-to-r from-[#A020F0]/30 to-[#00D1FF]/30" />
             <motion.div
-              className="absolute inset-y-0 left-0 h-3 bg-gradient-to-r from-[#A020F0] to-[#00D1FF]"
+              className="absolute inset-y-0 left-0 h-4 bg-gradient-to-r from-[#A020F0] to-[#00D1FF]"
               initial={{ width: "0%" }}
               animate={controls}
             />
           </div>
 
-          <p className="text-sm">{item.performance}%</p>
+          <p className="text-sm">
+            <CountUp
+              end={item.performance}
+              duration={2.5}
+              enableScrollSpy
+              scrollSpyOnce
+            />
+            %
+          </p>
         </div>
       </div>
 

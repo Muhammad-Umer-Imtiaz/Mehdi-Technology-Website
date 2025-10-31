@@ -1,4 +1,4 @@
-import { IoMail } from "react-icons/io5";
+import { Mail } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -24,8 +24,8 @@ export default function HeroSection() {
           future-ready digital products.
         </p>
 
-        <button className="bg-white px-8 py-3 font-semibold text-xl rounded-md  text-[#007BFF] mt-10">
-          <IoMail className=" inline  w-7   h-7 mb-0.5 mr-2 font-semibold  hover:opacity-10 transition-all duration-300" />
+        <button className="bg-white px-8 shadow-[0_0_7px_0_rgba(255,255,255,0.8)] shadow-white py-2 font-semibold text-2xl rounded-md  text-[#007BFF] mt-10">
+          <Mail className=" inline  w-7 text-[#000000]  h-7 mb-0.5 mr-3 font-semibold  hover:opacity-10 transition-all duration-300" />
           Our Services
         </button>
       </div>

@@ -59,12 +59,12 @@ export default function Achievement() {
           className="hidden lg:block"
         />
         <div className="flex flex-row items-center justify-center">
-          <button className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] text-white font-semibold px-4 py-2 shadow-md hover:opacity-90 transition-all duration-300">
-            <FaPhoneAlt className="text-white inline w-4 h-4 mb-0.5 mr-2" />
+          <button className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] rounded-lg text-xl text-white font-semibold px-6 py-3  hover:opacity-90 transition-all duration-300 shadow-[0_0_7px_0_rgba(255,255,255,0.8)]">
+            <FaPhoneAlt className="text-white inline w-5 h-5 mb-0.5 mr-3" />
             Book a Call
           </button>
-          <button className="bg-white px-4 py-2 ml-6 text-[#007BFF]">
-            <IoMail className="text-black inline  w-5 h-5 mb-0.5 mr-2 font-semibold shadow-md hover:opacity-10 transition-all duration-300" />
+          <button className="bg-white px-6 py-3 text-xl ml-6 text-[#007BFF] rounded-lg shadow-[0_0_8px_0_rgba(255,255,255,0.8)]">
+            <IoMail className="text-black inline  w-6 h-6 mb-0.5 mr-3 font-semibold  transition-all duration-300" />
             Contact Us
           </button>
         </div>
