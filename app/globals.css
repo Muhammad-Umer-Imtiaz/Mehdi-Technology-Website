@@ -6,15 +6,16 @@
   max-width: 100% !important;
 }
 
-html,
+:root {
+  --font-inter: "Inter", sans-serif;
+}
+
 body {
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--font-inter) !important;
 }
 html {
   scroll-behavior: smooth;
 }
-
-
 
 /* @keyframes borderMove {
   0% {
