@@ -24,7 +24,7 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="grid-cols-2 grid">
-        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 py-2">
+        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:gap-12 xl:gap-0  py-2">
           {/* Company Info */}
           <div>
             <div className="flex items-baseline gap-2 mb-6">
@@ -81,13 +81,13 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-2 ml-10">
+        <div className="  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:gap-8 gap-0 py-2 2xl:ml-10 ml-7">
           {/* Our Services */}
           <div className="text-right ">
             <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-3  text-[#ffffff]/70">
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <a href="#" className="hover:text-cyan-400  transition-colors">
                   Website Development
                 </a>
               </li>

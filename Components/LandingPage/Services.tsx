@@ -13,6 +13,7 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 // Data + icons
 const data = [
@@ -21,47 +22,54 @@ const data = [
     image: "/Services/BlockChain.png",
     heading: "Blockchain, Web 3.0 & NFT",
     icon: <FaCube />,
+    slug: "block-chain",
   },
   {
     id: 3,
     image: "/Services/MobileAppDeveloment.png",
     heading: "Mobile App Development",
     icon: <FaMobileAlt />,
+    slug: "mobile-app-development",
   },
   {
     id: 4,
     image: "/Services/TelegramMiniApps.png",
     heading: "Telegram Mini Apps Development",
     icon: <FaTelegramPlane />,
+    slug: "telegram-mini-apps",
   },
   {
     id: 5,
     image: "/Services/AIDevelopment.png",
     heading: "Artificial Intelligence",
     icon: <FaRobot />,
+    slug: "artificial-intelligence",
   },
   {
     id: 6,
     image: "/Services/UI&UX.jpg",
     heading: "UI/UX Designing",
     icon: <FaPaintBrush />,
+    slug: "ui-ux-design",
   },
   {
     id: 7,
     image: "/Services/SEO&Digital Marketing.png",
     heading: "SEO & Digital Marketing",
     icon: <FaBullhorn />,
+    slug: "seo-digital-marketing",
   },
   {
     id: 1,
     image: "/Services/WebsiteDevelopment.jpg",
     heading: "Website Development",
     icon: <FaGlobe />,
+    slug: "webdevelopment",
   },
 ];
-
 export default function Services() {
   const [current, setCurrent] = useState(0);
+  const router = useRouter();
   const n = data.length;
   const idx = (i: number) => ((i % n) + n) % n;
 
@@ -76,7 +84,9 @@ export default function Services() {
   const handlePrev = () => setCurrent((s) => idx(s - 1));
   const goTo = (i: number) => setCurrent(i);
 
-  const cardHeight = "h-72 sm:h-80 md:h-96";
+  // const cardHeight = "h-72 sm:h-80 md:h-2xl";
+  const cardSize = "size-72 sm:size-80 md:size-96";
+  const cardHeightinPX = "h-72 sm:h-80 md:h-[420px]";
 
   const cardVariants = {
     rest: { scale: 1, zIndex: 0 },
@@ -103,8 +113,9 @@ export default function Services() {
   return (
     <section
       id="service"
-      className="mx-auto overflow-x-hidden py-12 px-4 bg-white"
+      className="mx-auto overflow-x-hidden py-12 2xl:px-4 xl:px-28 bg-white "
     >
+      {/* <h3 className="size-96">Hello wolrd</h3> */}
       <div className="text-center mb-8">
         <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm font-light rounded-full tracking-[0.5em]">
           BEST FEATURES
@@ -125,17 +136,17 @@ export default function Services() {
         <button
           onClick={handlePrev}
           aria-label="Previous"
-          className="absolute left-10 border-3 text-black top-1/2 -translate-y-1/2 z-30 p-1 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
+          className="absolute 2xl:left-10 xl:-left-18 border-3 text-black top-1/2 -translate-y-1/2 z-30 p-1 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
         >
           <FiChevronLeft size={32} />
         </button>
 
         {/* Carousel */}
         <div className="overflow-hidden">
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center 2xl:gap-6 xl:gap-6">
             {visible.map((item, i) => {
               const isCenter = i === 1;
-              const globalIndex = (current + (i - 1) + n) % n;
+              // const globalIndex = (current + (i - 1) + n) % n;
 
               return (
                 <motion.div
@@ -148,13 +159,11 @@ export default function Services() {
                   animate="rest"
                   variants={cardVariants}
                   transition={{ duration: 0.35 }}
-                  onClick={() => {
-                    if (!isCenter) goTo(globalIndex);
-                  }}
+                  onClick={() => router.push(`/${item.slug}`)}
                 >
                   {/* Image */}
                   <div
-                    className={`relative w-full ${cardHeight} overflow-hidden`}
+                    className={`relative w-full ${cardHeightinPX} overflow-hidden`}
                   >
                     <motion.div
                       className="absolute inset-0 origin-center"
@@ -222,7 +231,7 @@ export default function Services() {
         <button
           onClick={handleNext}
           aria-label="Next"
-          className="absolute border-3 md:right-14  text-black top-1/2 -translate-y-1/2 z-30 p-1 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
+          className="absolute border-3 2xl:right-14 xl:xl:-right-16  text-black top-1/2 -translate-y-1/2 z-30 p-1 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
         >
           <FiChevronRight size={32} />
         </button>

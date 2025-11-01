@@ -11,12 +11,12 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 mt-28">
-        <h1 className="text-3xl sm:text-8xl  font-bold mb-4">
+        <h1 className="text-3xl sm:text-8xl xl:text-7xl 2xl:text-8xl  font-bold mb-4">
           Transforming <span className="text-[#007BFF] ">Ideas</span>
           <br /> into <span className="text-[#007BFF]">Digital</span> Excellence
         </h1>
         {"    "}
-        <p className="text-lg sm:text-2xl  px-44">
+        <p className="text-lg sm:text-xl 2xl:text-2xl  px-44">
           At Mehdi Technologies Pvt Ltd, we turn innovation into real-world
           impact through web,mobile, AI, and blockchain solutions. With 10+
           years of industry expertise, 350+ successful projects, and clients

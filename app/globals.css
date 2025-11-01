@@ -13,3 +13,55 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+
+/* @keyframes borderMove {
+  0% {
+    border-image-source: linear-gradient(0deg, #007BFF, transparent);
+  }
+  25% {
+    border-image-source: linear-gradient(90deg, #007BFF, transparent);
+  }
+  50% {
+    border-image-source: linear-gradient(180deg, #007BFF, transparent);
+  }
+  75% {
+    border-image-source: linear-gradient(270deg, #007BFF, transparent);
+  }
+  100% {
+    border-image-source: linear-gradient(360deg, #007BFF, transparent);
+  }
+}
+
+.animate-borderMove {
+  border-width: 2px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(0deg, #007BFF, transparent);
+  animation: borderMove 5s linear infinite;
+}
+@keyframes borderMove2 {
+  50% {
+    border-image-source: linear-gradient(0deg, #40f1aa, transparent);
+  }
+  75% {
+    border-image-source: linear-gradient(90deg, #40f1aa, transparent);
+  }
+  100% {
+    border-image-source: linear-gradient(180deg, #40f1aa, transparent);
+  }
+  0% {
+    border-image-source: linear-gradient(270deg, #40f1aa, transparent);
+  }
+  50% {
+    border-image-source: linear-gradient(360deg, #40f1aa, transparent);
+  }
+}
+
+.animate-borderMove2 {
+  border-width: 2px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(0deg, #007BFF, transparent);
+  animation: borderMove2 10s linear infinite;
+}
+ */

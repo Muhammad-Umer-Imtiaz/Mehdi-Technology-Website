@@ -64,16 +64,16 @@ export default function Blogs() {
             className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2"
           >
             {/* Image */}
-            <div className="relative h-64 p-6 overflow-hidden">
+            <div className="relative h-64 2xl:p-6 xl:p-4 overflow-hidden">
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-full  rounded-3xl   object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full h-full  rounded-3xl   object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
 
             {/* Content */}
-            <div className="p-6">
+            <div className="2xl:p-6 xl:p-4">
               {/* Category and Date */}
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[#00A6FF] text-sm font-semibold border border-[#00A6FF] px-4 py-1 rounded-full">
@@ -83,12 +83,12 @@ export default function Blogs() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+              <h3 className="text-xl font-bold text-gray-900 2xl:mb-3 mb-2 leading-tight">
                 {blog.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+              <p className="text-gray-600 text-sm 2xl:mb-6 xl:mb-3 leading-relaxed">
                 {blog.description}
               </p>
 

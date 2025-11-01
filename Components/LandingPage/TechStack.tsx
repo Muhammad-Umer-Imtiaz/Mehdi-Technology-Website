@@ -132,7 +132,7 @@ export default function TechStack() {
   const categories: Category[] = ["Web", "Mobile", "AI", "Blockchain", "UI/UX"];
 
   return (
-    <section className="mx-auto py-16 px-4 bg-white">
+    <section className="mx-auto py-16 2xl:px-4 xl:px-28 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -142,7 +142,7 @@ export default function TechStack() {
           <h2 className="text-5xl md:text-6xl font-bold text-black mb-4">
             Tech Stack & Tools
           </h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 text-base md:text-lg  mx-auto">
             We leverage modern technologies, frameworks, and tools to craft
             scalable solutions
             <br className="hidden md:block" /> tailored to every industry.

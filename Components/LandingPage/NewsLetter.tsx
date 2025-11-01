@@ -14,7 +14,7 @@ export default function NewsLetter() {
 
         {/* Email Input Form */}
         <div
-          className="flex flex-col sm:flex-row items-center rounded-xl  justify-center gap-4 max-w-2xl mx-auto"
+          className="flex flex-col sm:flex-row items-center rounded-xl  justify-center gap-4 max-w-2xl mx-auto "
           style={{ boxShadow: "0 6px 6px -2px rgba(0,0,0,6.5)" }}
         >
           <div className="relative flex-1 w-full sm:w-auto">
@@ -29,11 +29,11 @@ export default function NewsLetter() {
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full outline-none pl-12 pr-4 pt-3 text-2xl rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none border-none transition-colors"
+              className="w-full ml-2 outline-none pl-12 pr-4 pt-3 text-2xl rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none border-none transition-colors"
             />
           </div>
           <button
-            className="w-full sm:w-auto px-8 py-4 mb-2 mt-3 mx-3 rounded-xl text-gray-700 font-medium "
+            className="w-full sm:w-auto px-8 py-4 mb-4 mt-3 mx-3 rounded-xl text-gray-700 font-medium "
             style={{ boxShadow: "0 6px 6px -2px rgba(0,0,0,6.5)" }}
           >
             Get Started
