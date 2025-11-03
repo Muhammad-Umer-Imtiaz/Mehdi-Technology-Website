@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-export default function BreakpointDebugger(): JSX.Element {
+export default function BreakpointDebugger() {
   const [width, setWidth] = useState<number>(0);
   const [breakpoint, setBreakpoint] = useState<string>("");
 
