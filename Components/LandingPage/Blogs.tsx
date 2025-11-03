@@ -36,7 +36,7 @@ export default function Blogs() {
     <section
       id="blogs"
       className="relative min-h-screen py-16 px-10 lg:px-28 w-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/Achievement.png')" }}
+      style={{ backgroundImage: "url('/BlogsBG.png')" }}
     >
       {/* Header */}
       <div className="text-center mb-16">

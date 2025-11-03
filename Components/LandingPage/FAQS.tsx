@@ -8,37 +8,37 @@ const faqData = [
   {
     question: "What services does Mehdi Technologies provide?",
     answer:
-      "We provide Digital Marketing, Website Development, Mobile App Development, AI Solutions, SEO, and Branding services.",
+      "We provide complete digital transformation services including Web, Mobile, Blockchain, AI, and Digital Marketing solutions tailored to your business needs.",
   },
   {
     question: "Do you provide customized solutions?",
     answer:
-      "Yes! Every project is tailored to meet the client’s specific business requirements and goals.",
+      "Absolutely. Every project is unique. We design and develop custom solutions aligned with your brand, goals, and audience.",
   },
   {
     question: "How do I get started with Mehdi Technologies?",
     answer:
-      "You can contact us through our website or schedule a consultation to discuss your project needs.",
+      "It’s easy! Simply contact us with your project details or schedule a free consultation — our experts will guide you from idea to implementation.",
   },
   {
     question: "How can AI and Cloud solutions improve my business efficiency?",
     answer:
-      "AI helps automate processes and extract insights, while cloud solutions enable scalability and cost-efficiency.",
+      "AI automates repetitive tasks, enhances decision-making, and improves customer interaction. Combined with cloud scalability, your operations become smarter, faster, and more cost-effective.",
   },
   {
     question: "How is Mehdi Technologies different from other companies?",
     answer:
-      "We focus on innovation, transparency, and long-term partnerships rather than one-time projects.",
+      "We combine innovation with experience, offering transparent processes, advanced technology stacks, and a personalized client experience focused on long-term success.",
   },
   {
     question: "How is the project cost decided?",
     answer:
-      "Costs are determined based on project complexity, scope, and required technologies after a detailed consultation.",
+      "Project costs are based on scope, complexity, technology stack, and timeline. We provide a transparent quote after a detailed discussion of your requirements.",
   },
   {
     question: "Does your company provide post-launch support?",
     answer:
-      "Absolutely! We offer maintenance, performance monitoring, and updates even after project delivery.",
+      "Yes. We offer full post-launch maintenance, updates, bug fixes, and scaling support to ensure your project continues to perform seamlessly.",
   },
 ];
 
@@ -53,7 +53,10 @@ export default function FAQS() {
   };
 
   return (
-    <section id="faqs" className="flex flex-col lg:flex-row items-center justify-between px-10 lg:px-24 py-16 bg-white gap-12">
+    <section
+      id="faqs"
+      className="flex flex-col lg:flex-row items-center justify-between px-10 lg:px-24 py-16 bg-white gap-12"
+    >
       {/* ────── LEFT: IMAGE (fixed size, never affected) ────── */}
       <div className="flex justify-center lg:w-1/2">
         <div className="w-[589px] h-[517px] flex items-center justify-center">
@@ -70,7 +73,6 @@ export default function FAQS() {
 
       {/* ────── RIGHT: FAQ LIST ────── */}
       <div className="lg:w-1/2 w-full">
-
         <div className="space-y-4">
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;

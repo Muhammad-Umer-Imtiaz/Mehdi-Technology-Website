@@ -71,12 +71,12 @@ export default function ContactUs() {
   return (
     <section
       className="relative min-h-screen py-16 px-6 lg:px-28 w-full bg-cover bg-center bg-no-repeat flex items-center"
-      style={{ backgroundImage: "url('/Achievement.png')" }}
+      style={{ backgroundImage: "url('/ContactBG.png')" }}
     >
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Content */}
         <div className="text-white space-y-6">
-          <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight">
             Get In <span className="text-blue-500">Touch</span>
             <br />
             with Us,
@@ -84,7 +84,7 @@ export default function ContactUs() {
             We <span className="text-blue-500">Answer</span>
             <br />
             You
-          </h1>
+          </h2>
 
           <p className="text-white text-lg max-w-md">
             Let's bring your vision to life. Connect with our experts today to

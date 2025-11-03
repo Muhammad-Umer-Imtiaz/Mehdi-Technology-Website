@@ -69,7 +69,7 @@ export default function Testimonial() {
     <section
       id="testimonial"
       className="relative min-h-screen py-16 px-10 lg:px-28 w-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/Achievement.png')" }}
+      style={{ backgroundImage: "url('/TestimonialBG.png')" }}
     >
       <div className="text-center mb-8">
         <h4 className="text-[#007BFF] bg-white/90 inline-block border border-[#00000030] px-8 py-2 text-xs md:text-sm font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">

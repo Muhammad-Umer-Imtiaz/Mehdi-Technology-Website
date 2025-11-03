@@ -42,10 +42,10 @@ export default function Achievement() {
         </div>
 
         <p className="text-gray-200 leading-relaxed">
-          From crafting user-friendly interfaces to developing powerful web
-          solutions, our team has achieved milestones that highlight creativity,
-          innovation, and client satisfaction. Each project we deliver reflects
-          our passion for design and technology.
+          At <span className="text-[#00D1FF]">Mehdi Technologies,</span> our
+          achievements reflect innovation, reliability, and excellence. We take
+          pride in empowering businesses worldwide with cutting-edge digital
+          solutions that inspire growth and lasting impact.
         </p>
       </div>
 

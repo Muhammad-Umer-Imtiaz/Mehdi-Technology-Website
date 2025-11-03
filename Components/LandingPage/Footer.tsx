@@ -35,7 +35,9 @@ export default function Footer() {
 
             <h3 className="text-2xl font-semibold mb-3">For Jobs</h3>
             <a
-              href="mailto:hr@mehditechnologies.com"
+              href="https://mail.google.com/mail/?view=cm&to=hr@mehditechnologies.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex  text-[#ffffff] hover:text-cyan-400 transition-colors"
             >
               <Mail className="w-5 h-5 mr-2 " />
@@ -62,21 +64,38 @@ export default function Footer() {
           {/* Contact Us */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3  text-[#ffffff]/70">
+            <ul className="space-y-3 text-[#ffffff]/70">
+              {/* Phone */}
               <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span>(+92) 312 310 92 18</span>
+                <a href="tel:+923123109218" className="hover:underline">
+                  (+92) 312 310 92 18
+                </a>
               </li>
               <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>contact@mehditechnologies.com</span>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&to=contact@mehditechnologies.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  contact@mehditechnologies.com
+                </a>
               </li>
+
+              {/* Address */}
               <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>
+                <a
+                  href="https://www.google.com/maps/place/Mehdi+Technologies+(PVT.)+LTD./@33.6684678,72.9968936,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
                   Office #09, 2nd Floor, Silver City Plaza, G-11 Markaz,
-                  Islamabad.
-                </span>
+                  Islamabad
+                </a>
               </li>
             </ul>
           </div>
@@ -87,12 +106,18 @@ export default function Footer() {
             <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-3  text-[#ffffff]/70">
               <li>
-                <a href="#" className="hover:text-cyan-400  transition-colors">
+                <a
+                  href="/webdevelopment"
+                  className="hover:text-cyan-400  transition-colors"
+                >
                   Website Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="/block-chain"
+                  className="hover:text-cyan-400 transition-colors"
+                >
                   Blockchain Web3.0 & NFT Development
                 </a>
               </li>
@@ -124,22 +149,34 @@ export default function Footer() {
             <h3 className="text-2xl font-semibold mb-4">Explore</h3>
             <ul className="space-y-3  text-[#ffffff]/70">
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#testimonial"
+                  className="hover:text-cyan-400 transition-colors"
+                >
                   Clients
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#tech-stack"
+                  className="hover:text-cyan-400 transition-colors"
+                >
                   Tech Stack
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#faqs"
+                  className="hover:text-cyan-400 transition-colors"
+                >
                   FAQs
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#blogs"
+                  className="hover:text-cyan-400 transition-colors"
+                >
                   Blogs
                 </a>
               </li>

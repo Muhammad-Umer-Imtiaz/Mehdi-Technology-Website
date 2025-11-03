@@ -132,7 +132,7 @@ export default function TechStack() {
   const categories: Category[] = ["Web", "Mobile", "AI", "Blockchain", "UI/UX"];
 
   return (
-    <section className="mx-auto py-16 2xl:px-4 xl:px-28 bg-white">
+    <section id="tech-stack" className="mx-auto py-16 2xl:px-4 xl:px-28 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

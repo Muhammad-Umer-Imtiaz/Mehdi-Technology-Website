@@ -103,7 +103,7 @@ export default function HowWeServe() {
         {services.slice(2, 5).map((service, index) => (
           <div
             key={index + 2}
-            className="bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-[#007BFF] px-10 py-6 text-center hover:shadow-xl transition-shadow duration-300 shadow-[0_0_10px_0_rgba(0,123,255,0.8)]"
+            className="bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-[#007BFF] 2xl:px-6 px-3  py-6 text-center hover:shadow-xl transition-shadow duration-300 shadow-[0_0_10px_0_rgba(0,123,255,0.8)]"
           >
             <div className="w-16 h-16 bg-[#007BFF] rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
               {service.icon}

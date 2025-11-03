@@ -13,7 +13,7 @@ export default function AiSolution() {
   return (
     <section
       className="relative min-h-screen py-16 px-10 lg:px-28 w-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/Achievement.png')" }}
+      style={{ backgroundImage: "url('/AchievementBG.png')" }}
     >
       <div className="text-center mb-8">
         <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-xs md:text-base font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">
@@ -31,7 +31,7 @@ export default function AiSolution() {
         </p>
       </div>
 
-      <div className="flex gap-8 items-start">
+      <div className="flex 2xl:gap-8 xl:gap-6 items-start">
         <Image
           src="/AiSolution.png"
           alt="Ai solution Image"
@@ -46,11 +46,11 @@ export default function AiSolution() {
             return (
               <div
                 key={index}
-                className="group flex items-center gap-4 bg-gradient-to-r border rounded-lg border-white from-[#007BFF] to-[#58C9EC] text-white px-5 py-3  shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                className="group flex items-center 2xl:gap-4 xl:gap-3 bg-gradient-to-r border rounded-lg border-white from-[#007BFF] to-[#58C9EC] text-white px-5 py-3  shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer "
               >
                 <Icon size={32} className="text-white" />
 
-                <span className="font-semibold text-lg md:text-lg">
+                <span className="font-semibold 2xl:text-lg xl:text-base md:text-lg">
                   {item.label}
                 </span>
               </div>
