@@ -8,9 +8,7 @@ export default function HeroSection() {
         backgroundImage: "url('/Blockchain/BlackChainBG.png')",
       }}
     >
-      {/* Overlay for darkening background */}
-      {/* <div className="absolute inset-0 bg-black/40"></div> */}
-
+      
       {/* Content */}
       <div className="relative z-10 text-center px-6 md:px-12 mt-36 ">
         <div className="bg-white/10 backdrop-blur-md text-[#ffffff]/70 px-6 py-2 md:text-base inline-flex items-center gap-2 font-light rounded-full mb-4 tracking-wide shadow-sm border-2 border-white/50">

@@ -69,51 +69,60 @@ const data = [
 ];
 export default function Services() {
   const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
   const router = useRouter();
   const n = data.length;
-  const idx = (i: number) => ((i % n) + n) % n;
+  const idx = React.useCallback((i: number) => ((i % n) + n) % n, [n]);
 
   // visible: left, center, right
   const visible = useMemo(() => {
     return [idx(current - 1), idx(current), idx(current + 1)].map(
       (i) => data[i]
     );
-  }, [current]);
+  }, [current, idx]);
 
-  const handleNext = () => setCurrent((s) => idx(s + 1));
-  const handlePrev = () => setCurrent((s) => idx(s - 1));
-  const goTo = (i: number) => setCurrent(i);
-
-  // const cardHeight = "h-72 sm:h-80 md:h-2xl";
-  const cardSize = "size-72 sm:size-80 md:size-96";
-  const cardHeightinPX = "h-72 sm:h-80 md:h-[450px]";
-
-  const cardVariants = {
-    rest: { scale: 1, zIndex: 0 },
-    hover: { scale: 1.02, zIndex: 20 },
+  const handleNext = () => {
+    setDirection(1);
+    setCurrent((s) => idx(s + 1));
+  };
+  const handlePrev = () => {
+    setDirection(-1);
+    setCurrent((s) => idx(s - 1));
+  };
+  const goTo = (i: number) => {
+    setDirection(i > current ? 1 : -1);
+    setCurrent(i);
   };
 
-  const imageVariants = {
-    rest: { scale: 1, filter: "blur(0px)" },
-    hover: { scale: 1.5, filter: "blur(2px)" },
-  };
+  const cardHeightinPX = "h-72 sm:h-80 md:h-[420px]";
 
-  // New text + icon appear
-  const overlayVariants = {
-    rest: { y: 80, opacity: 0 },
-    hover: { y: 0, opacity: 1 },
-  };
-
-  // Old text moves up + fades
-  const oldTextVariants = {
-    rest: { y: 0, opacity: 1 },
-    hover: { y: -100, opacity: 0 },
+  // For sliding effect
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 400 : -400,
+      opacity: 0,
+      position: "absolute",
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      position: "relative",
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.2 },
+      },
+    },
+    exit: (dir: number) => ({
+      x: dir < 0 ? 400 : -400,
+      opacity: 0,
+      position: "absolute",
+    }),
   };
 
   return (
     <section
       id="service"
-      className="mx-auto overflow-x-hidden  py-12 2xl:px-4 xl:px-28 bg-white "
+      className="mx-auto overflow-x-hidden py-12 2xl:px-4 xl:px-28 bg-white "
     >
       {/* <h3 className="size-96">Hello wolrd</h3> */}
       <div className="text-center mb-8">
@@ -142,33 +151,40 @@ export default function Services() {
         </button>
 
         {/* Carousel */}
-        <div className="overflow-hidden">
-          <div className="flex items-center justify-center 2xl:gap-10 xl:gap-6">
-            {visible.map((item, i) => {
-              const isCenter = i === 1;
-              // const globalIndex = (current + (i - 1) + n) % n;
-
-              return (
-                <motion.div
-                  key={item.id}
-                  className={`relative w-64 sm:w-72 md:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white ${
-                    isCenter ? "z-20" : "z-10"
-                  }`}
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  variants={cardVariants}
-                  transition={{ duration: 0.35 }}
-                  onClick={() => router.push(`/${item.slug}`)}
-                >
-                  {/* Image */}
+        <div
+          className="overflow-hidden relative w-full flex items-center justify-center"
+          style={{ minHeight: 340 }}
+        >
+          <div
+            className="relative flex items-center justify-center w-full"
+            style={{ height: 340 }}
+          >
+            <motion.div
+              key={current}
+              className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-6 w-full"
+              initial="enter"
+              animate="center"
+              exit="exit"
+              custom={direction}
+              variants={slideVariants}
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+            >
+              {visible.map((item, i) => {
+                const isCenter = i === 1;
+                return (
                   <div
-                    className={`relative w-full ${cardHeightinPX} overflow-hidden`}
+                    key={item.id}
+                    className={`relative w-64 sm:w-72 md:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white ${
+                      isCenter ? "z-20" : "z-10"
+                    }`}
+                    onClick={() => router.push(`/${item.slug}`)}
                   >
-                    <motion.div
-                      className="absolute inset-0 origin-center"
-                      variants={imageVariants}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    {/* Image */}
+                    <div
+                      className={`relative w-full ${cardHeightinPX} overflow-hidden`}
                     >
                       <Image
                         src={item.image}
@@ -176,54 +192,35 @@ export default function Services() {
                         fill
                         className="object-cover w-full h-full"
                       />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none" />
-                  </div>
-
-                  {/* Old text moves up + fades out */}
-                  <motion.div
-                    variants={oldTextVariants}
-                    transition={{ duration: 0.9 }}
-                    className="absolute left-0 bottom-8 w-full text-center origin-center"
-                  >
-                    <motion.p
-                      initial={{ scaleX: 1 }}
-                      animate={{ scaleX: 1.2 }} // increases width by 40%
-                      transition={{ duration: 1, ease: "easeInOut" }}
-                      className="text-white text-xl font-normal  inline-block"
-                    >
-                      {item.heading}
-                    </motion.p>
-                  </motion.div>
-
-                  {/* New icon + text appear on hover */}
-                  <motion.div
-                    variants={overlayVariants}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="absolute inset-0 flex flex-col items-center justify-center text-white"
-                  >
-                    <div
-                      className="flex flex-col items-center justify-center px-10 py-2 rounded-xl backdrop-blur-3xl w-full h-full"
-                      style={{ backdropFilter: "blur(6px)" }}
-                    >
-                      <div className="text-5xl mb-2 text-[#007BFF]">
-                        {item.icon}
+                      <div className="absolute inset-0 bg-linear-to-t from-black/35 to-transparent pointer-events-none" />
+                    </div>
+                    {/* Text and icon overlay */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <div className="flex flex-col items-center justify-center px-4 py-2 rounded-xl backdrop-blur-md">
+                        <div className="text-5xl mb-2 text-[#007BFF]">
+                          {item.icon}
+                        </div>
+                        <p className="text-5xl font-semibold text-center">
+                          {item.heading}
+                        </p>
                       </div>
-                      <p className="text-5xl font-semibold text-center">
+                    </div>
+                    {/* Card heading always visible at bottom */}
+                    <div className="absolute left-0 bottom-8 w-full text-center origin-center">
+                      <p className="text-white text-xl font-normal inline-block">
                         {item.heading}
                       </p>
                     </div>
-                  </motion.div>
-
-                  {/* Featured badge */}
-                  {isCenter && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-white/90 px-3 py-1 rounded-full text-xs text-slate-800 shadow">
-                      Featured
-                    </div>
-                  )}
-                </motion.div>
-              );
-            })}
+                    {/* Featured badge */}
+                    {isCenter && (
+                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-white/90 px-3 py-1 rounded-full text-xs text-slate-800 shadow">
+                        Featured
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
 

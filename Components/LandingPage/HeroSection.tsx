@@ -9,13 +9,13 @@ export default function HeroSection() {
     >
       {/* Dark overlay for readability */}
       {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
-      <div className="relative z-10 text-center px-4 mt-28">
+      <div className="relative z-10 text-center xl:max-w-5xl 2xl:max-w-7xl mt-28 mx-auto">
         <h1 className="text-3xl sm:text-8xl xl:text-7xl 2xl:text-8xl font-bold mb-4">
           Transforming <span className="text-[#007BFF]">Ideas</span>
           <br /> into <span className="text-[#007BFF]">Digital</span> Excellence
         </h1>
 
-        <p className="text-lg sm:text-xl 2xl:text-2xl px-4 md:px-44">
+        <p className="text-lg sm:text-xl 2xl:text-2xl ">
           At Mehdi Technologies Pvt Ltd, we turn innovation into real-world
           impact through web, mobile, AI, and blockchain solutions. With 10+
           years of industry expertise, 350+ successful projects, and clients

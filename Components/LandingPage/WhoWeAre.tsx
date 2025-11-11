@@ -47,7 +47,7 @@ export default function WhoWeAre() {
   return (
     <section
       id="about"
-      className="flex flex-col lg:flex-row items-center justify-between py-16 px-10 lg:px-28 gap-10"
+      className="flex flex-col lg:flex-row items-center justify-between max-w-5xl mx-auto 2xl:max-w-7xl gap-10"
     >
       {/* Left side image with circular backdrop */}
       <div className="relative flex-shrink-0">
@@ -136,7 +136,7 @@ function AnimatedBar({
             />
           </div>
 
-          <p className="text-sm">
+          <p className="text-sm font-bold">
             <CountUp
               end={item.performance}
               duration={2.5}

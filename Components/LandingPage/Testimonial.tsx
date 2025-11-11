@@ -108,7 +108,7 @@ export default function Testimonial() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] text-white rounded-3xl p-8 flex  gap-8 w-[70%] shadow-xl z-10 relative"
+            className="bg-linear-to-r from-[#007BFF] to-[#58C9EC] text-white rounded-3xl p-8 flex  gap-8 w-[70%] shadow-xl z-10 relative"
           >
             <div>
               <Image
@@ -141,7 +141,7 @@ export default function Testimonial() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="bg-gradient-to-r from-[#007BFF]/70 to-[#58C9EC]/70 text-white rounded-3xl p-8 flex flex-col items-center shadow-xl w-[25%] absolute right-0 top-0 z-0"
+            className="bg-linear-to-r from-[#007BFF]/70 to-[#58C9EC]/70 text-white rounded-3xl p-8 flex flex-col items-center shadow-xl w-[25%] absolute right-0 top-0 z-0"
           >
             <Image
               src={firstTestimonial.image}

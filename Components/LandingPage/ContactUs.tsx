@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ChevronDown, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 
 const countries = [
   { code: "+1", country: "US", flag: "🇺🇸", name: "United States" },
@@ -57,7 +57,7 @@ const countries = [
 ];
 
 export default function ContactUs() {
-  const [selectedCountry, setSelectedCountry] = useState(countries[3]); // Default to Pakistan
+  const [selectedCountry, setSelectedCountry] = useState(countries[3]); // Default Pakistan
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [agreedToTerms, setAgreedToTerms] = useState(false);
@@ -73,10 +73,14 @@ export default function ContactUs() {
       className="relative min-h-screen py-16 px-6 lg:px-28 w-full bg-cover bg-center bg-no-repeat flex items-center"
       style={{ backgroundImage: "url('/ContactBG.png')" }}
     >
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Content */}
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+        {/* Left Side - Contact Info */}
         <div className="text-white space-y-6">
-          <h2 className="text-5xl lg:text-6xl font-bold leading-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg">
             Get In <span className="text-blue-500">Touch</span>
             <br />
             with Us,
@@ -86,44 +90,61 @@ export default function ContactUs() {
             You
           </h2>
 
-          <p className="text-white text-lg max-w-md">
+          <p className="text-white text-lg max-w-md drop-shadow-md">
             Let's bring your vision to life. Connect with our experts today to
             discuss your next project.
           </p>
 
           <div className="space-y-4 pt-8">
+            {/* Phone */}
             <div className="flex items-center gap-4">
-              <div className="bg-white backdrop-blur-sm p-2 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
                 <Phone className="w-5 h-5 text-blue-500" />
               </div>
-              <span className="text-gray-200 text-lg">(+92) 312 310 92 18</span>
+              <a
+                href="tel:+923123109218"
+                className="text-white text-lg hover:text-cyan-400 hover:underline transition-colors drop-shadow-md"
+              >
+                (+92) 312 310 92 18
+              </a>
             </div>
 
+            {/* Email (Gmail Compose) */}
             <div className="flex items-center gap-4">
-              <div className="bg-white backdrop-blur-sm p-2 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
                 <Mail className="w-5 h-5 text-blue-500" />
               </div>
-              <span className="text-gray-200 text-lg">
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=contact@mehditechnologies.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-lg hover:text-cyan-400 hover:underline transition-colors drop-shadow-md"
+              >
                 contact@mehditechnologies.com
-              </span>
+              </a>
             </div>
 
+            {/* Address */}
             <div className="flex items-start gap-4">
-              <div className="bg-white backdrop-blur-sm p-2 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
                 <MapPin className="w-5 h-5 text-blue-500" />
               </div>
-              <div className="text-gray-200 text-lg">
-                <div>Office no 9, 2nd Floor, Silver City Plaza,</div>
-                <div>G-11 Markaz. Islamabad</div>
-              </div>
+              <a
+                href="https://www.google.com/maps/place/Mehdi+Technologies+(PVT.)+LTD./@33.6684678,72.9968936,17z"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-lg hover:text-cyan-400 hover:underline transition-colors drop-shadow-md"
+              >
+                Office #09, 2nd Floor, Silver City Plaza, G-11 Markaz, Islamabad
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Right Side - Form */}
-        <div className="w-full">
+        {/* Right Side - Contact Form */}
+        <div className="relative z-10 w-full">
           <form className="space-y-4">
-            {/* Name and Address Row */}
+            {/* Name & Address */}
             <div className="grid md:grid-cols-2 gap-4">
               <input
                 type="text"
@@ -144,7 +165,7 @@ export default function ContactUs() {
               className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
-            {/* Phone Number with Country Code Selector */}
+            {/* Phone with Country Code */}
             <div className="flex gap-2">
               <div className="relative">
                 <button
@@ -226,7 +247,7 @@ export default function ContactUs() {
               className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             ></textarea>
 
-            {/* Terms and Submit */}
+            {/* Terms & Submit */}
             <div className="flex items-center justify-between gap-4 flex-wrap">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input

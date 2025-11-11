@@ -2,8 +2,8 @@ import React from "react";
 
 export default function NewsLetter() {
   return (
-    <section className="bg-white py-20 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="bg-white py-20 2xl:max-w-7xl max-w-5xl mx-auto">
+      <div className=" text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           <span className="text-[#007BFF]">Subscribe</span> Today to Learn More
         </h2>
@@ -33,8 +33,14 @@ export default function NewsLetter() {
             />
           </div>
           <button
-            className="w-full sm:w-auto px-8 py-4 mb-4 mt-3 mx-3 rounded-xl text-gray-700 font-medium "
-            style={{ boxShadow: "0 6px 6px -2px rgba(0,0,0,6.5)" }}
+            className="
+    w-full sm:w-auto px-8 py-4 mb-4 mt-3 mx-3 
+    rounded-xl text-gray-700 font-medium 
+    transition-shadow duration-300
+    shadow-md shadow-black
+    hover:shadow-xl
+    active:shadow-xl
+  "
           >
             Get Started
           </button>

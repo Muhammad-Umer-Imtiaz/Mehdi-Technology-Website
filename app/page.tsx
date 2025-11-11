@@ -13,7 +13,7 @@ import BreakpointDebugger from "@/Components/BreakpointDebugger";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="">
       <BreakpointDebugger />
 
       <HeroSection />
