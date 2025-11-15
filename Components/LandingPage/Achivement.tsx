@@ -21,7 +21,7 @@ export default function Achievement() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
         {/* Left Text Section */}
         <div className="max-w-2xl space-y-6">
-          <h4 className="text-[#007BFF] bg-white border border-[#00000030] py-1 text-sm inline-block font-light rounded-full tracking-[0.5em]">
+          <h4 className="text-[#007BFF] bg-white border border-[#00000030] py-1 px-3 text-base inline-block font-light rounded-full tracking-[0.5em]">
             PROVEN SUCCESS
           </h4>
           <h2 className="text-5xl font-bold">Achievement</h2>
@@ -60,12 +60,12 @@ export default function Achievement() {
             height={500}
             className="hidden lg:block"
           />
-          <div className="flex flex-row items-center justify-center mt-6">
-            <button className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] rounded-lg text-xl text-white font-semibold px-6 py-3 hover:opacity-90 transition-all duration-300 shadow-[0_0_7px_0_rgba(255,255,255,0.8)]">
+          <div className="flex flex-row items-center justify-center md:mt-6">
+            <button className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] rounded-lg md:text-xl text-white font-semibold md:px-6 px-3 py-3 hover:opacity-90 transition-all duration-300 shadow-[0_0_7px_0_rgba(255,255,255,0.8)]">
               <FaPhoneAlt className="inline w-5 h-5 mb-0.5 mr-3" />
               Book a Call
             </button>
-            <button className="bg-white px-6 py-3 text-xl ml-6 text-[#007BFF] rounded-lg shadow-[0_0_8px_0_rgba(255,255,255,0.8)]">
+            <button className="bg-white md:px-6 px-3 py-3 md:text-xl ml-6 text-[#007BFF] rounded-lg shadow-[0_0_8px_0_rgba(255,255,255,0.8)]">
               <IoMail className="inline w-6 h-6 mb-0.5 mr-3 text-black" />
               Contact Us
             </button>

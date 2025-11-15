@@ -10,11 +10,10 @@ import Blogs from "@/Components/LandingPage/Blogs";
 import Clients from "@/Components/LandingPage/Clients";
 import BreakpointDebugger from "@/Components/BreakpointDebugger";
 
-
 export default function Home() {
   return (
-    <div className="">
-      <BreakpointDebugger />
+    <div className="overflow-x-hidden">
+      {/* <BreakpointDebugger /> */}
 
       <HeroSection />
       <WhoWeAre />
@@ -26,7 +25,6 @@ export default function Home() {
       <TechStack />
       <Blogs />
       <Clients />
-     
     </div>
   );
 }

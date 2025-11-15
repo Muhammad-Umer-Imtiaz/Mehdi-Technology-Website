@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
@@ -15,7 +15,6 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// Data + icons
 const data = [
   {
     id: 2,
@@ -67,44 +66,56 @@ const data = [
     slug: "webdevelopment",
   },
 ];
+
 export default function Services() {
   const [current, setCurrent] = useState(0);
   const router = useRouter();
+
+  /* -------------------------------------------------
+   *  Detect breakpoint – we consider <lg as “mobile”
+   * ------------------------------------------------- */
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024); // lg = 1024px
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const n = data.length;
   const idx = (i: number) => ((i % n) + n) % n;
 
-  // visible: left, center, right
+  /* -------------------------------------------------
+   *  Visible items – 3 on desktop, 1 on mobile
+   * ------------------------------------------------- */
   const visible = useMemo(() => {
+    if (isMobile) {
+      return [data[idx(current)]];
+    }
     return [idx(current - 1), idx(current), idx(current + 1)].map(
       (i) => data[i]
     );
-  }, [current]);
+  }, [current, isMobile]);
 
   const handleNext = () => setCurrent((s) => idx(s + 1));
   const handlePrev = () => setCurrent((s) => idx(s - 1));
   const goTo = (i: number) => setCurrent(i);
 
-  // const cardHeight = "h-72 sm:h-80 md:h-2xl";
-  const cardSize = "size-72 sm:size-80 md:size-96";
-  const cardHeightinPX = "h-72 sm:h-80 md:h-[450px]";
-
+  /* -------------------------------------------------
+   *  Animation variants
+   * ------------------------------------------------- */
   const cardVariants = {
     rest: { scale: 1, zIndex: 0 },
     hover: { scale: 1.02, zIndex: 20 },
   };
-
   const imageVariants = {
     rest: { scale: 1, filter: "blur(0px)" },
     hover: { scale: 1.5, filter: "blur(2px)" },
   };
-
-  // New text + icon appear
   const overlayVariants = {
     rest: { y: 80, opacity: 0 },
     hover: { y: 0, opacity: 1 },
   };
-
-  // Old text moves up + fades
   const oldTextVariants = {
     rest: { y: 0, opacity: 1 },
     hover: { y: -100, opacity: 0 },
@@ -113,47 +124,68 @@ export default function Services() {
   return (
     <section
       id="service"
-      className="mx-auto overflow-x-hidden  py-12 2xl:px-4 xl:px-28 bg-white "
+      className="mx-auto overflow-x-hidden py-12 px-5 2xl:max-w-7xl bg-white"
     >
-      {/* <h3 className="size-96">Hello wolrd</h3> */}
-      <div className="text-center mb-8">
+      {/* Header */}
+      <div className="md:text-center text-start mb-8">
         <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm font-light rounded-full tracking-[0.5em]">
           BEST FEATURES
         </h4>
         <h2 className="text-6xl my-2 font-semibold mt-4 text-black">
           SERVICES
         </h2>
-        <p className="text-center mt-3 text-gray-600">
+        <p className=" mt-3 text-gray-600">
           At Mehdi Technologies, we deliver smart digital solutions that empower
-          businesses to grow. From web development to AI <br /> automation, our
-          services simplify operations, boost performance, and drive lasting
-          success.
+          businesses to grow. From web development to AI{" "}
+          <br className="hidden md:block" /> automation, our services simplify
+          operations, boost performance, and drive lasting success.
         </p>
       </div>
 
       <div className="relative">
-        {/* Left arrow */}
-        <button
-          onClick={handlePrev}
-          aria-label="Previous"
-          className="absolute 2xl:left-10 xl:-left-18 border-3 text-black top-1/2 -translate-y-1/2 z-30 p-1 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
-        >
-          <FiChevronLeft size={32} />
-        </button>
+        {/* Arrows – hidden on mobile when only 1 card */}
+        {!isMobile && (
+          <>
+            <button
+              onClick={handlePrev}
+              aria-label="Previous"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
+            >
+              <FiChevronLeft size={32} />
+            </button>
+
+            <button
+              onClick={handleNext}
+              aria-label="Next"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
+            >
+              <FiChevronRight size={32} />
+            </button>
+          </>
+        )}
 
         {/* Carousel */}
         <div className="overflow-hidden">
-          <div className="flex items-center justify-center 2xl:gap-10 xl:gap-6">
+          <div
+            className={`
+              flex items-center justify-center
+              ${isMobile ? "gap-0" : "2xl:gap-10 xl:gap-6 gap-4"}
+            `}
+          >
             {visible.map((item, i) => {
-              const isCenter = i === 1;
-              // const globalIndex = (current + (i - 1) + n) % n;
-
+              const isCenter = !isMobile && i === 1; // only on desktop
               return (
                 <motion.div
                   key={item.id}
-                  className={`relative w-64 sm:w-72 md:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white ${
-                    isCenter ? "z-20" : "z-10"
-                  }`}
+                  className={`
+                    relative rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white
+                    ${
+                      isMobile
+                        ? "w-full max-w-xs mx-auto"
+                        : "w-64 sm:w-72 md:w-80 lg:w-96"
+                    }
+                    ${isCenter ? "z-20" : "z-10"}
+                  `}
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
@@ -162,9 +194,7 @@ export default function Services() {
                   onClick={() => router.push(`/${item.slug}`)}
                 >
                   {/* Image */}
-                  <div
-                    className={`relative w-full ${cardHeightinPX} overflow-hidden`}
-                  >
+                  <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[450px] overflow-hidden">
                     <motion.div
                       className="absolute inset-0 origin-center"
                       variants={imageVariants}
@@ -174,29 +204,29 @@ export default function Services() {
                         src={item.image}
                         alt={item.heading}
                         fill
-                        className="object-cover w-full h-full"
+                        className="object-cover"
                       />
                     </motion.div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Old text moves up + fades out */}
+                  {/* Old text (moves up on hover) */}
                   <motion.div
                     variants={oldTextVariants}
                     transition={{ duration: 0.9 }}
-                    className="absolute left-0 bottom-8 w-full text-center origin-center"
+                    className="absolute  md:left-0 md:bottom-8 left-0 bottom-26 w-full text-center"
                   >
                     <motion.p
-                      initial={{ scaleX: 1 }}
-                      animate={{ scaleX: 1.2 }} // increases width by 40%
+                      initial={{ scaleX: 0.5 }}
+                      animate={{ scaleX: 1 }}
                       transition={{ duration: 1, ease: "easeInOut" }}
-                      className="text-white text-xl font-normal  inline-block"
+                      className="text-white md:text-xl text-3xl md:font-normal font-bold inline-block"
                     >
                       {item.heading}
                     </motion.p>
                   </motion.div>
 
-                  {/* New icon + text appear on hover */}
+                  {/* Hover overlay (icon + big title) */}
                   <motion.div
                     variants={overlayVariants}
                     transition={{ duration: 0.5, ease: "easeOut" }}
@@ -215,7 +245,7 @@ export default function Services() {
                     </div>
                   </motion.div>
 
-                  {/* Featured badge */}
+                  {/* Featured badge – only center card on desktop */}
                   {isCenter && (
                     <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-white/90 px-3 py-1 rounded-full text-xs text-slate-800 shadow">
                       Featured
@@ -226,18 +256,9 @@ export default function Services() {
             })}
           </div>
         </div>
-
-        {/* Right arrow */}
-        <button
-          onClick={handleNext}
-          aria-label="Next"
-          className="absolute border-3 2xl:right-14 xl:xl:-right-16  text-black top-1/2 -translate-y-1/2 z-30 p-1 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
-        >
-          <FiChevronRight size={32} />
-        </button>
       </div>
 
-      {/* Pagination dots */}
+      {/* Pagination dots – always shown */}
       <div className="mt-6 flex items-center justify-center gap-3">
         {data.map((_, i) => (
           <button

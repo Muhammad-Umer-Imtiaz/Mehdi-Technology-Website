@@ -61,7 +61,7 @@ export default function FAQS() {
       <div className="flex justify-center lg:w-1/2">
         <div className="w-[589px] h-[517px] flex items-center justify-center">
           <Image
-            src="/FAQS.png"
+            src="/FAQs.gif"
             alt="FAQ Illustration"
             width={589}
             height={517}

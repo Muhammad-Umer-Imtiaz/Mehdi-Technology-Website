@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 
 const countries = [
@@ -57,10 +57,11 @@ const countries = [
 ];
 
 export default function ContactUs() {
-  const [selectedCountry, setSelectedCountry] = useState(countries[3]); // Default Pakistan
+  const [selectedCountry, setSelectedCountry] = useState(countries[3]); // default Pakistan
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const filteredCountries = countries.filter(
     (country) =>
@@ -68,228 +69,327 @@ export default function ContactUs() {
       country.code.includes(searchQuery)
   );
 
+  // Close dropdown on Escape key
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowDropdown(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Prevent body scroll when mobile dropdown open
+  useEffect(() => {
+    if (showDropdown) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showDropdown]);
+
   return (
     <section
-      className="relative min-h-screen py-16 px-6 lg:px-28 w-full bg-cover bg-center bg-no-repeat flex items-center"
+      className="relative py-12 lg:py-16 w-full bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/ContactBG.png')" }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      <div className="absolute inset-0 bg-black/30 z-0" />
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Contact Info */}
-        <div className="text-white space-y-6">
-          <h2 className="text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg">
-            Get In <span className="text-blue-500">Touch</span>
-            <br />
-            with Us,
-            <br />
-            We <span className="text-blue-500">Answer</span>
-            <br />
-            You
-          </h2>
+      <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* Left Side - Contact Info (moves above on mobile) */}
+          <div className="text-white space-y-6 order-1 lg:order-0">
+            <h2 className="md:block hidden text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg">
+              Get In <span className="text-blue-400">Touch</span> with Us,
+              <br />
+              We <span className="text-blue-400">Answer</span> You
+            </h2>
 
-          <p className="text-white text-lg max-w-md drop-shadow-md">
-            Let's bring your vision to life. Connect with our experts today to
-            discuss your next project.
-          </p>
+            <p className=" md:block hidden text-white/90 text-base sm:text-lg max-w-lg drop-shadow-md">
+              Let's bring your vision to life. Connect with our experts today to
+              discuss your next project.
+            </p>
 
-          <div className="space-y-4 pt-8">
-            {/* Phone */}
-            <div className="flex items-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
-                <Phone className="w-5 h-5 text-blue-500" />
+            <div className="space-y-4 pt-6">
+              {/* Phone */}
+              <div className="flex items-center gap-4">
+                <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
+                  <Phone className="w-5 h-5 text-blue-400" />
+                </div>
+                <a
+                  href="tel:+923123109218"
+                  className="text-white text-base sm:text-lg hover:text-cyan-300 hover:underline transition-colors"
+                >
+                  (+92) 312 310 92 18
+                </a>
               </div>
-              <a
-                href="tel:+923123109218"
-                className="text-white text-lg hover:text-cyan-400 hover:underline transition-colors drop-shadow-md"
-              >
-                (+92) 312 310 92 18
-              </a>
-            </div>
 
-            {/* Email (Gmail Compose) */}
-            <div className="flex items-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
-                <Mail className="w-5 h-5 text-blue-500" />
+              {/* Email */}
+              <div className="flex items-center gap-4">
+                <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
+                  <Mail className="w-5 h-5 text-blue-400" />
+                </div>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&to=contact@mehditechnologies.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-base sm:text-lg hover:text-cyan-300 hover:underline transition-colors"
+                >
+                  contact@mehditechnologies.com
+                </a>
               </div>
-              <a
-                href="https://mail.google.com/mail/?view=cm&to=contact@mehditechnologies.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-lg hover:text-cyan-400 hover:underline transition-colors drop-shadow-md"
-              >
-                contact@mehditechnologies.com
-              </a>
-            </div>
 
-            {/* Address */}
-            <div className="flex items-start gap-4">
-              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
-                <MapPin className="w-5 h-5 text-blue-500" />
+              {/* Address */}
+              <div className="flex items-start gap-4">
+                <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
+                  <MapPin className="w-5 h-5 text-blue-400" />
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/Mehdi+Technologies+(PVT.)+LTD./@33.6684678,72.9968936,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-base sm:text-lg hover:text-cyan-300 hover:underline transition-colors"
+                >
+                  Office #09, 2nd Floor, Silver City Plaza, G-11 Markaz,
+                  Islamabad
+                </a>
               </div>
-              <a
-                href="https://www.google.com/maps/place/Mehdi+Technologies+(PVT.)+LTD./@33.6684678,72.9968936,17z"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-lg hover:text-cyan-400 hover:underline transition-colors drop-shadow-md"
-              >
-                Office #09, 2nd Floor, Silver City Plaza, G-11 Markaz, Islamabad
-              </a>
             </div>
           </div>
-        </div>
 
-        {/* Right Side - Contact Form */}
-        <div className="relative z-10 w-full">
-          <form className="space-y-4">
-            {/* Name & Address */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="text"
-                placeholder="Your Address"
-                className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+          {/* Right Side - Contact Form */}
+          <div className="relative backdrop-blur-md rounded-2xl md:py-6 sm:p-8 lg:p-10 shadow-xl order-0 lg:order-1">
+            <h2 className="md:hidden block text-4xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Get In <span className="text-blue-400">Touch</span> with Us,
+              <br />
+              We <span className="text-blue-400">Answer</span> You
+            </h2>
 
-            {/* Email */}
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-
-            {/* Phone with Country Code */}
-            <div className="flex gap-2">
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="h-full px-4 rounded-xl bg-white text-gray-800 flex items-center gap-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[120px]"
-                >
-                  <span className="text-2xl">{selectedCountry.flag}</span>
-                  <span className="font-medium">{selectedCountry.code}</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-
-                {showDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl z-50 max-h-96 overflow-hidden flex flex-col">
-                    <div className="p-3 border-b sticky top-0 bg-white">
-                      <input
-                        type="text"
-                        placeholder="Search country..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div className="overflow-y-auto">
-                      {filteredCountries.map((country) => (
-                        <button
-                          key={country.country}
-                          type="button"
-                          onClick={() => {
-                            setSelectedCountry(country);
-                            setShowDropdown(false);
-                            setSearchQuery("");
-                          }}
-                          className="w-full px-4 py-3 hover:bg-blue-50 flex items-center gap-3 text-left transition-colors"
-                        >
-                          <span className="text-2xl">{country.flag}</span>
-                          <span className="font-medium text-gray-700 min-w-[60px]">
-                            {country.code}
-                          </span>
-                          <span className="text-gray-600">{country.name}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
+            <p className=" md:hidden block text-white/90 text-base sm:text-lg max-w-lg drop-shadow-md mb-4">
+              Let's bring your vision to life. Connect with our experts today to
+              discuss your next project.
+            </p>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              {/* Name & Address */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Your Address"
+                  className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
               </div>
 
+              {/* Email */}
               <input
-                type="tel"
-                placeholder="Your Contact Number"
-                className="flex-1 px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
-            </div>
 
-            {/* Business Name/Website */}
-            <input
-              type="text"
-              placeholder="Business Name / Website"
-              className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+              {/* Phone with Country Code */}
+              <div className="flex gap-3 flex-col sm:flex-row">
+                <div className="relative w-full sm:w-[170px]" ref={dropdownRef}>
+                  <button
+                    type="button"
+                    onClick={() => setShowDropdown((s) => !s)}
+                    aria-haspopup="listbox"
+                    aria-expanded={showDropdown}
+                    className="w-full h-full px-3 py-3 rounded-xl bg-white text-gray-800 flex items-center gap-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  >
+                    <span className="text-lg">{selectedCountry.flag}</span>
+                    <span className="font-medium">{selectedCountry.code}</span>
+                    <ChevronDown className="w-4 h-4 ml-auto text-gray-600" />
+                  </button>
 
-            {/* Service Selector */}
-            <div className="relative">
-              <select className="w-full px-6 py-4 rounded-xl bg-white text-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none cursor-pointer">
-                <option value="">Select Service you want</option>
-                <option value="web-dev">Web Development</option>
-                <option value="mobile-dev">Mobile Development</option>
-                <option value="ui-ux">UI/UX Design</option>
-                <option value="consulting">Consulting</option>
-                <option value="digital-marketing">Digital Marketing</option>
-              </select>
-              <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" />
-            </div>
+                  {/* Dropdown */}
+                  {showDropdown && (
+                    <>
+                      {/* For larger screens: small popup. For small screens: full-screen panel */}
+                      <div
+                        className="hidden sm:block absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl z-50 max-h-96 overflow-hidden"
+                        role="dialog"
+                        aria-modal="true"
+                      >
+                        <div className="p-3 border-b sticky top-0 bg-white z-10">
+                          <input
+                            type="text"
+                            placeholder="Search country..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          />
+                        </div>
+                        <div className="overflow-y-auto max-h-[360px]">
+                          {filteredCountries.map((country) => (
+                            <button
+                              key={country.country}
+                              type="button"
+                              onClick={() => {
+                                setSelectedCountry(country);
+                                setShowDropdown(false);
+                                setSearchQuery("");
+                              }}
+                              className="w-full px-4 py-3 hover:bg-blue-50 flex items-center gap-3 text-left transition-colors"
+                            >
+                              <span className="text-2xl">{country.flag}</span>
+                              <span className="font-medium text-gray-700 min-w-[60px]">
+                                {country.code}
+                              </span>
+                              <span className="text-gray-600">
+                                {country.name}
+                              </span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
 
-            {/* Message */}
-            <textarea
-              placeholder="Type Your Message Here..."
-              rows={5}
-              className="w-full px-6 py-4 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-            ></textarea>
+                      {/* Mobile full-screen picker */}
+                      <div
+                        className="sm:hidden fixed inset-0 z-50 bg-black/60 flex items-end"
+                        role="dialog"
+                        aria-modal="true"
+                      >
+                        <div className="w-full max-h-[85vh] bg-white rounded-t-2xl p-4 overflow-hidden">
+                          <div className="flex items-center gap-3 mb-3">
+                            <input
+                              type="text"
+                              placeholder="Search country..."
+                              value={searchQuery}
+                              onChange={(e) => setSearchQuery(e.target.value)}
+                              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setShowDropdown(false);
+                                setSearchQuery("");
+                              }}
+                              className="px-3 py-2 text-sm bg-gray-100 rounded-lg"
+                            >
+                              Close
+                            </button>
+                          </div>
 
-            {/* Terms & Submit */}
-            <div className="flex items-center justify-between gap-4 flex-wrap">
-              <label className="flex items-center gap-2 cursor-pointer">
+                          <div
+                            className="overflow-y-auto"
+                            style={{ maxHeight: "70vh" }}
+                          >
+                            {filteredCountries.map((country) => (
+                              <button
+                                key={country.country}
+                                type="button"
+                                onClick={() => {
+                                  setSelectedCountry(country);
+                                  setShowDropdown(false);
+                                  setSearchQuery("");
+                                }}
+                                className="w-full px-4 py-3 hover:bg-gray-50 flex items-center gap-3 text-left transition-colors"
+                              >
+                                <span className="text-2xl">{country.flag}</span>
+                                <span className="font-medium text-gray-700 min-w-[60px]">
+                                  {country.code}
+                                </span>
+                                <span className="text-gray-600">
+                                  {country.name}
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+
                 <input
-                  type="checkbox"
-                  checked={agreedToTerms}
-                  onChange={(e) => setAgreedToTerms(e.target.checked)}
-                  className="w-5 h-5 rounded border-2 border-gray-300 text-blue-500 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                  type="tel"
+                  placeholder="Your Contact Number"
+                  className="flex-1 px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
-                <span className="text-white text-sm">
-                  I agree with{" "}
-                  <a
-                    href="#"
-                    className="text-blue-500 hover:underline font-medium"
-                  >
-                    Terms of Use
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="#"
-                    className="text-blue-500 hover:underline font-medium"
-                  >
-                    Privacy Policy
-                  </a>
-                </span>
-              </label>
+              </div>
 
-              <button
-                type="submit"
-                className="px-8 py-3 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent transition-all text-base"
-              >
-                Get Started
-              </button>
-            </div>
-          </form>
+              {/* Business Name/Website */}
+              <input
+                type="text"
+                placeholder="Business Name / Website"
+                className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              {/* Service Selector */}
+              <div className="relative">
+                <select className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 appearance-none cursor-pointer">
+                  <option value="">Select Service you want</option>
+                  <option value="web-dev">Web Development</option>
+                  <option value="mobile-dev">Mobile Development</option>
+                  <option value="ui-ux">UI/UX Design</option>
+                  <option value="consulting">Consulting</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" />
+              </div>
+
+              {/* Message */}
+              <textarea
+                placeholder="Type Your Message Here..."
+                rows={5}
+                className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+              ></textarea>
+
+              {/* Terms & Submit */}
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={agreedToTerms}
+                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                    className="w-5 h-5 rounded border-2 border-gray-300 text-blue-500 focus:ring-2 focus:ring-blue-400 cursor-pointer"
+                  />
+                  <span className="text-white md:text-sm text-xs">
+                    I agree with{" "}
+                    <a
+                      href="#"
+                      className="text-blue-400 hover:underline font-medium"
+                    >
+                      Terms of Use
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="#"
+                      className="text-blue-400 hover:underline font-medium"
+                    >
+                      Privacy Policy
+                    </a>
+                  </span>
+                </label>
+
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-blue-400 text-white rounded-xl font-semibold hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-base"
+                >
+                  Get Started
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
-      {/* Click outside to close dropdown */}
+      {/* Click outside to close dropdown (keeps existing behavior) */}
       {showDropdown && (
         <div
           className="fixed inset-0 z-40"
-          onClick={() => setShowDropdown(false)}
+          onClick={() => {
+            setShowDropdown(false);
+            setSearchQuery("");
+          }}
         />
       )}
     </section>

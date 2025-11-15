@@ -76,7 +76,7 @@ const Navbar = () => {
       </button>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed top-20 sm:top-28 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] bg-[#8D27FF] backdrop-blur-md bg-opacity-95 rounded-3xl shadow-xl z-10 py-6 px-6">
+        <div className="lg:hidden fixed top-20 sm:top-28 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] bg-[#00D1FF] backdrop-blur-md bg-opacity-95 rounded-3xl shadow-xl z-10 py-6 px-6">
           <ul className="flex flex-col gap-4 text-white">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -91,15 +91,15 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <button
+          {/* <button
             onClick={() => {
               //   router.push("/login");
               setMobileMenuOpen(false);
             }}
-            className="w-full mt-6 bg-white text-[#00000] font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all"
+            className="w-full mt-6 bg-white text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all"
           >
             Contact us
-          </button>
+          </button> */}
         </div>
       )}
     </nav>

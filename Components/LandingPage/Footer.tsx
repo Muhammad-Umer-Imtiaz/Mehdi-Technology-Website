@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -8,14 +8,14 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] text-white  pt-16 pb-4 px-6 lg:px-28 w-full">
       {/* Top Banner */}
       <div className="max-w-7xl mx-auto mb-12">
-        <div className="border-y-2 border-[#58C9EC] rounded-2xl p-6">
+        <div className="border-y-2 border-[#58C9EC] rounded-2xl md:p-6 p-2">
           <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12 mx-10">
             <img src="/Footer/Clutch.png" alt="Clutch" className="h-12" />
             <img src="/Footer/GoodFirms.png" alt="GoodFirms" className="h-12" />
             <img src="/Footer/google.png" alt="Google" className="h-12" />
             <img src="/Footer/UpWork.png" alt="Upwork" className="h-12" />
           </div>
-          <p className="text-center  text-[#ffffff]/70 text-sm md:text-lg mt-6 tracking-[0.1em]">
+          <p className="text-start  text-[#ffffff]/70 text-xs md:text-lg mt-6 md:tracking-[0.1em]">
             4.7 star rating by 200+ Mehdi Technologies Clients on over 350+
             Projects
           </p>
@@ -23,7 +23,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="grid-cols-2 grid">
+      <div className="md:grid-cols-2 grid-cols-1 grid">
         <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:gap-12 xl:gap-0  py-2">
           {/* Company Info */}
           <div>
@@ -44,6 +44,16 @@ export default function Footer() {
               <span className="inline text-sm">hr@mehditechnologies.com</span>
             </a>
 
+            <h3 className="text-2xl font-semibold mb-3">For Queries</h3>
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=info@mehditechnologies.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex  text-[#ffffff] hover:text-cyan-400 transition-colors"
+            >
+              <MessageCircle  className="w-5 h-5 mr-2 " />
+              <span className="inline text-sm">info@mehditechnologies.com</span>
+            </a>
             {/* Social Links */}
             <div className="flex gap-4 mt-6  text-[#ffffff]/70">
               <a href="#" className="hover:text-cyan-400 transition-colors">
@@ -88,7 +98,7 @@ export default function Footer() {
               <li className="flex gap-3 items-start hover:text-cyan-400 transition-colors">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <a
-                  href="https://www.google.com/maps/place/Mehdi+Technologies+(PVT.)+LTD./@33.6684678,72.9968936,17z"
+                  href="https://www.google.com/maps/place/Mehdi+Technologies+(PVT.)+LTD./@33.6684486,72.9942926,17z/data=!4m6!3m5!1s0x38df950053c1b88b:0xc45aaba0ad6bb35a!8m2!3d33.6684442!4d72.9968675!16s%2Fg%2F11wc5qtj5v?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
@@ -100,11 +110,11 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:gap-8 gap-0 py-2 2xl:ml-10 ml-7">
+        <div className="  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:gap-8 gap-0 py-2 2xl:ml-10 md:ml-7">
           {/* Our Services */}
-          <div className="text-right ">
+          <div className="md:text-right ">
             <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-3  text-[#ffffff]/70">
+            <ul className="space-y-3 grid md:inline grid-cols-2  text-[#ffffff]/70">
               <li>
                 <a
                   href="/webdevelopment"
@@ -145,9 +155,9 @@ export default function Footer() {
           </div>
 
           {/* Explore */}
-          <div className="text-right">
+          <div className="md:text-right">
             <h3 className="text-2xl font-semibold mb-4">Explore</h3>
-            <ul className="space-y-3  text-[#ffffff]/70">
+            <ul className="space-y-3  grid md:inline grid-cols-2 text-[#ffffff]/70">
               <li>
                 <a
                   href="#testimonial"
@@ -184,9 +194,9 @@ export default function Footer() {
           </div>
 
           {/* Industries */}
-          <div className="text-right">
+          <div className="md:text-right">
             <h3 className="text-2xl font-semibold mb-4">Industries</h3>
-            <ul className="space-y-3  text-[#ffffff]/70">
+            <ul className="space-y-3 grid md:inline grid-cols-2  text-[#ffffff]/70">
               <li>
                 <a href="#" className="hover:text-cyan-400 transition-colors">
                   Health Care
@@ -260,8 +270,8 @@ export default function Footer() {
 
       {/* Bottom Copyright */}
       <div className="pt-4 border-t-2 border-[#58C9EC] rounded-2xl">
-        <p className="text-center  text-[#ffffff]/70 text-sm">
-          © 2025, Made with passion by Mehdi Technologies Pvt Ldt..
+        <p className="text-center  text-[#ffffff]/70 md:text-sm text-xs">
+          © 2025, Made with passion by Mehdi Technologies Pvt Ldt
         </p>
       </div>
     </footer>

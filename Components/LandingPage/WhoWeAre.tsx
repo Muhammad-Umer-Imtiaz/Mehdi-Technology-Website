@@ -47,11 +47,11 @@ export default function WhoWeAre() {
   return (
     <section
       id="about"
-      className="flex flex-col lg:flex-row items-center justify-between max-w-5xl mx-auto 2xl:max-w-7xl gap-10"
+      className="flex flex-col md:flex-row items-center justify-between w-full px-5  mx-auto 2xl:max-w-7xl gap-10 md:py-20 py-10"
     >
       {/* Left side image with circular backdrop */}
-      <div className="relative flex-shrink-0">
-        <div className="absolute -z-10 bg-[#00BFFF20] rounded-full w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"></div>
+      <div className="md:inline relative hidden flex-shrink-0">
+        <div className="absolute -z-10 "></div>
         <Image
           src="/WhoWeAre.png"
           alt="Who we are Image"
@@ -62,12 +62,12 @@ export default function WhoWeAre() {
       </div>
 
       {/* Right content */}
-      <div className="max-w-2xl ">
+      <div className=" ">
         <h4 className="text-[#007BFF] border border-[#00000030] px-6 py-1 inline-block font-extralight rounded-full   tracking-widest">
           WHO WE ARE
         </h4>
 
-        <h2 className="text-4xl md:text-6xl font-bold mt-2">
+        <h2 className="text-3xl md:text-6xl font-bold mt-2">
           Your partner in <span className="text-[#007BFF] mr-2">Software</span>
           excellence
         </h2>
@@ -78,6 +78,16 @@ export default function WhoWeAre() {
           full range of services including web and app design, development,
           testing, deployment, and ongoing maintenance.
         </p>
+        <div className="inline relative md:hidden flex-shrink-0">
+          <div className="absolute -z-10 "></div>
+          <Image
+            src="/WhoWeAre.png"
+            alt="Who we are Image"
+            width={550}
+            height={500}
+            className="relative z-10"
+          />
+        </div>
 
         {/* Services list */}
         <div className="space-y-1 pt-4">
@@ -114,20 +124,20 @@ function AnimatedBar({
 
   return (
     <div ref={ref} className="py-2">
-      <div className="flex justify-between items-center mb-1">
+      <div className="md:flex justify-between items-center mb-1">
         <div className="flex items-center gap-3">
           <Image
             src={item.icon}
             alt={item.title}
             width={28}
             height={28}
-            className="object-contain"
+            className="w-10 md:w-10 object-contain"
           />
-          <h4 className="text-base font-semibold">{item.title}</h4>
+          <h4 className="md:text-base text-sm font-semibold">{item.title}</h4>
         </div>
         <div className="flex items-center gap-2">
           {/* Animated bar */}
-          <div className="relative w-40 border-3  h-4 rounded-full overflow-hidden">
+          <div className="relative md:w-40 border-3  h-4 rounded-full overflow-hidden w-full">
             <div className="absolute inset-0 h-4 bg-gradient-to-r from-[#A020F0]/30 to-[#00D1FF]/30" />
             <motion.div
               className="absolute inset-y-0 left-0 h-4 bg-gradient-to-r from-[#A020F0] to-[#00D1FF]"
@@ -149,7 +159,7 @@ function AnimatedBar({
       </div>
 
       {/* Dual-layer progress line */}
-      <div className="relative w-full h-0.5 rounded-full overflow-hidden">
+      <div className="hidden md:block relative w-full h-0.5 rounded-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black to-white" />
       </div>
     </div>

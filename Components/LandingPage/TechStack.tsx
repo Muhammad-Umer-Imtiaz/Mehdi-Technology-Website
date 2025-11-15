@@ -132,10 +132,13 @@ export default function TechStack() {
   const categories: Category[] = ["Web", "Mobile", "AI", "Blockchain", "UI/UX"];
 
   return (
-    <section id="tech-stack" className="mx-auto py-16 2xl:px-4 xl:px-28 bg-white">
+    <section
+      id="tech-stack"
+      className="mx-auto py-16 2xl:px-4 px-4 xl:px-28 bg-white"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="md:text-center mb-16">
           <h4 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 px-6 py-1.5 text-base  font-medium rounded-full tracking-[0.4em] mb-4">
             OUR FOUNDATION
           </h4>
@@ -152,12 +155,12 @@ export default function TechStack() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-[230px_1fr] gap-8 items-start">
           {/* Left Side - Category Buttons */}
-          <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-3 md:grid-cols-1 gap-2">
             {categories.map((category: any) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`w-full font-semibold text-2xl py-4 px-8 rounded-full transition-all duration-300 ${
+                className={`w-full font-semibold md:text-2xl text-base md:py-4 py-1.5 md:px-8 px-1.5 rounded-full transition-all duration-300 ${
                   activeCategory === category
                     ? "bg-[#007BFF] text-white shadow-xl"
                     : "bg-white text-black border-2 border-gray-300 hover:bg-[#58C9EC] hover:text-3xl transition-all ease-in shadow-md"

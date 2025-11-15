@@ -42,7 +42,7 @@ export default function Blogs() {
       <div className="absolute inset-0 bg-black/40 z-0"></div>
 
       {/* Header */}
-      <div className="relative z-10 text-center mb-16">
+      <div className="relative z-10 md:text-center mb-16">
         <h4 className="text-[#00A6FF] bg-white inline-block border border-gray-200 px-6 py-2 text-xs font-medium rounded-full tracking-[0.4em] uppercase shadow-sm mb-6">
           INSIGHTS & UPDATES
         </h4>
@@ -76,13 +76,13 @@ export default function Blogs() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
+            <div className="md:p-6 p-2">
               {/* Category & Date */}
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[#00A6FF] text-sm font-semibold border border-[#00A6FF] px-4 py-1 rounded-full">
+                <span className="text-[#00A6FF] md:text-sm text-xs font-semibold border border-[#00A6FF] md:px-4 px-2 py-1 rounded-full">
                   {blog.category}
                 </span>
-                <span className="text-gray-500 text-sm">{blog.date}</span>
+                <span className="text-gray-500 md:text-sm text-xs">{blog.date}</span>
               </div>
 
               {/* Title */}

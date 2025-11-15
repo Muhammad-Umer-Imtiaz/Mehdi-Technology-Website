@@ -2,12 +2,12 @@ import React from "react";
 
 export default function NewsLetter() {
   return (
-    <section className="bg-white py-20 2xl:max-w-7xl max-w-5xl mx-auto">
-      <div className=" text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+    <section className="bg-white py-20 2xl:max-w-7xl xl:max-w-5xl mx-auto w-full px-6">
+      <div className=" md:text-center text-start">
+        <h2 className="text-5xl md:text-5xl lg:text-6xl font-bold mb-6">
           <span className="text-[#007BFF]">Subscribe</span> Today to Learn More
         </h2>
-        <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-12">
+        <p className="text-gray-600 text-start md:text-center text-base md:text-xl md:max-w-3xl mx-auto mb-12">
           Get the latest updates on technology trends, AI breakthroughs, and
           exclusive Mehdi Technologies insights straight to your inbox.
         </p>
