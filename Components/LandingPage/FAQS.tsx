@@ -55,11 +55,11 @@ export default function FAQS() {
   return (
     <section
       id="faqs"
-      className="flex flex-col lg:flex-row items-center justify-between px-10 lg:px-24 py-16 bg-white gap-12"
+      className="flex flex-col lg:flex-row items-center justify-between px-5 mx-auto 2xl:max-w-7xl py-16 bg-white md:gap-12"
     >
       {/* ────── LEFT: IMAGE (fixed size, never affected) ────── */}
       <div className="flex justify-center lg:w-1/2">
-        <div className="w-[589px] h-[517px] flex items-center justify-center">
+        <div className="w-[450px] md:w-[600px] h-[517px] flex items-center justify-center">
           <Image
             src="/FAQs.gif"
             alt="FAQ Illustration"

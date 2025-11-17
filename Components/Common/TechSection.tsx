@@ -20,7 +20,7 @@ export default function TechSection({
   technologies = [],
 }: TechSectionProps) {
   return (
-    <section className="bg-white py-20  max-w-7xl mx-auto">
+    <section className="bg-white py-20 px-5  max-w-7xl mx-auto">
       {/* Title */}
       <h2 className="text-3xl 2xl:text-6xl xl:text-6xl font-extrabold text-center mb-12">
         {title}{" "}
@@ -28,7 +28,7 @@ export default function TechSection({
       </h2>
 
       {/* Tech Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 gap-y-12 justify-center -items-center">
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-7 gap-8 gap-y-12 justify-center -items-center">
         {technologies.map((tech, index) => {
           const Icon = tech.icon;
           return (

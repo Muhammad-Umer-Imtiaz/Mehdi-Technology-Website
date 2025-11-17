@@ -20,20 +20,20 @@ export default function HeroSection({
       {/* <div className="absolute inset-0 bg-black/40" /> */}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 md:px-12 mt-36">
+      <div className="relative z-10 text-center px-5 md:px-12 md:mt-36 ">
         {/* Breadcrumb */}
-        <div className="bg-white/10 backdrop-blur-md text-[#ffffff]/70 px-6 py-2 md:text-base inline-flex items-center gap-2 font-light rounded-full mb-4 tracking-wide shadow-sm border-2 border-white/50">
+        <div className="bg-white/10 backdrop-blur-md text-[#ffffff]/70 md:px-6 px-3 py-2 md:text-base inline-flex items-center gap-2 font-light rounded-full mb-4 tracking-wide shadow-sm border-2 border-white/50">
           {breadcrumbs.map((item, index) => (
             <span key={index} className="flex items-center gap-2">
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-lg font-extralight transition-all duration-300 ease-in-out hover:text-[#58C9EC] hover:font-bold"
+                  className="md:text-lg font-extralight transition-all duration-300 ease-in-out hover:text-[#58C9EC] hover:font-bold"
                 >
                   {item.name}
                 </Link>
               ) : (
-                <span className="text-white text-lg font-semibold">
+                <span className="text-white md:text-lg font-semibold">
                   {item.name}
                 </span>
               )}
@@ -50,7 +50,7 @@ export default function HeroSection({
         </h1>
 
         {/* Description */}
-        <p className="text-center text-2xl text-white leading-relaxed font-light">
+        <p className="text-center md:text-2xl text-base text-white leading-relaxed font-light">
           {description}
         </p>
       </div>

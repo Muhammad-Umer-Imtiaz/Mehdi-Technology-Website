@@ -52,10 +52,10 @@ export default function HowWeServe({
   const rows = getRows(services);
 
   return (
-    <section className="bg-white text-black py-20 px-6 md:px-28">
+    <section className="bg-white text-black py-20 px-5 2xl:max-w-7xl xl:max-w-5xl">
       {/* Heading */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+        <h2 className="text-2xl md:text-4xl font-bold mb-4">{title}</h2>
         <p className="text-gray-700 text-base md:text-xl leading-6 text-center">
           {description}
         </p>
@@ -75,16 +75,18 @@ export default function HowWeServe({
                 <div
                   key={index}
                   className={`bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-[#007BFF] shadow-[0_0_10px_0_rgba(0,123,255,0.8)]
-                    px-6 py-6 text-center hover:shadow-xl transition-shadow duration-300
+                    md:px-6 md:py-6 px-1.5 py-3 text-center hover:shadow-xl transition-shadow duration-300
                     ${service.colSpan ? service.colSpan : ""}`}
                 >
                   <div className="w-16 h-16 bg-[#007BFF] rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <h3 className="md:text-2xl text-lg font-bold md:mb-4 mb-2">
+                    {service.title}
+                  </h3>
                   <p
                     className={`text-black leading-relaxed ${
-                      row.length <= 2 ? "text-xl" : "text-lg"
+                      row.length <= 2 ? "md:text-xl" : "md:text-lg"
                     }`}
                   >
                     {service.description}

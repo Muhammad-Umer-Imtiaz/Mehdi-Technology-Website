@@ -17,7 +17,7 @@ export default function AiSolution() {
       style={{ backgroundImage: "url('/AchievementBG.png')" }}
     >
       {/* Optional dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      {/* <div className="absolute inset-0 bg-black/40 z-0"></div> */}
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="relative z-10 md:text-center mb-12">
@@ -40,14 +40,17 @@ export default function AiSolution() {
 
         {/* Image + Solutions */}
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 2xl:gap-12 xl:gap-8">
-          <div className="">
-            <Image
-              src="/AiSolution.png"
-              alt="AI Solution Image"
-              width={760}
-              height={500}
-              className="object-contain"
-              priority
+          <div className=" ">
+            <video
+              className="border-4 border-[#007BFF] rounded-3xl shadow-[0_0_25px_5px_#58C9EC]"
+              width={700}
+              height={350}
+              autoPlay
+              muted
+              loop
+              playsInline
+              src="/Videos/Video.mp4"
+              style={{ pointerEvents: "none" }} // prevent pause by click
             />
           </div>
 

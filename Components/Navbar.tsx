@@ -6,14 +6,15 @@ import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Service", href: "/#service" },
+  { name: "Service", href: "/services" },
   { name: "Testimonial", href: "/#testimonial" },
   { name: "Blogs", href: "/#blogs" },
   { name: "FAQs", href: "/#faqs" },
-  { name: "About Us", href: "/#about" },
+  { name: "About Us", href: "/about-us" },
 ];
 
 const Navbar = () => {
@@ -26,16 +27,14 @@ const Navbar = () => {
       {/* Logo */}
       <div
         className="cursor-pointer flex items-center"
-        onClick={() => {
-          router.push("/");
-        }}
+        onClick={() => router.push("/")}
       >
         <Image
           src="/Logo.png"
           alt="Logo"
           width={80}
           height={45}
-          className=" w-16 h-auto sm:w-20 lg:w-[120px]"
+          className="w-16 h-auto sm:w-20 lg:w-[120px]"
           priority
         />
       </div>
@@ -50,58 +49,93 @@ const Navbar = () => {
             >
               {link.name}
             </Link>
-
-            {/* UNDERLINE EFFECT */}
             <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-white transition-all duration-200 group-hover:w-full rounded-full"></span>
           </li>
         ))}
       </ul>
 
       {/* Desktop Button */}
-      <button
-        //   onClick={() => router.push("/login")}
+      <Link
+        href="/contact-us"
         className="hidden lg:block bg-white text-[#000000] font-semibold px-6 py-2 rounded-full shadow-lg shadow-black/50 hover:shadow-black/90 hover:bg-gray-100 transition-all text-xl"
       >
         Contact us
         <BsFillTelephoneFill className="inline w-4 h-4 ml-2 mb-0.5" />
-      </button>
+      </Link>
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Toggle */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="lg:hidden text-white p-2"
+        className="lg:hidden text-white  z-50"
         aria-label="Toggle menu"
       >
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {mobileMenuOpen && (
-        <div className="lg:hidden fixed top-20 sm:top-28 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] bg-[#00D1FF] backdrop-blur-md bg-opacity-95 rounded-3xl shadow-xl z-10 py-6 px-6">
-          <ul className="flex flex-col gap-4 text-white">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 px-4 rounded-xl hover:bg-white/10 transition-colors duration-300 text-lg font-medium"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* <button
-            onClick={() => {
-              //   router.push("/login");
-              setMobileMenuOpen(false);
+      {/* Mobile Menu with Smooth Animation */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+              x: 100,
+              y: -50,
             }}
-            className="w-full mt-6 bg-white text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all"
+            animate={{
+              opacity: 1,
+              scale: 1,
+              x: 0,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.8,
+              x: 100,
+              y: -50,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+              duration: 0.4,
+            }}
+            className="lg:hidden fixed top-16 sm:top-24 right-2 w-[95%] sm:w-[400px] bg-[#00D1FF] backdrop-blur-md bg-opacity-95 rounded-3xl shadow-2xl z-40 py-8 px-6 border border-white/20"
           >
-            Contact us
-          </button> */}
-        </div>
-      )}
+            <ul className="flex flex-col gap-3 text-white">
+              {navLinks.map((link) => (
+                <motion.li
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-3 px-5 rounded-xl hover:bg-white/20 transition-all duration-300 text-lg font-medium backdrop-blur-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+
+            {/* Mobile Contact Button */}
+            <Link href="/contact-us">
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="mt-6 w-full bg-white text-[#000000] font-bold px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all text-lg flex items-center justify-center gap-2 inline-flex"
+              >
+                Contact us
+                <BsFillTelephoneFill className="w-5 h-5" />
+              </motion.a>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

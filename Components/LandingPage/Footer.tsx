@@ -2,13 +2,14 @@
 import React from "react";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import { BiBriefcase } from "react-icons/bi";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white  pt-16 pb-4 px-6 lg:px-28 w-full">
+    <footer className="bg-[#0a0a0a] text-white  pt-16 pb-4 px-5 lg:px-28 w-full">
       {/* Top Banner */}
       <div className="max-w-7xl mx-auto mb-12">
-        <div className="border-y-2 border-[#58C9EC] rounded-2xl md:p-6 p-2">
+        <div className="border-y-2 border-[#58C9EC] rounded-2xl md:p-6 p-2 py-4">
           <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12 mx-10">
             <img src="/Footer/Clutch.png" alt="Clutch" className="h-12" />
             <img src="/Footer/GoodFirms.png" alt="GoodFirms" className="h-12" />
@@ -23,7 +24,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="md:grid-cols-2 grid-cols-1 grid">
+      <div className="max-w-7xl mx-auto md:grid-cols-2 grid-cols-1 grid">
         <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:gap-12 xl:gap-0  py-2">
           {/* Company Info */}
           <div>
@@ -44,15 +45,29 @@ export default function Footer() {
               <span className="inline text-sm">hr@mehditechnologies.com</span>
             </a>
 
-            <h3 className="text-2xl font-semibold mb-3">For Queries</h3>
+            <h3 className="text-2xl font-semibold mb-3 mt-2">For Queries</h3>
             <a
               href="https://mail.google.com/mail/?view=cm&to=info@mehditechnologies.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex  text-[#ffffff] hover:text-cyan-400 transition-colors"
             >
-              <MessageCircle  className="w-5 h-5 mr-2 " />
+              <MessageCircle className="w-5 h-5 mr-2 " />
               <span className="inline text-sm">info@mehditechnologies.com</span>
+            </a>
+
+            <h3 className="text-2xl font-semibold mb-3 mt-2">For Buisness </h3>
+
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=buisness@mehditechnologies.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex  text-[#ffffff] hover:text-cyan-400 transition-colors"
+            >
+              <BiBriefcase className="w-5 h-5 mr-2 " />
+              <span className="inline text-sm">
+                buisness@mehditechnologies.com
+              </span>
             </a>
             {/* Social Links */}
             <div className="flex gap-4 mt-6  text-[#ffffff]/70">
@@ -269,7 +284,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Copyright */}
-      <div className="pt-4 border-t-2 border-[#58C9EC] rounded-2xl">
+      <div className="max-w-7xl mx-auto pt-4 border-t-2 border-[#58C9EC] rounded-2xl">
         <p className="text-center  text-[#ffffff]/70 md:text-sm text-xs">
           © 2025, Made with passion by Mehdi Technologies Pvt Ldt
         </p>

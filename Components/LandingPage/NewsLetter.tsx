@@ -14,33 +14,35 @@ export default function NewsLetter() {
 
         {/* Email Input Form */}
         <div
-          className="flex flex-col sm:flex-row items-center rounded-xl  justify-center gap-4 max-w-2xl mx-auto "
+          className="flex flex-row items-center gap-3 md:px-4 px-1 py-3 rounded-xl max-w-2xl mx-auto"
           style={{ boxShadow: "0 6px 6px -2px rgba(0,0,0,6.5)" }}
         >
-          <div className="relative flex-1 w-full sm:w-auto">
+          <div className="relative flex-1">
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 mt-1 mr-2 text-gray-400"
+              className="absolute left-2 top-1/2 -translate-y-1/2 md:w-6 md:h-6 w-5 h-5 text-gray-400"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
+
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full ml-2 outline-none pl-12 pr-4 pt-3 text-2xl rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none border-none transition-colors"
+              className="w-full md:pl-12 pl-8 pr-0 py-3 md:text-xl rounded-xl text-gray-700 placeholder-gray-400 border-none outline-none"
             />
           </div>
+
           <button
             className="
-    w-full sm:w-auto px-8 py-4 mb-4 mt-3 mx-3 
-    rounded-xl text-gray-700 font-medium 
-    transition-shadow duration-300
-    shadow-md shadow-black
-    hover:shadow-xl
-    active:shadow-xl
-  "
+      md:px-6 px-4 md:py-4 py-3
+      rounded-xl text-gray-700 font-medium 
+      bg-white shadow-md
+      hover:shadow-xl active:shadow-xl
+      whitespace-nowrap
+      text-sm md:text-base
+    "
           >
             Get Started
           </button>

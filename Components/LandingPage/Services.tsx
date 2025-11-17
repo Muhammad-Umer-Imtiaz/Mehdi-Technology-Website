@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { motion, PanInfo } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   FaGlobe,
@@ -71,9 +71,7 @@ export default function Services() {
   const [current, setCurrent] = useState(0);
   const router = useRouter();
 
-  /* -------------------------------------------------
-   *  Detect breakpoint – we consider <lg as “mobile”
-   * ------------------------------------------------- */
+  /* breakpoint detection */
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024); // lg = 1024px
@@ -85,13 +83,9 @@ export default function Services() {
   const n = data.length;
   const idx = (i: number) => ((i % n) + n) % n;
 
-  /* -------------------------------------------------
-   *  Visible items – 3 on desktop, 1 on mobile
-   * ------------------------------------------------- */
+  /* visible items */
   const visible = useMemo(() => {
-    if (isMobile) {
-      return [data[idx(current)]];
-    }
+    if (isMobile) return [data[idx(current)]];
     return [idx(current - 1), idx(current), idx(current + 1)].map(
       (i) => data[i]
     );
@@ -101,9 +95,31 @@ export default function Services() {
   const handlePrev = () => setCurrent((s) => idx(s - 1));
   const goTo = (i: number) => setCurrent(i);
 
-  /* -------------------------------------------------
-   *  Animation variants
-   * ------------------------------------------------- */
+  /* swipe config */
+  const SWIPE_DISTANCE = 80; // px — distance threshold
+  const SWIPE_VELOCITY = 500; // px/s — velocity threshold to treat as flick
+  const draggedRef = useRef(false); // track if user actually dragged to suppress click
+
+  const handleDrag = (_: any, info: PanInfo) => {
+    // mark as dragged if moved a bit (prevents click)
+    if (Math.abs(info.offset.x) > 6) draggedRef.current = true;
+  };
+
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    const offsetX = info.offset.x;
+    const velocityX = info.velocity.x;
+
+    // treat either a long drag or a fast flick as a swipe
+    if (offsetX < -SWIPE_DISTANCE || velocityX < -SWIPE_VELOCITY) {
+      handleNext();
+    } else if (offsetX > SWIPE_DISTANCE || velocityX > SWIPE_VELOCITY) {
+      handlePrev();
+    }
+    // reset dragged flag after small timeout so subsequent clicks work
+    setTimeout(() => (draggedRef.current = false), 50);
+  };
+
+  /* Animation variants (unchanged) */
   const cardVariants = {
     rest: { scale: 1, zIndex: 0 },
     hover: { scale: 1.02, zIndex: 20 },
@@ -134,7 +150,7 @@ export default function Services() {
         <h2 className="text-6xl my-2 font-semibold mt-4 text-black">
           SERVICES
         </h2>
-        <p className=" mt-3 text-gray-600">
+        <p className="mt-3 text-gray-600">
           At Mehdi Technologies, we deliver smart digital solutions that empower
           businesses to grow. From web development to AI{" "}
           <br className="hidden md:block" /> automation, our services simplify
@@ -167,25 +183,100 @@ export default function Services() {
         {/* Carousel */}
         <div className="overflow-hidden">
           <div
-            className={`
-              flex items-center justify-center
-              ${isMobile ? "gap-0" : "2xl:gap-10 xl:gap-6 gap-4"}
-            `}
+            className={`flex items-center justify-center ${
+              isMobile ? "gap-0" : "2xl:gap-10 xl:gap-6 gap-4"
+            }`}
           >
             {visible.map((item, i) => {
               const isCenter = !isMobile && i === 1; // only on desktop
+
+              /* For mobile: make the single card draggable (swipe) */
+              if (isMobile) {
+                return (
+                  <motion.div
+                    key={item.id}
+                    className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white w-full max-w-xs mx-auto"
+                    drag="x"
+                    // relaxed constraints so swipe feels natural across devices
+                    dragConstraints={{ left: -300, right: 300 }}
+                    dragElastic={0.18}
+                    onDrag={handleDrag}
+                    onDragEnd={handleDragEnd}
+                    whileTap={{ scale: 0.99 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    onClick={(e) => {
+                      if (draggedRef.current) {
+                        // user dragged — don't treat as click
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return;
+                      }
+                      router.push(`/${item.slug}`);
+                    }}
+                  >
+                    <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[450px] overflow-hidden">
+                      <motion.div
+                        className="absolute inset-0 origin-center"
+                        variants={imageVariants}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.heading}
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none" />
+                    </div>
+
+                    <motion.div
+                      variants={oldTextVariants}
+                      transition={{ duration: 0.9 }}
+                      className="absolute left-0 bottom-8 w-full text-center"
+                    >
+                      <motion.p
+                        initial={{ scaleX: 0.5 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
+                        className="text-white md:text-xl text-3xl md:font-normal font-bold inline-block"
+                      >
+                        {item.heading}
+                      </motion.p>
+                    </motion.div>
+
+                    <motion.div
+                      variants={overlayVariants}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      className="absolute inset-0 flex flex-col items-center justify-center text-white"
+                    >
+                      <div
+                        className="flex flex-col items-center justify-center px-10 py-2 rounded-xl backdrop-blur-3xl w-full h-full"
+                        style={{ backdropFilter: "blur(6px)" }}
+                      >
+                        <div className="text-5xl mb-2 text-[#007BFF]">
+                          {item.icon}
+                        </div>
+                        <p className="text-5xl font-semibold text-center">
+                          {item.heading}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                );
+              }
+
+              /* Desktop / non-mobile cards (unchanged) */
               return (
                 <motion.div
                   key={item.id}
-                  className={`
-                    relative rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white
-                    ${
-                      isMobile
-                        ? "w-full max-w-xs mx-auto"
-                        : "w-64 sm:w-72 md:w-80 lg:w-96"
-                    }
-                    ${isCenter ? "z-20" : "z-10"}
-                  `}
+                  className={`relative rounded-2xl overflow-hidden shadow-lg cursor-pointer select-none bg-white ${
+                    isCenter ? "z-20" : "z-10"
+                  } ${
+                    isMobile
+                      ? "w-full max-w-xs mx-auto"
+                      : "w-64 sm:w-72 md:w-80 lg:w-96"
+                  }`}
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
@@ -193,7 +284,6 @@ export default function Services() {
                   transition={{ duration: 0.35 }}
                   onClick={() => router.push(`/${item.slug}`)}
                 >
-                  {/* Image */}
                   <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[450px] overflow-hidden">
                     <motion.div
                       className="absolute inset-0 origin-center"
@@ -210,11 +300,10 @@ export default function Services() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Old text (moves up on hover) */}
                   <motion.div
                     variants={oldTextVariants}
                     transition={{ duration: 0.9 }}
-                    className="absolute  md:left-0 md:bottom-8 left-0 bottom-26 w-full text-center"
+                    className="absolute md:left-0 md:bottom-8 left-0 bottom-26 w-full text-center"
                   >
                     <motion.p
                       initial={{ scaleX: 0.5 }}
@@ -226,7 +315,6 @@ export default function Services() {
                     </motion.p>
                   </motion.div>
 
-                  {/* Hover overlay (icon + big title) */}
                   <motion.div
                     variants={overlayVariants}
                     transition={{ duration: 0.5, ease: "easeOut" }}
@@ -245,7 +333,6 @@ export default function Services() {
                     </div>
                   </motion.div>
 
-                  {/* Featured badge – only center card on desktop */}
                   {isCenter && (
                     <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-white/90 px-3 py-1 rounded-full text-xs text-slate-800 shadow">
                       Featured

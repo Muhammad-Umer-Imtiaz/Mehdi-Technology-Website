@@ -6,6 +6,7 @@ import Navbar from "@/Components/Navbar";
 import ContactUs from "@/Components/LandingPage/ContactUs";
 import NewsLetter from "@/Components/LandingPage/NewsLetter";
 import Footer from "@/Components/LandingPage/Footer";
+import LayoutWrapper from "@/Components/LayoutWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,7 +31,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <ContactUs />
+        <LayoutWrapper />
         <NewsLetter />
         <Footer />
       </body>
