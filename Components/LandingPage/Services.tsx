@@ -147,7 +147,7 @@ export default function Services() {
         <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm font-light rounded-full tracking-[0.5em]">
           BEST FEATURES
         </h4>
-        <h2 className="text-6xl my-2 font-semibold mt-4 text-black">
+        <h2 className="md:text-6xl text-3xl my-2 font-semibold mt-4 text-black">
           SERVICES
         </h2>
         <p className="mt-3 text-gray-600">

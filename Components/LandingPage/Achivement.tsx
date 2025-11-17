@@ -24,12 +24,12 @@ export default function Achievement() {
           <h4 className="text-[#007BFF] bg-white border border-[#00000030] py-1 px-3 text-base inline-block font-light rounded-full tracking-[0.5em]">
             PROVEN SUCCESS
           </h4>
-          <h2 className="text-5xl font-bold">Achievement</h2>
+          <h2 className="md:text-5xl text-3xl font-bold">Achievement</h2>
 
           <div className="grid grid-cols-2 gap-8 py-6">
             {data.map((item) => (
               <div key={item.id}>
-                <h3 className="text-5xl font-extrabold text-[#00D1FF]">
+                <h3 className="md:text-5xl text-3xl font-extrabold text-[#00D1FF]">
                   <CountUp
                     end={item.number}
                     duration={2.5}

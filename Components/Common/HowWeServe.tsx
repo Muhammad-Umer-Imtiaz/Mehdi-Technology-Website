@@ -52,7 +52,7 @@ export default function HowWeServe({
   const rows = getRows(services);
 
   return (
-    <section className="bg-white text-black py-20 px-5 2xl:max-w-7xl xl:max-w-5xl">
+    <section className="bg-white text-black py-20 px-5 2xl:max-w-7xl xl:max-w-5xl mx-auto">
       {/* Heading */}
       <div className="text-center mb-14">
         <h2 className="text-2xl md:text-4xl font-bold mb-4">{title}</h2>
