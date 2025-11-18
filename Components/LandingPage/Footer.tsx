@@ -10,13 +10,13 @@ export default function Footer() {
       {/* Top Banner */}
       <div className="max-w-7xl mx-auto mb-12">
         <div className="border-y-2 border-[#58C9EC] rounded-2xl md:p-6 p-2 py-4">
-          <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12 mx-10">
+          <div className="flex flex-wrap items-center justify-center md:justify-between gap-8 md:gap-12 mx-10">
             <img src="/Footer/Clutch.png" alt="Clutch" className="h-12" />
             <img src="/Footer/GoodFirms.png" alt="GoodFirms" className="h-12" />
             <img src="/Footer/google.png" alt="Google" className="h-12" />
             <img src="/Footer/UpWork.png" alt="Upwork" className="h-12" />
           </div>
-          <p className="text-start  text-[#ffffff]/70 text-xs md:text-lg mt-6 md:tracking-[0.1em]">
+          <p className="text-center  text-[#ffffff]/70 text-xs md:text-lg mt-6 md:tracking-[0.1em]">
             4.7 star rating by 200+ Mehdi Technologies Clients on over 350+
             Projects
           </p>

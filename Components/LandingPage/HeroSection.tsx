@@ -3,12 +3,24 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative h-[100vh] w-full bg-cover bg-center md:flex md:pt-0 pt-36 md:items-center md:justify-center text-white"
-      style={{ backgroundImage: "url('/BGHeroSection.png')" }}
-    >
+    <section className="relative h-[100vh] w-full md:flex md:pt-0 pt-36 md:items-center md:justify-center text-white overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="none"
+        poster="/BGHeroSection.png"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source
+          src="https://res.cloudinary.com/dezxyrcnm/video/upload/q_auto,f_auto/v1763444736/final_video_hero_section__1__xpr5cu.mp4"
+          type="video/mp4"
+        />
+      </video>
       {/* Dark overlay for readability */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
+      <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative z-10 md:text-center  xl:max-w-5xl 2xl:max-w-7xl md:mt-28 px-5   mx-auto">
         <h1 className="text-5xl sm:text-8xl xl:text-7xl 2xl:text-8xl font-bold mb-4">
           Transforming <span className="text-[#007BFF]">Ideas</span>

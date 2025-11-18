@@ -67,6 +67,7 @@ export default function FAQS() {
             height={517}
             className="object-contain"
             priority
+            unoptimized
           />
         </div>
       </div>
