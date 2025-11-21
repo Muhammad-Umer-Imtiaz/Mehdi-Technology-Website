@@ -15,7 +15,10 @@ export default function Achievement() {
   return (
     <section
       className="relative min-h-screen py-16 w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-white"
-      style={{ backgroundImage: "url('/Achievement.png')" }}
+      style={{
+        backgroundImage:
+          "url('/BackgroundPictures/LandingPageBG/AchievementBG.webp')",
+      }}
     >
       {/* Content wrapper for max-width and spacing */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
@@ -54,7 +57,7 @@ export default function Achievement() {
         {/* Right Image + Buttons */}
         <div className="mt-10 lg:mt-0 flex flex-col items-center">
           <Image
-            src="/AchivementRightSection.png"
+            src="/LandingPage/AchivementRightSection.webp"
             alt="Achievement Right Section"
             width={550}
             height={500}

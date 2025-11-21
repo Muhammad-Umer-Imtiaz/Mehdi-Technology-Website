@@ -36,7 +36,10 @@ export default function Blogs() {
     <section
       id="blogs"
       className="relative min-h-screen py-16 px-6  w-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/BlogsBG.png')" }}
+      style={{
+        backgroundImage:
+          "url('/BackgroundPictures/LandingPageBG/BlogsBG.webp')",
+      }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>

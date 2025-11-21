@@ -17,7 +17,7 @@ export default function WebDevelopment() {
         description="We specialize in custom Telegram mini-apps that enhance engagement and automate workflows."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "Telegram Mini Apps Technologies" },
         ]}
       />

@@ -11,7 +11,7 @@ export default function HeroSection() {
         muted
         playsInline
         preload="none"
-        poster="/BGHeroSection.png"
+        poster="/BackgroundPictures/LandingPageBG/BGHeroSection.webp"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source

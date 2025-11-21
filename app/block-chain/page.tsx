@@ -18,7 +18,7 @@ export default function WebDevelopment() {
         description="We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "Blockchain" },
         ]}
       />

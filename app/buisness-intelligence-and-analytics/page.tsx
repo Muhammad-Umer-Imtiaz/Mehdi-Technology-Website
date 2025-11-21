@@ -12,7 +12,7 @@ export default function AiAutomation() {
         description="We provide advanced BI and analytics solutions that turn your data into actionable insights. From dashboards and reports to predictive analytics, our services help businesses make informed decisions, identify trends, and optimize performance for measurable growth."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "Business Intelligence & Analytics" },
         ]}
       />

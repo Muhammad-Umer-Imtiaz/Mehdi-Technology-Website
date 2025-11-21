@@ -53,7 +53,7 @@ export default function WhoWeAre() {
       <div className="md:inline relative hidden flex-shrink-0">
         <div className="absolute -z-10 "></div>
         <Image
-          src="/WhoWeAre.png"
+          src="/LandingPage/WhoWeAre.webp"
           alt="Who we are Image"
           width={550}
           height={500}

@@ -14,7 +14,7 @@ export default function WebDevelopment() {
 secure architectures. From corporate websites to complex web apps, our development process ensures speed, scalability, and flawless user experience."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "Web Development" },
         ]}
       />

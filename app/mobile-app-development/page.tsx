@@ -15,7 +15,7 @@ export default function MobileAppDevelopment() {
         description="We build powerful, scalable, and intuitive mobile apps that combine stunning design with robust functionality. From startups to enterprises, our mobile solutions help brands engage users and grow faster in the digital space."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "Mobile App Development" },
         ]}
       />

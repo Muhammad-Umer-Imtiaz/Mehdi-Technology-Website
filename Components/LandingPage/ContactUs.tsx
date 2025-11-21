@@ -93,7 +93,10 @@ export default function ContactUs() {
   return (
     <section
       className="relative py-12 lg:py-16 w-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/ContactBG.png')" }}
+      style={{
+        backgroundImage:
+          "url('/BackgroundPictures/LandingPageBG/ContactBG.webp')",
+      }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/30 z-0" />

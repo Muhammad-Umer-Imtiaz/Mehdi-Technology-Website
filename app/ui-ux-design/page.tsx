@@ -13,7 +13,7 @@ export default function UIUX() {
         description="We build & integrate Artificial Intelligence driven solutions to make your business smarter, faster, and more efficient."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "UI / UX Designing" },
         ]}
       />

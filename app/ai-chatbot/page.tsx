@@ -12,7 +12,7 @@ export default function AIChatbot() {
         description="We build intelligent chatbots that automate customer support, streamline workflows, and deliver instant, human-like conversations across your website, apps, and social platforms.."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "AI Chatbot Development" },
         ]}
       />

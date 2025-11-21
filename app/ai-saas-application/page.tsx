@@ -12,7 +12,7 @@ export default function AiAutomation() {
         description="We create intelligent SaaS solutions powered by AI that enhance user experience, automate tasks, and deliver actionable insights. Our applications help businesses scale efficiently, improve decision-making, and leverage data-driven intelligence seamlessly in the cloud."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/service" },
           { name: "AI SaaS Applications" },
         ]}
       />

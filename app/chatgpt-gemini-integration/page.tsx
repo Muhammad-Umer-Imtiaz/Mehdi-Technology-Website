@@ -12,7 +12,7 @@ export default function AiAutomation() {
         description="We integrate advanced AI conversational models like ChatGPT and Gemini into your platforms, enabling smart, human-like interactions. These integrations enhance customer support, automate responses, and provide personalized experiences across websites, apps, and digital services."
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Services", href: "/#service" },
+          { name: "Services", href: "/services" },
           { name: "ChatGPT / Gemini Integrations" },
         ]}
       />
