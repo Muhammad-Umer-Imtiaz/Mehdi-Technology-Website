@@ -11,10 +11,34 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto mb-12">
         <div className="border-y-2 border-[#58C9EC] rounded-2xl md:p-6 p-2 py-4">
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-8 md:gap-12 mx-10">
-            <img src="/Footer/Clutch.png" alt="Clutch" className="h-12" />
-            <img src="/Footer/GoodFirms.png" alt="GoodFirms" className="h-12" />
-            <img src="/Footer/google.png" alt="Google" className="h-12" />
-            <img src="/Footer/UpWork.png" alt="Upwork" className="h-12" />
+            <Image
+              src="/Footer/Clutch.png"
+              alt="Clutch"
+              width={220}
+              height={30}
+              loading="lazy"
+            />
+            <Image
+              src="/Footer/GoodFirms.png"
+              alt="GoodFirms"
+              width={300}
+              height={30}
+              loading="lazy"
+            />
+            <Image
+              src="/Footer/google.png"
+              alt="Google"
+              width={220}
+              height={30}
+              loading="lazy"
+            />
+            <Image
+              src="/Footer/UpWork.png"
+              alt="Upwork"
+              width={220}
+              height={30}
+              loading="lazy"
+            />
           </div>
           <p className="text-center  text-[#ffffff]/70 text-xs md:text-lg mt-6 md:tracking-[0.1em]">
             4.7 star rating by 200+ Mehdi Technologies Clients on over 350+
@@ -279,40 +303,40 @@ export default function Footer() {
       </div>
 
       {/* Social Media Links */}
-<div className="max-w-7xl mx-auto flex items-center gap-6 mb-8">
-      <a
-        href="https://www.instagram.com/mehdi_technologies"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
-      >
-        <FaInstagram className="w-6 h-6" />
-      </a>
-      <a
-        href="https://www.linkedin.com/company/mehdi-technologies"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
-      >
-        <FaLinkedin className="w-6 h-6" />
-      </a>
-      <a
-        href="https://www.behance.net/mehdi_technologies"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
-      >
-        <FaBehance className="w-6 h-6" />
-      </a>
-      <a
-        href="https://www.facebook.com/MehdiTechnologies"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
-      >
-        <FaFacebook className="w-6 h-6" />
-      </a>
-    </div>
+      <div className="max-w-7xl mx-auto flex items-center gap-6 mb-8">
+        <a
+          href="https://www.instagram.com/mehdi_technologies"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
+        >
+          <FaInstagram className="w-6 h-6" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/mehdi-technologies"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
+        >
+          <FaLinkedin className="w-6 h-6" />
+        </a>
+        <a
+          href="https://www.behance.net/mehdi_technologies"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
+        >
+          <FaBehance className="w-6 h-6" />
+        </a>
+        <a
+          href="https://www.facebook.com/MehdiTechnologies"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#ffffff]/70 hover:text-cyan-400 transition-colors"
+        >
+          <FaFacebook className="w-6 h-6" />
+        </a>
+      </div>
 
       {/* Bottom Copyright */}
       <div className="max-w-7xl mx-auto pt-4 border-t-2 border-[#58C9EC] rounded-2xl">

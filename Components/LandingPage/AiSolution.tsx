@@ -65,6 +65,7 @@ export default function AiSolution() {
               muted
               loop
               playsInline
+              preload="none"
               src="https://res.cloudinary.com/dezxyrcnm/video/upload/q_auto,f_auto/v1763798204/Video_oyr9i6.mp4"
               style={{ pointerEvents: "none" }} // prevent pause by click
             />
@@ -75,7 +76,7 @@ export default function AiSolution() {
               const Icon = item.icon;
               return (
                 <Link key={index} href={item.href} passHref>
-                  <div className="group flex items-center gap-4 bg-gradient-to-r from-[#007BFF] to-[#58C9EC] border border-white rounded-lg text-white px-5 py-3 shadow-lg hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300 cursor-pointer">
+                  <div className="group flex items-center gap-4 bg-linear-to-r from-[#007BFF] to-[#58C9EC] border border-white rounded-lg text-white px-5 py-3 shadow-lg hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300 cursor-pointer">
                     <Icon size={32} className="text-white" />
                     <span className="font-semibold text-base md:text-lg">
                       {item.label}

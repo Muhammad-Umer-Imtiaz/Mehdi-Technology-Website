@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -62,6 +61,7 @@ export default function FAQS() {
             autoPlay
             muted
             loop
+            preload="none"
             playsInline
             src="https://res.cloudinary.com/dezxyrcnm/video/upload/q_auto,f_auto/v1763803244/FAQS_vpjru3.webm"
           />
@@ -77,7 +77,7 @@ export default function FAQS() {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] text-white rounded-xl shadow-md overflow-hidden transition-all duration-300"
+                className="bg-linear-to-r from-[#007BFF] to-[#58C9EC] text-white rounded-xl shadow-md overflow-hidden transition-all duration-300"
               >
                 {/* ----- QUESTION BUTTON ----- */}
                 <button
