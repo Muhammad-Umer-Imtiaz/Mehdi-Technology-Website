@@ -1,3 +1,16 @@
+export type Typeprojects = {
+  id?: number;
+  title: string;
+  subtitle?: string;
+  description?: string;
+  image: string;
+  slug?: string;
+  client?: string;
+  date?: string;
+  category?: string;
+  url?: string;
+};
+
 export const projects = [
   {
     id: 1,

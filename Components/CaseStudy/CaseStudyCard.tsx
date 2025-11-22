@@ -1,4 +1,5 @@
 "use client";
+import { Typeprojects } from "@/data/CommonData";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -7,7 +8,10 @@ import { CiLink } from "react-icons/ci";
 import { IoIosTime } from "react-icons/io";
 import { RiContactsFill } from "react-icons/ri";
 
-export default function CaseStudyCard({ item }) {
+type CaseStudyCardProps = {
+  item: Typeprojects;
+};
+export default function CaseStudyCard({ item }: CaseStudyCardProps) {
   const router = useRouter();
 
   return (
@@ -24,8 +28,12 @@ export default function CaseStudyCard({ item }) {
         {/* LEFT SIDE – TEXT */}
         <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-black">{item.title}</h2>
-            <p className="text-gray-600 text-lg md:text-xl mt-1">{item.subtitle}</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-black">
+              {item.title}
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl mt-1">
+              {item.subtitle}
+            </p>
 
             <p className="text-gray-600 mt-4 leading-relaxed">
               {item.description}
