@@ -53,21 +53,17 @@ export default function FAQS() {
   };
 
   return (
-    <section
-      id="faqs"
-      className="flex flex-col lg:flex-row items-center justify-between px-5 mx-auto 2xl:max-w-7xl py-16 bg-white md:gap-12"
-    >
-      {/* ────── LEFT: IMAGE (fixed size, never affected) ────── */}
-      <div className="flex justify-center lg:w-1/2">
-        <div className="w-[450px] md:w-[600px] h-[517px] flex items-center justify-center">
-          <Image
-            src="/FAQs.gif"
-            alt="FAQ Illustration"
-            width={589}
-            height={517}
-            className="object-contain"
-            priority
-            unoptimized
+    <section className="flex flex-col h-[95vh] lg:flex-row items-start justify-between px-5 mx-auto 2xl:max-w-7xl py-16 bg-white md:gap-12">
+      {/* ────── LEFT: VIDEO (fixed height) ────── */}
+      <div className="lg:w-1/2 flex justify-center items-start">
+        <div className="w-full h-[517px] flex justify-center items-center">
+          <video
+            className="object-contain w-full h-full"
+            autoPlay
+            muted
+            loop
+            playsInline
+            src="https://res.cloudinary.com/dezxyrcnm/video/upload/q_auto,f_auto/v1763803244/FAQS_vpjru3.webm"
           />
         </div>
       </div>

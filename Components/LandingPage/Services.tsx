@@ -140,7 +140,7 @@ export default function Services() {
   return (
     <section
       id="service"
-      className="mx-auto overflow-x-hidden py-12 px-5 2xl:max-w-7xl bg-white"
+      className="mx-auto  py-12 md:px-0 px-5 2xl:max-w-7xl bg-white"
     >
       {/* Header */}
       <div className="md:text-center text-start mb-8">
@@ -165,7 +165,7 @@ export default function Services() {
             <button
               onClick={handlePrev}
               aria-label="Previous"
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
+              className="absolute -left-16 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full text-black bg-white/90 shadow-md hover:scale-105 transition-transform"
             >
               <FiChevronLeft size={32} />
             </button>
@@ -173,7 +173,7 @@ export default function Services() {
             <button
               onClick={handleNext}
               aria-label="Next"
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
+              className="absolute -right-16 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/90 shadow-md hover:scale-105 transition-transform"
             >
               <FiChevronRight size={32} />
             </button>
