@@ -13,9 +13,9 @@ const nextConfig = {
   },
 
   experimental: {
-    legacyBrowsers: false,         // avoid legacy JS → faster
-    optimizeCss: true,             // removes unused CSS
-    optimizePackageImports: true,  // reduce JS bundle size
+    // legacyBrowsers: false,         // avoid legacy JS → faster
+    optimizeCss: true, // removes unused CSS
+    optimizePackageImports: ["react", "react-dom", "framer-motion"], // reduce JS bundle size
   },
 
   compress: true, // gzip + brotli compression
