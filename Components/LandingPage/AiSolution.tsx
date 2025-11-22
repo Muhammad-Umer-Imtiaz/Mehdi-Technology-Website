@@ -65,7 +65,7 @@ export default function AiSolution() {
               muted
               loop
               playsInline
-              src="/Videos/Video.mp4"
+              src="https://res.cloudinary.com/dezxyrcnm/video/upload/q_auto,f_auto/v1763798204/Video_oyr9i6.mp4"
               style={{ pointerEvents: "none" }} // prevent pause by click
             />
           </div>
