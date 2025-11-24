@@ -22,7 +22,7 @@ export default function JobSection() {
       <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
         {jobs.map((items) => (
           <div
-            key={items.id}
+            key={items._id}
             className="border-[#007BFF] border-2 shadow-[0_0_20px_0_rgba(0,123,255,0.8)] p-7 rounded-2xl"
           >
             <h3 className="text-3xl font-bold text-[#007BFF]">{items.job}</h3>
