@@ -1,10 +1,9 @@
 import { projects } from "@/data/CommonData";
 import CaseStudyCard from "./CaseStudyCard";
 
-
 export default function AllCaseStudy() {
   return (
-    <div className="2xl:max-w-7xl xl:max-w-5xl w-full mx-auto py-20 px-5">
+    <section className="2xl:max-w-7xl xl:max-w-5xl w-full mx-auto py-20 px-5">
       <div className="md:text-center mb-16">
         <h4 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 px-6 py-1.5 text-xl font-medium rounded-full tracking-[0.3em] mb-4">
           Solutions That Work
@@ -24,6 +23,6 @@ export default function AllCaseStudy() {
           <CaseStudyCard key={item.id} item={item} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

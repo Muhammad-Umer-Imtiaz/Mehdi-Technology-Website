@@ -225,7 +225,7 @@ export default function Footer() {
           </div>
 
           {/* Explore */}
-          {/* <div className="md:text-right">
+          <div className="md:text-right">
             <h3 className="text-2xl font-semibold mb-4">Explore</h3>
             <ul className="space-y-3  grid md:inline grid-cols-2 text-[#ffffff]/70">
               <li>
@@ -260,8 +260,24 @@ export default function Footer() {
                   Blogs
                 </a>
               </li>
+              <li>
+                <a
+                  href="/career"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Jobs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/case-study"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Case Study
+                </a>
+              </li>
             </ul>
-          </div> */}
+          </div>
 
           {/* Industries */}
           <div className="md:text-right">
