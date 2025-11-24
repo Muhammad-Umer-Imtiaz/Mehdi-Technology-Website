@@ -1,5 +1,6 @@
 import { jobs } from "@/data/CommonData";
 import { div } from "framer-motion/client";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
 export default function JobSection() {
@@ -21,7 +22,8 @@ export default function JobSection() {
 
       <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
         {jobs.map((items) => (
-          <div
+          <Link
+            href={`/career/${items._id}`}
             key={items._id}
             className="border-[#007BFF] border-2 shadow-[0_0_20px_0_rgba(0,123,255,0.8)] p-7 rounded-2xl"
           >
@@ -36,7 +38,7 @@ export default function JobSection() {
               See Details
               <FaArrowRight className="inline ml-1" />
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
