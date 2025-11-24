@@ -1,5 +1,6 @@
 import { jobs } from "@/data/CommonData";
 import { div } from "framer-motion/client";
+import { FaArrowRight } from "react-icons/fa6";
 
 export default function JobSection() {
   return (
@@ -18,15 +19,23 @@ export default function JobSection() {
         </p>
       </div>
 
-      <div>
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
         {jobs.map((items) => (
           <div
             key={items.id}
-            className="border-[#007BFF] border-2 shadow-[0_0_20px_0_rgba(0,123,255,0.8)]"
+            className="border-[#007BFF] border-2 shadow-[0_0_20px_0_rgba(0,123,255,0.8)] p-7 rounded-2xl"
           >
-            <h3>{items.job}</h3>
-            <p className=" border-b pb-4">{items.date}</p>
-            
+            <h3 className="text-3xl font-bold text-[#007BFF]">{items.job}</h3>
+            <p className="text-xs pt-2 pb-4 border-b-2">{items.date}</p>
+            <div className="flex justify-between px-1 my-1">
+              <span>{items.city}</span>
+              <span>{items.status}</span>
+            </div>
+            <p className="line-clamp-2 text-sm">{items.description}</p>
+            <span className=" font-bold hover:text-[#007BFF] active:text-[#007BFF] cursor-pointer  py-96">
+              See Details
+              <FaArrowRight className="inline ml-1" />
+            </span>
           </div>
         ))}
       </div>

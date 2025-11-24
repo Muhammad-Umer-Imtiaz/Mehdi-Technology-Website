@@ -1,4 +1,7 @@
 import HeroSection from "@/Components/Common/HeroSection";
+import JobSection from "@/Components/Job/jobSection";
+import OurCoreValue from "@/Components/Job/OurCoreValue";
+import WhyChoose from "@/Components/Job/WhyChoose";
 
 export default function Career() {
   return (
@@ -13,6 +16,9 @@ export default function Career() {
           { name: "Work With Us" },
         ]}
       />
+      <JobSection />
+      <WhyChoose />
+      <OurCoreValue />
     </div>
   );
 }

@@ -64,8 +64,8 @@ export const projects = [
 
 export const jobs = [
   {
-  id:1,
-    job: "React Developer",
+    id: 1,
+    job: "Frontend Developer (React)",
     date: "23 Sep 2025",
     status: "Full-time",
     city: "Islamabad",
@@ -75,7 +75,7 @@ export const jobs = [
     and ensuring high performance and scalability. Strong knowledge of React, JavaScript, HTML, CSS, and REST APIs is required.`,
   },
   {
-    id:2,
+    id: 2,
     job: "Full Stack Developer (MERN)",
     date: "23 Sep 2025",
     status: "Full-time",
@@ -86,7 +86,7 @@ export const jobs = [
     Experience with deployment, Git, and agile methodologies is preferred.`,
   },
   {
-    id:3,
+    id: 3,
     job: "Full Stack Developer (React, Django)",
     date: "23 Sep 2025",
     status: "Internship",
@@ -97,7 +97,7 @@ export const jobs = [
     and collaborating with the team. This is a great opportunity to gain hands-on experience in full stack development.`,
   },
   {
-    id:4,
+    id: 4,
     job: "Frontend Developer (React)",
     date: "24 Sep 2025",
     status: "Part-time",
@@ -108,7 +108,7 @@ export const jobs = [
     Strong attention to detail and problem-solving skills are required.`,
   },
   {
-    id:5,
+    id: 5,
     job: "Backend Developer (Node.js)",
     date: "25 Sep 2025",
     status: "Full-time",
