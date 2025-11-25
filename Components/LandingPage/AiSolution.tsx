@@ -71,7 +71,7 @@ export default function AiSolution() {
             />
           </div>
 
-          <div className="flex-1 flex flex-col space-y-4 max-w-sm w-full">
+          <div className="flex-1 flex flex-col space-y-4  w-full">
             {solutions.map((item, index) => {
               const Icon = item.icon;
               return (

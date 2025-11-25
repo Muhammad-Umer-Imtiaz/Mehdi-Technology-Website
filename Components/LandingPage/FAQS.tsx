@@ -52,10 +52,10 @@ export default function FAQS() {
   };
 
   return (
-    <section className="flex flex-col h-[95vh] lg:flex-row items-start justify-between px-5 mx-auto 2xl:max-w-7xl py-16 bg-white md:gap-12">
+    <section className="flex flex-col h-contain lg:flex-row items-start justify-between px-5 mx-auto 2xl:max-w-7xl md:py-16 py-0 bg-white md:gap-12">
       {/* ────── LEFT: VIDEO (fixed height) ────── */}
       <div className="lg:w-1/2 flex justify-center items-start">
-        <div className="w-full h-[517px] flex justify-center items-center">
+        <div className="w-full md:h-[550px]  flex justify-center items-center">
           <video
             className="object-contain w-full h-full"
             autoPlay

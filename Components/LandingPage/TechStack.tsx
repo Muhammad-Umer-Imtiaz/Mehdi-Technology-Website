@@ -9,11 +9,9 @@ import {
   FaPhp,
   FaLaravel,
   FaPython,
-  FaAndroid,
-  FaApple,
   FaFigma,
-  FaSketch,
-  FaGithub,
+  FaJava,
+  FaRobot,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -24,28 +22,38 @@ import {
   SiFirebase,
   SiTailwindcss,
   SiDjango,
-  SiCodeigniter,
   SiFlutter,
-  //   SiReactnative,
   SiSwift,
   SiKotlin,
-  SiTensorflow,
-  SiPytorch,
   SiOpenai,
-  SiAdobexd,
-  SiInvision,
   SiSolidity,
   SiEthereum,
   SiWeb3Dotjs,
   SiIpfs,
+  SiFlask,
+  SiFastapi,
+  SiSupabase,
+  SiN8N,
+  SiTensorflow,
+  SiPytorch,
+  SiChainlink,
+  SiBinance,
+  SiSolana,
+  SiAdobeillustrator,
+  SiAdobeaftereffects,
+  SiCanva,
+  SiLangchain,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
+type Category = "Web" | "Mobile" | "AI" | "Blockchain" | "UI/UX";
+
 interface TechItem {
-  icon: React.ComponentType<{ size?: number; color?: string }>;
+  icon: React.ComponentType<{ size?: number; color?: string }> | null;
   name: string;
   color: string;
 }
+
 export default function TechStack() {
   const [activeCategory, setActiveCategory] = useState<Category>("Web");
 
@@ -62,72 +70,46 @@ export default function TechStack() {
       { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
       { icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
       { icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4" },
-      { icon: FaGithub, name: "GitHub", color: "#181717" },
       { icon: FaWordpress, name: "WordPress", color: "#21759B" },
       { icon: FaPhp, name: "PHP", color: "#777BB4" },
       { icon: FaLaravel, name: "Laravel", color: "#FF2D20" },
       { icon: SiDjango, name: "Django", color: "#092E20" },
-      { icon: SiCodeigniter, name: "CodeIgniter", color: "#EE4323" },
+      { icon: SiFlask, name: "Flask", color: "#000000" },
+      { icon: SiFastapi, name: "FastAPI", color: "#009688" },
+      { icon: SiSupabase, name: "Supabase", color: "#3ECF8E" },
     ],
     Mobile: [
       { icon: SiFlutter, name: "Flutter", color: "#02569B" },
       { icon: TbBrandReactNative, name: "React Native", color: "#61DAFB" },
       { icon: SiSwift, name: "Swift", color: "#FA7343" },
       { icon: SiKotlin, name: "Kotlin", color: "#7F52FF" },
-      { icon: FaAndroid, name: "Android", color: "#3DDC84" },
-      { icon: FaApple, name: "iOS", color: "#000000" },
-      { icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
-      { icon: FaNodeJs, name: "Node.js", color: "#8CC84B" },
-      { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
-      { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-      { icon: FaReact, name: "React.js", color: "#61DAFB" },
-      { icon: SiExpress, name: "Express.js", color: "#000000" },
+      { icon: FaJava, name: "Java", color: "#007396" },
     ],
     AI: [
       { icon: FaPython, name: "Python", color: "#3776AB" },
       { icon: SiTensorflow, name: "TensorFlow", color: "#FF6F00" },
       { icon: SiPytorch, name: "PyTorch", color: "#EE4C2C" },
       { icon: SiOpenai, name: "OpenAI", color: "#412991" },
-      { icon: FaNodeJs, name: "Node.js", color: "#8CC84B" },
-      { icon: FaReact, name: "React.js", color: "#61DAFB" },
-      { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-      { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-      { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
-      { icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
-      { icon: SiExpress, name: "Express.js", color: "#000000" },
-      { icon: FaGithub, name: "GitHub", color: "#181717" },
+      { icon: null, name: "ADK (Agent Dev Kit)", color: "#00C3FF" }, // Image will be used
+      { icon: SiN8N, name: "n8n", color: "#E76645" },
+      { icon: FaRobot, name: "LLMs", color: "#9C27B0" },
+      { icon: SiLangchain, name: "LangChain", color: "#2A5ADA" },
     ],
     Blockchain: [
       { icon: SiSolidity, name: "Solidity", color: "#363636" },
       { icon: SiEthereum, name: "Ethereum", color: "#3C3C3D" },
       { icon: SiWeb3Dotjs, name: "Web3.js", color: "#F16822" },
       { icon: SiIpfs, name: "IPFS", color: "#65C2CB" },
-      { icon: FaReact, name: "React.js", color: "#61DAFB" },
-      { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
-      { icon: FaNodeJs, name: "Node.js", color: "#8CC84B" },
-      { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-      { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-      { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
-      { icon: SiExpress, name: "Express.js", color: "#000000" },
-      { icon: FaGithub, name: "GitHub", color: "#181717" },
+      { icon: SiBinance, name: "BNB Chain", color: "#F3BA2F" },
+      { icon: SiSolana, name: "Solana", color: "#00FFA3" },
     ],
     "UI/UX": [
       { icon: FaFigma, name: "Figma", color: "#F24E1E" },
-      { icon: SiAdobexd, name: "Adobe XD", color: "#FF61F6" },
-      { icon: FaSketch, name: "Sketch", color: "#F7B500" },
-      { icon: SiInvision, name: "InVision", color: "#FF3366" },
-      { icon: FaReact, name: "React.js", color: "#61DAFB" },
-      { icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4" },
-      { icon: FaHtml5, name: "HTML5", color: "#E34F26" },
-      { icon: FaCss3Alt, name: "CSS 3", color: "#1572B6" },
-      { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-      { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-      { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
-      { icon: FaGithub, name: "GitHub", color: "#181717" },
+      { icon: SiCanva, name: "Canva", color: "#00C4CC" },
+      { icon: SiAdobeillustrator, name: "Illustrator", color: "#FF9A00" },
+      { icon: SiAdobeaftereffects, name: "After Effects", color: "#9999FF" },
     ],
   };
-
-  type Category = "Web" | "Mobile" | "AI" | "Blockchain" | "UI/UX";
 
   const categories: Category[] = ["Web", "Mobile", "AI", "Blockchain", "UI/UX"];
 
@@ -139,13 +121,13 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="md:text-center mb-16">
-          <h4 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 px-6 py-1.5 text-base  font-medium rounded-full tracking-[0.4em] mb-4">
+          <h4 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 px-6 py-1.5 text-base font-medium rounded-full tracking-[0.4em] mb-4">
             OUR FOUNDATION
           </h4>
           <h2 className="text-5xl md:text-6xl font-bold text-black mb-4">
             Tech Stack & Tools
           </h2>
-          <p className="text-gray-600 text-base md:text-lg  mx-auto">
+          <p className="text-gray-600 text-base md:text-lg mx-auto">
             We leverage modern technologies, frameworks, and tools to craft
             scalable solutions
             <br className="hidden md:block" /> tailored to every industry.
@@ -156,7 +138,7 @@ export default function TechStack() {
         <div className="grid grid-cols-1 md:grid-cols-[230px_1fr] gap-8 items-start">
           {/* Left Side - Category Buttons */}
           <div className="grid grid-cols-3 md:grid-cols-1 gap-2">
-            {categories.map((category: any) => (
+            {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
@@ -173,7 +155,7 @@ export default function TechStack() {
 
           {/* Right Side - Tech Stack Icons */}
           <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-8 gap-y-12">
-            {techStacks[activeCategory].map((tech: any, index: number) => {
+            {techStacks[activeCategory].map((tech, index) => {
               const Icon = tech.icon;
               return (
                 <div
@@ -182,7 +164,15 @@ export default function TechStack() {
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <div className="w-20 h-20 flex items-center justify-center transition-transform hover:scale-110">
-                    <Icon size={64} color={tech.color} />
+                    {Icon ? (
+                      <Icon size={64} color={tech.color} />
+                    ) : (
+                      <img
+                        src="/ADK.png"
+                        alt={tech.name}
+                        className="w-20 h-20 object-contain"
+                      />
+                    )}
                   </div>
                   <span className="text-sm font-medium text-gray-700 text-center">
                     {tech.name}
@@ -194,6 +184,7 @@ export default function TechStack() {
         </div>
       </div>
 
+      {/* Fade-in animation */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -206,7 +197,7 @@ export default function TechStack() {
           }
         }
         .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out forwards;
+          animation: fadeIn 0.8s ease-out forwards;
         }
       `}</style>
     </section>
