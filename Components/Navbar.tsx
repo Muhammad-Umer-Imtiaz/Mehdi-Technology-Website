@@ -72,67 +72,38 @@ const Navbar = () => {
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile Menu with Smooth Animation */}
+      {/* Mobile Menu styled like the image */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-              x: 100,
-              y: -50,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              x: 0,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.8,
-              x: 100,
-              y: -50,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 30,
-              duration: 0.4,
-            }}
-            className="lg:hidden fixed top-16 sm:top-24 right-2 w-[95%] sm:w-[400px] bg-[#00D1FF] backdrop-blur-md bg-opacity-95 rounded-3xl shadow-2xl z-40 py-8 px-6 border border-white/20"
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="lg:hidden fixed top-16 left-1/2 transform -translate-x-1/2 w-full sm:w-[420px] bg-[#000000] text-white rounded-2xl shadow-2xl z-40 py-4 px-4"
+            style={{ boxShadow: "0 10px 30px rgba(0,0,0,0.6)" }}
           >
-            <ul className="flex flex-col gap-3 text-white">
-              {navLinks.map((link) => (
+            {/* Menu Items */}
+            <ul className="mt-3 flex flex-col">
+              {navLinks.map((link, idx) => (
                 <motion.li
                   key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.05 * idx }}
+                  className="border-b rounded-2xl"
+                  style={{ borderColor: "#58C9EC" }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-3 px-5 rounded-xl hover:bg-white/20 transition-all duration-300 text-lg font-medium backdrop-blur-sm"
+                    className="block text-center py-4 px-4 text-lg font-medium rounded-2xl"
                   >
                     {link.name}
                   </Link>
                 </motion.li>
               ))}
             </ul>
-
-            {/* Mobile Contact Button */}
-            <Link href="/contact-us">
-              <motion.a
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="mt-6 w-full bg-white text-[#000000] font-bold px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all text-lg flex items-center justify-center gap-2 inline-flex"
-              >
-                Contact us
-                <BsFillTelephoneFill className="w-5 h-5" />
-              </motion.a>
-            </Link>
           </motion.div>
         )}
       </AnimatePresence>
