@@ -50,7 +50,7 @@ export default function BlogPage() {
                   {blog.description}
                 </p>
 
-                <button className="bg-gradient-to-r from-[#58C9EC] to-[#007BFF] text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#0088cc] transition-all duration-300 flex items-center gap-2 group">
+                <button className="bg-linear-to-r from-[#58C9EC] to-[#007BFF] text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#0088cc] transition-all duration-300 flex items-center gap-2 group">
                   Learn more
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
