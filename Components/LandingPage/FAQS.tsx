@@ -69,7 +69,7 @@ export default function FAQS() {
       </div>
 
       {/* ────── RIGHT: FAQ LIST ────── */}
-      <div className="lg:w-1/2 w-full">
+      <div className="lg:w-1/2 w-full md:mb-0 mb-10">
         <div className="space-y-4">
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;

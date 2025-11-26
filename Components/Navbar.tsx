@@ -97,7 +97,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-64 bg-[#000000] border-2 border-[#FFFFFF]/50 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md bg-opacity-95"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-[#000000] border-2 border-[#FFFFFF]/50 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md bg-opacity-95"
                   >
                     <div className="py-2">
                       {link.dropdown.map((service, index) => (

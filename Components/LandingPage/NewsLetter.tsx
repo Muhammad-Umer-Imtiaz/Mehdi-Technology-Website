@@ -14,7 +14,7 @@ export default function NewsLetter() {
         </p>
 
         {/* Email Input Form */}
-        <div className="flex flex-row items-center gap-3 md:px-4 px-1 md:py-3 py-1 rounded-2xl max-w-2xl mx-auto border-2   border-[#007BFF] shadow-[0_0_10px_0_rgba(0,123,255,0.8)]">
+        <div className="flex flex-row items-center gap-3 md:px-4 px-1 md:py-3 py-1 rounded- md:rounded-2xl max-w-2xl mx-auto border-2   border-[#007BFF] shadow-[0_0_10px_0_rgba(0,123,255,0.8)]">
           <div className="relative flex-1 ">
             <svg
               className="absolute left-2 top-1/2 -translate-y-1/2 md:w-6 md:h-6 w-5 h-5 text-[#007BFF]"
