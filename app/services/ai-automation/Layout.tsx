@@ -1,10 +1,10 @@
-// app/services/web-development/layout.tsx
+// app/services/ai-automation/layout.tsx
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Website Development | Mehdi Technologies",
+  title: "AI Development & Automation | Mehdi Technologies",
   description:
-    "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+    "Leverage AI with custom chatbots, automation systems, machine learning, NLP, and end-to-end AI integrations built for real business impact.",
   robots: {
     index: true,
     follow: true,
@@ -14,35 +14,35 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.mehditechnologies.com/services/web-development",
+    canonical: "https://www.mehditechnologies.com/services/ai-automation",
   },
   openGraph: {
-    title: "Custom Website Development | Mehdi Technologies",
+    title: "AI Development & Automation | Mehdi Technologies",
     description:
-      "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+      "Leverage AI with custom chatbots, automation systems, machine learning, NLP, and end-to-end AI integrations built for real business impact.",
     type: "website",
-    url: "https://www.mehditechnologies.com/services/web-development",
+    url: "https://www.mehditechnologies.com/services/ai-automation",
     images: [
       {
         url: "https://www.mehditechnologies.com/Logo.png",
         width: 800,
         height: 600,
-        alt: "Web Development Services",
+        alt: "AI Automation Services",
       },
     ],
     siteName: "Mehdi Technologies",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Website Development | Mehdi Technologies",
+    title: "AI Development & Automation | Mehdi Technologies",
     description:
-      "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+      "Leverage AI with custom chatbots, automation systems, machine learning, NLP, and end-to-end AI integrations built for real business impact.",
     images: ["https://www.mehditechnologies.com/Logo.png"],
     creator: "@MehdiTechnologies",
   },
 };
 
-export default function WebDevelopmentLayout({
+export default function AiAutomationLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -56,7 +56,7 @@ export default function WebDevelopmentLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Web Development",
+            name: "AI Development & Automation",
             provider: {
               "@type": "Organization",
               name: "Mehdi Technologies",
@@ -70,11 +70,11 @@ export default function WebDevelopmentLayout({
               ],
             },
             description:
-              "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+              "Leverage AI with custom chatbots, automation systems, machine learning, NLP, and end-to-end AI integrations built for real business impact.",
             areaServed: "Worldwide",
             audience: {
               "@type": "Audience",
-              audienceType: "Businesses seeking custom web applications",
+              audienceType: "Businesses seeking AI and automation solutions",
             },
           }),
         }}

@@ -1,10 +1,10 @@
-// app/services/web-development/layout.tsx
+// app/services/mobile-app-development/layout.tsx
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Website Development | Mehdi Technologies",
+  title: "Mobile App Development | iOS & Android Apps by Mehdi Technologies",
   description:
-    "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+    "We develop high-performance Android, iOS, and cross-platform mobile apps with clean UI/UX and scalable backend architecture.",
   robots: {
     index: true,
     follow: true,
@@ -14,35 +14,36 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.mehditechnologies.com/services/web-development",
+    canonical:
+      "https://www.mehditechnologies.com/services/mobile-app-development",
   },
   openGraph: {
-    title: "Custom Website Development | Mehdi Technologies",
+    title: "Mobile App Development | iOS & Android Apps by Mehdi Technologies",
     description:
-      "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+      "We develop high-performance Android, iOS, and cross-platform mobile apps with clean UI/UX and scalable backend architecture.",
     type: "website",
-    url: "https://www.mehditechnologies.com/services/web-development",
+    url: "https://www.mehditechnologies.com/services/mobile-app-development",
     images: [
       {
         url: "https://www.mehditechnologies.com/Logo.png",
         width: 800,
         height: 600,
-        alt: "Web Development Services",
+        alt: "Mobile App Development Services",
       },
     ],
     siteName: "Mehdi Technologies",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Website Development | Mehdi Technologies",
+    title: "Mobile App Development | iOS & Android Apps by Mehdi Technologies",
     description:
-      "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+      "We develop high-performance Android, iOS, and cross-platform mobile apps with clean UI/UX and scalable backend architecture.",
     images: ["https://www.mehditechnologies.com/Logo.png"],
     creator: "@MehdiTechnologies",
   },
 };
 
-export default function WebDevelopmentLayout({
+export default function MobileAppServicesLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -56,7 +57,7 @@ export default function WebDevelopmentLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Web Development",
+            name: "Mobile App Development",
             provider: {
               "@type": "Organization",
               name: "Mehdi Technologies",
@@ -70,11 +71,11 @@ export default function WebDevelopmentLayout({
               ],
             },
             description:
-              "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
+              "We develop high-performance Android, iOS, and cross-platform mobile apps with clean UI/UX and scalable backend architecture.",
             areaServed: "Worldwide",
             audience: {
               "@type": "Audience",
-              audienceType: "Businesses seeking custom web applications",
+              audienceType: "Businesses seeking mobile app solutions",
             },
           }),
         }}
