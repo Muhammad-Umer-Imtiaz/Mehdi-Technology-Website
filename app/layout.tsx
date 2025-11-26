@@ -54,6 +54,43 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Open Graph for Facebook, WhatsApp, LinkedIn */}
+        <meta
+          property="og:title"
+          content="Mehdi Technologies - Custom Software Development & AI Solutions"
+        />
+        <meta
+          property="og:description"
+          content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on."
+        />
+        <meta
+          property="og:image"
+          content="https://mehdi-technologies.com/og-image.png"
+        />
+        <meta property="og:url" content="https://mehdi-technologies.com" />
+        <meta property="og:type" content="website" />
+
+        {/* WhatsApp uses Open Graph (same as Facebook) */}
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Mehdi Technologies - Custom Software Development & AI Solutions"
+        />
+        <meta
+          name="twitter:description"
+          content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies."
+        />
+        <meta
+          name="twitter:image"
+          content="https://mehdi-technologies.com/og-image.png"
+        />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
       >
