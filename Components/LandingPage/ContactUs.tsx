@@ -98,12 +98,11 @@ export default function ContactUs() {
           "url('/BackgroundPictures/LandingPageBG/ContactBG.webp')",
       }}
     >
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/30 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          {/* Left Side - Contact Info (moves above on mobile) */}
+          {/* Left Side */}
           <div className="text-white space-y-6 order-1 lg:order-0">
             <h2 className="md:block hidden text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg">
               Get In <span className="text-blue-400">Touch</span> with Us,
@@ -111,7 +110,7 @@ export default function ContactUs() {
               We <span className="text-blue-400">Answer</span> You
             </h2>
 
-            <p className=" md:block hidden text-white/90 text-base sm:text-lg max-w-lg drop-shadow-md">
+            <p className="md:block hidden text-white/90 text-base sm:text-lg max-w-lg drop-shadow-md">
               Let's bring your vision to life. Connect with our experts today to
               discuss your next project.
             </p>
@@ -136,9 +135,7 @@ export default function ContactUs() {
                   <Mail className="w-5 h-5 text-blue-400" />
                 </div>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&to=contact@mehditechnologies.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:contact@mehditechnologies.com"
                   className="text-white text-base sm:text-lg hover:text-cyan-300 hover:underline transition-colors"
                 >
                   contact@mehditechnologies.com
@@ -163,7 +160,7 @@ export default function ContactUs() {
             </div>
           </div>
 
-          {/* Right Side - Contact Form */}
+          {/* Right Side */}
           <div className="relative backdrop-blur-md rounded-2xl md:py-6 sm:p-8 lg:p-10 shadow-xl order-0 lg:order-1">
             <h2 className="md:hidden block text-4xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Get In <span className="text-blue-400">Touch</span> with Us,
@@ -171,21 +168,22 @@ export default function ContactUs() {
               We <span className="text-blue-400">Answer</span> You
             </h2>
 
-            <p className=" md:hidden block text-white/90 text-base sm:text-lg max-w-lg drop-shadow-md mb-4">
+            <p className="md:hidden block text-white/90 text-base sm:text-lg max-w-lg drop-shadow-md mb-4">
               Let's bring your vision to life. Connect with our experts today to
               discuss your next project.
             </p>
+
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              {/* Name & Address */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Name */}
+              <div className="grid grid-cols-2 md:gap-4 gap-2">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="First Name"
                   className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <input
                   type="text"
-                  placeholder="Your Address"
+                  placeholder="Last Name"
                   className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
               </div>
@@ -197,12 +195,15 @@ export default function ContactUs() {
                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
 
-              {/* Phone with Country Code */}
+              {/* Phone + Country */}
               <div className="flex gap-3 flex-col sm:flex-row">
                 <div className="relative w-full sm:w-[170px]" ref={dropdownRef}>
                   <button
                     type="button"
-                    onClick={() => setShowDropdown((s) => !s)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowDropdown((s) => !s);
+                    }}
                     aria-haspopup="listbox"
                     aria-expanded={showDropdown}
                     className="w-full h-full px-3 py-3 rounded-xl bg-white text-gray-800 flex items-center gap-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -215,11 +216,10 @@ export default function ContactUs() {
                   {/* Dropdown */}
                   {showDropdown && (
                     <>
-                      {/* For larger screens: small popup. For small screens: full-screen panel */}
+                      {/* Desktop */}
                       <div
-                        className="hidden sm:block absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl z-50 max-h-96 overflow-hidden"
-                        role="dialog"
-                        aria-modal="true"
+                        className="hidden sm:block absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl z-50"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <div className="p-3 border-b sticky top-0 bg-white z-10">
                           <input
@@ -230,12 +230,13 @@ export default function ContactUs() {
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                           />
                         </div>
-                        <div className="overflow-y-auto max-h-[360px]">
+                        <div className="max-h-96 overflow-y-auto">
                           {filteredCountries.map((country) => (
                             <button
                               key={country.country}
                               type="button"
-                              onClick={() => {
+                              onClick={(e) => {
+                                e.stopPropagation();
                                 setSelectedCountry(country);
                                 setShowDropdown(false);
                                 setSearchQuery("");
@@ -254,13 +255,20 @@ export default function ContactUs() {
                         </div>
                       </div>
 
-                      {/* Mobile full-screen picker */}
+                      {/* Mobile */}
                       <div
-                        className="sm:hidden fixed inset-0 z-50 bg-black/60 flex items-end"
+                        className="sm:hidden fixed inset-0 z-50 bg-black/60 flex justify-center items-end"
                         role="dialog"
                         aria-modal="true"
+                        onClick={() => {
+                          setShowDropdown(false);
+                          setSearchQuery("");
+                        }}
                       >
-                        <div className="w-full max-h-[85vh] bg-white rounded-t-2xl p-4 overflow-hidden">
+                        <div
+                          className="w-full max-h-[85vh] bg-white rounded-t-2xl p-4 flex flex-col"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <div className="flex items-center gap-3 mb-3">
                             <input
                               type="text"
@@ -281,15 +289,13 @@ export default function ContactUs() {
                             </button>
                           </div>
 
-                          <div
-                            className="overflow-y-auto"
-                            style={{ maxHeight: "70vh" }}
-                          >
+                          <div className="overflow-y-auto flex-1">
                             {filteredCountries.map((country) => (
                               <button
                                 key={country.country}
                                 type="button"
-                                onClick={() => {
+                                onClick={(e) => {
+                                  e.stopPropagation();
                                   setSelectedCountry(country);
                                   setShowDropdown(false);
                                   setSearchQuery("");
@@ -341,60 +347,41 @@ export default function ContactUs() {
 
               {/* Message */}
               <textarea
-                placeholder="Type Your Message Here..."
-                rows={5}
+                placeholder="Your Message"
+                rows={4}
                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-500 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
-              ></textarea>
+              />
 
-              {/* Terms & Submit */}
-              <div className="flex items-center justify-between gap-4 flex-wrap">
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={agreedToTerms}
-                    onChange={(e) => setAgreedToTerms(e.target.checked)}
-                    className="w-5 h-5 rounded border-2 border-gray-300 text-blue-500 focus:ring-2 focus:ring-blue-400 cursor-pointer"
-                  />
-                  <span className="text-white md:text-sm text-xs">
-                    I agree with{" "}
-                    <a
-                      href="#"
-                      className="text-blue-400 hover:underline font-medium"
-                    >
-                      Terms of Use
-                    </a>{" "}
-                    and{" "}
-                    <a
-                      href="#"
-                      className="text-blue-400 hover:underline font-medium"
-                    >
-                      Privacy Policy
-                    </a>
-                  </span>
-                </label>
-
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-blue-400 text-white rounded-xl font-semibold hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-base"
-                >
-                  Get Started
-                </button>
+              {/* Terms */}
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={agreedToTerms}
+                  onChange={(e) => setAgreedToTerms(e.target.checked)}
+                  className="w-4 h-4 accent-blue-400 rounded"
+                />
+                <span className="text-white text-sm sm:text-base">
+                  I agree to the <span className="text-blue-400">terms</span> &{" "}
+                  <span className="text-blue-400">conditions</span>
+                </span>
               </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={!agreedToTerms}
+                className={`w-full py-3 px-6 rounded-xl text-white font-semibold transition-colors ${
+                  agreedToTerms
+                    ? "bg-blue-400 hover:bg-blue-500"
+                    : "bg-gray-400 cursor-not-allowed"
+                }`}
+              >
+                Send Message
+              </button>
             </form>
           </div>
         </div>
       </div>
-
-      {/* Click outside to close dropdown (keeps existing behavior) */}
-      {showDropdown && (
-        <div
-          className="fixed inset-0 z-40"
-          onClick={() => {
-            setShowDropdown(false);
-            setSearchQuery("");
-          }}
-        />
-      )}
     </section>
   );
 }

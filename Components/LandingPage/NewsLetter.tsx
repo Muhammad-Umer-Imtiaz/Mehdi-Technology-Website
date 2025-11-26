@@ -1,4 +1,5 @@
 import React from "react";
+import { BsSendFill } from "react-icons/bs";
 
 export default function NewsLetter() {
   return (
@@ -13,13 +14,10 @@ export default function NewsLetter() {
         </p>
 
         {/* Email Input Form */}
-        <div
-          className="flex flex-row items-center gap-3 md:px-4 px-1 py-3 rounded-xl max-w-2xl mx-auto"
-          style={{ boxShadow: "0 6px 6px -2px rgba(0,0,0,6.5)" }}
-        >
-          <div className="relative flex-1">
+        <div className="flex flex-row items-center gap-3 md:px-4 px-1 md:py-3 py-1 rounded-2xl max-w-2xl mx-auto border-2   border-[#007BFF] shadow-[0_0_10px_0_rgba(0,123,255,0.8)]">
+          <div className="relative flex-1 ">
             <svg
-              className="absolute left-2 top-1/2 -translate-y-1/2 md:w-6 md:h-6 w-5 h-5 text-gray-400"
+              className="absolute left-2 top-1/2 -translate-y-1/2 md:w-6 md:h-6 w-5 h-5 text-[#007BFF]"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -30,21 +28,34 @@ export default function NewsLetter() {
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full md:pl-12 pl-8 pr-0 py-3 md:text-xl rounded-xl text-gray-700 placeholder-gray-400 border-none outline-none"
+              className="w-full md:pl-12 pl-8 pr-0 py-3 md:text-xl text-lg rounded-xl text-gray-700 placeholder-gray-400 border-none outline-none"
             />
           </div>
-
           <button
             className="
-      md:px-6 px-4 md:py-4 py-3
-      rounded-xl text-gray-700 font-medium 
-      bg-white shadow-md
-      hover:shadow-xl active:shadow-xl
-      whitespace-nowrap
+            hidden md:inline
+      md:px-6 px-4 md:py-3 py-2
+      rounded-xl text-white font-medium 
+      bg-[#007BFF] shadow-md
+      hover:shadow-md 
+      whitespace-nowrap hover:shadow-[#007bffc1] 
       text-sm md:text-base
     "
           >
-            Get Started
+            Subscribe
+          </button>{" "}
+          <button
+            className="
+            inline md:hidden
+       p-2
+      rounded-full text-white font-medium 
+      bg-[#007BFF] shadow-md
+   active:shadow-md
+      whitespace-nowrap  active:shadow-[#007BFF]
+      text-sm md:text-base
+    "
+          >
+            <BsSendFill className="w-4 h-4 " />
           </button>
         </div>
       </div>

@@ -138,15 +138,15 @@ function AnimatedBar({
         <div className="flex items-center gap-2">
           {/* Animated bar */}
           <div className="relative md:w-40 border-3  h-4 rounded-full overflow-hidden w-full">
-            <div className="absolute inset-0 h-4 bg-gradient-to-r from-[#A020F0]/30 to-[#00D1FF]/30" />
+            <div className="absolute inset-0 h-4 bg-linear-to-r from-[#A020F0]/30 to-[#00D1FF]/30" />
             <motion.div
-              className="absolute inset-y-0 left-0 h-4 bg-gradient-to-r from-[#A020F0] to-[#00D1FF]"
+              className="absolute inset-y-0 left-0 h-4 bg-linear-to-r from-[#A020F0] to-[#00D1FF]"
               initial={{ width: "0%" }}
               animate={controls}
             />
           </div>
 
-          <p className="text-sm font-bold">
+          <p className="text-sm font-bold w-1">
             <CountUp
               end={item.performance}
               duration={2.5}
@@ -160,7 +160,7 @@ function AnimatedBar({
 
       {/* Dual-layer progress line */}
       <div className="hidden md:block relative w-full h-0.5 rounded-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-white" />
+        <div className="absolute inset-0 bg-linear-to-r from-black to-white" />
       </div>
     </div>
   );

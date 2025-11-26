@@ -1,6 +1,6 @@
 import { Bot, Zap, Brain, Cloud, MessageSquare, BarChart3 } from "lucide-react";
 import Link from "next/link";
-
+import Image from "next/image";
 export default function AiSolution() {
   const solutions = [
     { icon: Bot, label: "AI Chatbot Development", href: "/ai-chatbot" },
