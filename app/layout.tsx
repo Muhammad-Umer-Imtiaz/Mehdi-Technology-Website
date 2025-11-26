@@ -24,7 +24,7 @@ const schemaData = {
   "@type": "Organization",
   name: "Mehdi Technologies",
   url: "https://mehdi-technologies.com",
-  logo: "https://mehdi-technologies.com/logo.png",
+  logo: "Logo.png",
   sameAs: [
     "https://www.instagram.com/mehdi_technologies",
     "https://www.linkedin.com/company/mehdi-technologies",
@@ -64,10 +64,7 @@ export default function RootLayout({
           property="og:description"
           content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on."
         />
-        <meta
-          property="og:image"
-          content="https://mehdi-technologies.com/og-image.png"
-        />
+        <meta property="og:image" content="Logo.png" />
         <meta property="og:url" content="https://mehdi-technologies.com" />
         <meta property="og:type" content="website" />
 
@@ -83,10 +80,7 @@ export default function RootLayout({
           name="twitter:description"
           content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies."
         />
-        <meta
-          name="twitter:image"
-          content="https://mehdi-technologies.com/og-image.png"
-        />
+        <meta name="twitter:image" content="Logo.png" />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />

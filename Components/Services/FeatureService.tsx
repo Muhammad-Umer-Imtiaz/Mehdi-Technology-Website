@@ -26,42 +26,42 @@ export default function FeatureService() {
       image: "/LandingPage/Services/WebsiteDevelopment.webp",
       heading: "Website Development",
       icon: <FaGlobe />,
-      slug: "webdevelopment",
+      slug: "services/web-development",
     },
     {
       id: 2,
       image: "/LandingPage/Services/BlockChain.webp",
       heading: "Blockchain, Web 3.0 & NFT",
       icon: <FaCube />,
-      slug: "block-chain",
+      slug: "services/blockchain-development",
     },
     {
       id: 3,
       image: "/LandingPage/Services/MobileAppDeveloment.webp",
       heading: "Mobile App Development",
       icon: <FaMobileAlt />,
-      slug: "mobile-app-development",
+      slug: "services/mobile-app-development",
     },
     {
       id: 4,
       image: "/LandingPage/Services/TelegramMiniApps.webp",
       heading: "Telegram Mini Apps Development",
       icon: <FaTelegramPlane />,
-      slug: "telegram-mini-apps",
+      slug: "services/telegram-mini-apps",
     },
     {
       id: 5,
       image: "/LandingPage/Services/AIDevelopment.webp",
-      heading: "Artificial Intelligence",
+      heading: "AI/ML & Generative AI",
       icon: <FaRobot />,
-      slug: "artificial-intelligence",
+      slug: "services/ai-automation",
     },
     {
       id: 6,
       image: "/LandingPage/Services/UI&UX.webp",
       heading: "UI/UX Designing",
       icon: <FaPaintBrush />,
-      slug: "ui-ux-design",
+      slug: "services/graphic-designing",
     },
   ];
 
@@ -70,7 +70,7 @@ export default function FeatureService() {
     image: "/LandingPage/Services/SEO&Digitalmarketing.webp",
     heading: "SEO & Digital Marketing",
     icon: <FaBullhorn />,
-    slug: "seo-digital-marketing",
+    slug: "services/website-optimzation",
   };
 
   // Animations
