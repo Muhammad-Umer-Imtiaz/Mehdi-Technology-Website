@@ -211,14 +211,14 @@ export default function FeatureService() {
         </motion.div>
 
         {/* Banner */}
-        <div className="md:col-span-2 bg-linear-to-l from-[#58C9EC] to-[#003C7D] p-8 rounded-3xl h-72 sm:h-80 md:h-96">
+        <div className="md:col-span-2 bg-linear-to-l from-[#58C9EC] to-[#003C7D] md:p-8 p-4 rounded-3xl h-full md:h-96">
           <h2 className="text-3xl md:text-4xl font-semibold text-white text-center">
             Let’s Start Your Project
           </h2>
           <div className=" flex flex-col md:flex-row justify-between items-center">
-            <div className="space-y-4 pt-6">
+            <div className="space-y-4 md:pt-6 pt-3">
               {/* Phone */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center md:gap-4 gap-2">
                 <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
                   <Phone className="w-5 h-5 text-blue-400" />
                 </div>
@@ -231,13 +231,13 @@ export default function FeatureService() {
               </div>
 
               {/* Email */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center md:gap-4 gap-2">
                 <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
                   <Mail className="w-5 h-5 text-blue-400" />
                 </div>
                 <a
                   href="mailto:contact@mehditechnologies.com"
-                  className="text-white text-base sm:text-lg hover:text-cyan-300 hover:underline transition-colors"
+                  className="text-white text-sm sm:text-lg hover:text-cyan-300 hover:underline transition-colors"
                 >
                   contact@mehditechnologies.com
                 </a>
@@ -260,7 +260,7 @@ export default function FeatureService() {
               </div>
             </div>
 
-            <div className="relative w-52 h-52 md:w-64 md:h-64 mt-5 md:mt-0">
+            <div className="relative md:block hidden w-52 h-52 md:w-64 md:h-64 mt-5 md:mt-0">
               <Image
                 src="/bannerRightSide.png"
                 alt="Banner Image"
@@ -269,14 +269,14 @@ export default function FeatureService() {
               />
             </div>
           </div>
-          <div className="flex gap-4 justify-evenly">
-            <button className="px-10 py-2 rounded-full text-2xl text-[#007BFF] bg-white shadow-lg">
-              <FaPhoneAlt className="inline w-5 h-5 mb-0.5 mr-3" />
+          <div className="flex md:gap-4 gap-2 justify-evenly mt-3">
+            <button className="md:px-10 px-3 py-2 rounded-full md:text-2xl text-base text-[#007BFF] bg-white shadow-black shadow-lg">
+              <FaPhoneAlt className="inline md:w-5 md:h-5 w-4 h-4 mb-0.5 md:mr-3 mr-1" />
               Book a Call
             </button>
 
-            <button className="px-10 py-2 rounded-full border text-2xl text-[#007BFF] bg-white">
-              <IoMail className="inline w-6 h-6 mb-0.5 mr-3" />
+            <button className="md:px-10 px-3 py-2 rounded-full md:text-2xl text-base text-[#007BFF] bg-white shadow-black  shadow-lg">
+              <IoMail className="inline md:w-6 md:h-6 w-5 h-5 mb-0.5 md:mr-3 " />
               Contact Us
             </button>
           </div>

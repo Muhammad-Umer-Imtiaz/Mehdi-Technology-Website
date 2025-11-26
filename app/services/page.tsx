@@ -1,7 +1,5 @@
 import HeroSection from "@/Components/Common/HeroSection";
-import AiSolution from "@/Components/LandingPage/AiSolution";
 import Clients from "@/Components/LandingPage/Clients";
-import Services from "@/Components/LandingPage/Services";
 import FeatureService from "@/Components/Services/FeatureService";
 import OurAiSolution from "@/Components/Services/OurAiSolution";
 

@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { BiBriefcase } from "react-icons/bi";
 import { FaInstagram, FaLinkedin, FaBehance, FaFacebook } from "react-icons/fa";
+import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-white  pt-16 pb-4 px-5 lg:px-28 w-full">
@@ -161,12 +162,12 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Explore</h3>
               <ul className="space-y-3 text-[#ffffff]/70">
                 <li>
-                  <a
+                  <Link
                     href="/career"
                     className="hover:text-cyan-400 transition-colors"
                   >
                     Jobs
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
