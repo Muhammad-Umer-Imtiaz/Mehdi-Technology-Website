@@ -163,18 +163,18 @@ export default function Footer() {
               <ul className="space-y-3 text-[#ffffff]/70">
                 <li>
                   <Link
-                    href="/career"
+                    href="/careers"
                     className="hover:text-cyan-400 transition-colors"
                   >
-                    Jobs
+                    Careers
                   </Link>
                 </li>
                 <li>
                   <a
-                    href="/case-study"
+                    href="/case-studies"
                     className="hover:text-cyan-400 transition-colors"
                   >
-                    Case Study
+                    Case Studies
                   </a>
                 </li>
               </ul>
@@ -188,7 +188,7 @@ export default function Footer() {
             <ul className="space-y-3 grid md:inline grid-cols-2  text-[#ffffff]/70">
               <li>
                 <a
-                  href="/webdevelopment"
+                  href="/services/web-development"
                   className="hover:text-cyan-400  transition-colors"
                 >
                   Website Development
@@ -197,7 +197,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/mobile-app-development"
+                  href="/services/mobile-app-development"
                   className="hover:text-cyan-400 transition-colors"
                 >
                   Mobile App Development
@@ -205,7 +205,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/telegram-mini-apps"
+                  href="/services/telegram-mini-apps"
                   className="hover:text-cyan-400 transition-colors"
                 >
                   Telegram Mini Apps Development
@@ -213,15 +213,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/artificial-intelligence"
+                  href="services/ai-automation"
                   className="hover:text-cyan-400 transition-colors"
                 >
-                  AI Chatbot Development
+                  AI/ML & Generative AI
                 </a>
               </li>
               <li>
                 <a
-                  href="/ui-ux-design"
+                  href="/services/graphic-designing"
                   className="hover:text-cyan-400 transition-colors"
                 >
                   UI/UX Designing
@@ -230,7 +230,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/seo-digital-marketing"
+                  href="/services/website-optimzation"
                   className="hover:text-cyan-400 transition-colors"
                 >
                   SEO & Digital Marketing
@@ -238,7 +238,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/block-chain"
+                  href="/services/blockchain-development"
                   className="hover:text-cyan-400 transition-colors"
                 >
                   Blockchain Web3.0 & NFT Development

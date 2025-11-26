@@ -56,7 +56,7 @@ const countries = [
   { code: "+233", country: "GH", flag: "🇬🇭", name: "Ghana" },
   { code: "+251", country: "ET", flag: "🇪🇹", name: "Ethiopia" },
 ];
-export default function contactUS() {
+export default function ContactUS() {
   const [selectedCountry, setSelectedCountry] = useState(countries[3]); // default Pakistan
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");

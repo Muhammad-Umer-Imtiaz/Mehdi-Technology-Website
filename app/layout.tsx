@@ -17,6 +17,18 @@ export const metadata: Metadata = {
   title: "Mehdi Technologies - Custom Software Development & AI Solutions",
   description:
     "Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on. Get a free consultation today.",
+  alternates: {
+    canonical: "https://www.mehditechnologies.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 const schemaData = {
@@ -24,7 +36,7 @@ const schemaData = {
   "@type": "Organization",
   name: "Mehdi Technologies",
   url: "https://mehdi-technologies.com",
-  logo: "Logo.png",
+  logo: "https://mehdi-technologies.com/Logo.png",
   sameAs: [
     "https://www.instagram.com/mehdi_technologies",
     "https://www.linkedin.com/company/mehdi-technologies",
@@ -62,9 +74,12 @@ export default function RootLayout({
         />
         <meta
           property="og:description"
-          content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on."
+          content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on. Get a free consultation today."
         />
-        <meta property="og:image" content="Logo.png" />
+        <meta
+          property="og:image"
+          content="https://mehdi-technologies.com/Logo.png"
+        />
         <meta property="og:url" content="https://mehdi-technologies.com" />
         <meta property="og:type" content="website" />
 
@@ -78,9 +93,12 @@ export default function RootLayout({
         />
         <meta
           name="twitter:description"
-          content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies."
+          content="Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on. Get a free consultation today."
         />
-        <meta name="twitter:image" content="Logo.png" />
+        <meta
+          name="twitter:image"
+          content="https://mehdi-technologies.com/Logo.png"
+        />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
