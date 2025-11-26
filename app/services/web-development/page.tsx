@@ -8,7 +8,7 @@ export default function WebDevelopment() {
   return (
     <section>
       <HeroSection
-        bgImage="/WebDevelopment/WebsiteDevelopmentBG.png"
+        bgImage="/BackgroundPictures/WebsiteDevelopmentBG.webp"
         title="Modern Web Development"
         description="We craft high-performing, visually stunning websites using modern frameworks and 
 secure architectures. From corporate websites to complex web apps, our development process ensures speed, scalability, and flawless user experience."

@@ -94,7 +94,7 @@ export default function ContactUS() {
       <section
         className="relative h-screen w-full bg-cover bg-center flex items-center justify-center text-white"
         style={{
-          backgroundImage: "url('/BackgroundPictures/ContactPageBG.jpg')",
+          backgroundImage: "url('/BackgroundPictures/ContactPageBG.webp')",
         }}
       >
         <h1 className="absolute md:top-38 top-30 text-3xl md:text-6xl font-semibold mb-4 drop-shadow-lg text-white   ">

@@ -5,7 +5,7 @@ export default function blogs() {
   return (
     <div>
       <HeroSection
-        bgImage="/BackgroundPictures/BlogPageBG.jpg"
+        bgImage="/BackgroundPictures/BlogPageBG.webp"
         title="AI & Automation Insights"
         description="Stay informed with the latest insights, trends, and updates in AI, automation, and digital innovation."
         breadcrumbs={[

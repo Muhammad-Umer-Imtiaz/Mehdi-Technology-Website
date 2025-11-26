@@ -13,7 +13,7 @@ const serviceData = [
   { name: "Mobile App Development", href: "/services/mobile-app-development" },
   {
     name: "Blockchain, Web 3.0 & NFT",
-    href: "services/blockchain-development",
+    href: "/services/blockchain-development",
   },
   {
     name: "Telegram Mini Apps Development",

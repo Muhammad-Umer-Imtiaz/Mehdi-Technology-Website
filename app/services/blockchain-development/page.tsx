@@ -13,7 +13,7 @@ export default function WebDevelopment() {
     <section>
       {/* 🌐 Hero */}
       <HeroSection
-        bgImage="/Blockchain/BlackChainBG.png"
+        bgImage="/BackgroundPictures/BlackChainBG.webp"
         title="Blockchain, Web3.0 & NFT Development"
         description="We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces."
         breadcrumbs={[

@@ -8,7 +8,7 @@ export default function AiDevelopment() {
   return (
     <section>
       <HeroSection
-        bgImage="/BackgroundPictures/AIBG.png"
+        bgImage="/BackgroundPictures/AIBG.webp"
         title="AI Development"
         description="We build & integrate Artificial Intelligence driven solutions to make your business smarter, faster, and more efficient."
         breadcrumbs={[

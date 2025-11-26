@@ -12,7 +12,7 @@ export default function WebDevelopment() {
   return (
     <section>
       <HeroSection
-        bgImage="/BackgroundPictures/TelegramBG.png"
+        bgImage="/BackgroundPictures/TelegramBG.webp"
         title="Telegram Mini Apps Development"
         description="We specialize in custom Telegram mini-apps that enhance engagement and automate workflows."
         breadcrumbs={[

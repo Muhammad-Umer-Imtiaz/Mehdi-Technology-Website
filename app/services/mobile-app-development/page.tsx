@@ -10,7 +10,7 @@ export default function MobileAppDevelopment() {
     <section>
       {/* 🌐 Hero */}
       <HeroSection
-        bgImage="/BackgroundPictures/AppDevelopmentBG.png"
+        bgImage="/BackgroundPictures/AppDevelopmentBG.webp"
         title="Mobile App Development"
         description="We build powerful, scalable, and intuitive mobile apps that combine stunning design with robust functionality. From startups to enterprises, our mobile solutions help brands engage users and grow faster in the digital space."
         breadcrumbs={[
