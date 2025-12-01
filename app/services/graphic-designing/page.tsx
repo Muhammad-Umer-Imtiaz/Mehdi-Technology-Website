@@ -25,6 +25,8 @@ export default function UIUX() {
 
       <ServicesSection
         title="Our UI/UX Design Services"
+                description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."
+
         services={UIDesignServices}
       />
 

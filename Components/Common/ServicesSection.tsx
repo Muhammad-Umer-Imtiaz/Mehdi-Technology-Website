@@ -11,13 +11,11 @@ interface ServiceItem {
 
 interface ServicesSectionProps {
   title: string;
-  description: string;
   services: ServiceItem[];
 }
 
 export default function ServicesSection({
   title,
-
   services,
 }: ServicesSectionProps) {
   const [active, setActive] = useState<string>(services[0]?.title || "");
