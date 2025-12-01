@@ -1,7 +1,8 @@
+// 'use client'
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import type { IconType } from "react-icons";
-
+import { useRouter } from "next/navigation";
 export interface ProcessStep {
   phase: string;
   duration: string;
@@ -14,13 +15,13 @@ export interface ProcessStep {
 
 interface OurProcessProps {
   title: string;
-  description: string;
+  // description: string;
   process: ProcessStep[];
 }
 
-export default function OurProcess({ title, description, process }: OurProcessProps) {
+export default function OurProcess({ title, process }: OurProcessProps) {
   const [activePhase, setActivePhase] = useState<number | null>(null);
-
+const router =useRouter()
   return (
     <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-20 px-6 md:px-20 relative overflow-hidden">
       {/* Background grid effect */}
@@ -35,9 +36,9 @@ export default function OurProcess({ title, description, process }: OurProcessPr
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
             {title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          {/* <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             {description}
-          </p>
+          </p> */}
         </div>
 
         {/* Process Timeline */}
@@ -132,7 +133,7 @@ export default function OurProcess({ title, description, process }: OurProcessPr
             <p className="text-gray-400 mb-6">
               Let's discuss how our proven SEO methodology can drive measurable results for your business.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+            <button onClick={()=>{router.push("/contact-us")}} className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
               Schedule a Strategy Call
             </button>
           </div>

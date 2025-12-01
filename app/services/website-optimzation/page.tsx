@@ -30,30 +30,34 @@ export default function UIUX() {
           { name: "SEO & Digital Marketing" },
         ]}
       />
+
       <ServicesSection
         title="Building the Future, One App at a Time — Your Partner in Mobile Innovation"
         description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."
         services={DigitalMarketingServices}
       />
+
       <OurProcess
-      title="Our SEO & Marketing Process"
-      description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
-      process={seoProcess}/>
+        title="Our SEO & Marketing Process"
+        description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
+        process={seoProcess} />
+
       <IndustriesWeServe
-  title="Industries We Serve"
-  Industry={SEOindustries}
-/>
+        title="Industries We Serve"
+        Industry={SEOindustries}
+      />
+
       <TechSection
         title="Tools & Platforms "
         highlight="We Use "
         technologies={SEOAndMarketingTech}
       />
-      
-     <FAQS
-     data={SEOFaqData}/>
-      
-    <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies}/>
-      
+
+      <FAQS
+        data={SEOFaqData} />
+
+      <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies} />
+
       <HowWeServeSection
         title="How We Serve You (Digital Marketing)"
         description="We help your brand grow online with data-driven marketing strategies, creative content, and measurable results. From SEO to social media campaigns, our goal is to increase your visibility, attract the right audience, and convert visitors into loyal customers."

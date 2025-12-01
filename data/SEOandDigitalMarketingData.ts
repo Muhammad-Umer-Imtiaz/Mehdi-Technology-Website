@@ -16,18 +16,22 @@ import {
 } from "react-icons/fa";
 import { SiGoogleads, SiMeta, SiHubspot ,} from "react-icons/si";
 import { FaMeta } from "react-icons/fa6";
-
-import { FaChartBar } from "react-icons/fa";
-import type { IconType } from "react-icons";
 import { 
   FaShoppingCart, 
   FaHeartbeat, 
   FaBuilding, 
   FaLaptopCode, 
+  FaDollarSign, 
+  FaBook, 
+  FaPlane, 
+  FaBitcoin 
+} from "react-icons/fa";
+import type { IconType } from "react-icons";
+import { 
+
   FaMoneyCheckAlt, 
   FaStore, 
-  FaBook, 
-  FaPlane 
+  
 } from "react-icons/fa";
 
 export interface Tech {

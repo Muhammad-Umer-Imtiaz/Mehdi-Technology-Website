@@ -7,6 +7,7 @@ import NewsLetter from "@/Components/LandingPage/NewsLetter";
 import Footer from "@/Components/LandingPage/Footer";
 import LayoutWrapper from "@/Components/LayoutWrapper";
 import ScrollToTop from "@/Components/ScrollToTop";
+import CookieScriptClient from "@/Components/CookieScriptClient";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -107,6 +108,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
       >
+        <CookieScriptClient/>
         {/* Schema JSON-LD */}
         <script
           type="application/ld+json"
