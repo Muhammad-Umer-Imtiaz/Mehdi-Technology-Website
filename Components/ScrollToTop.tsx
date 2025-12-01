@@ -1,13 +1,19 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowUp, Rocket, Zap } from "lucide-react";
+import type { JSX } from "react";
 
-export default function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
-  const [particles, setParticles] = useState([]);
+type Particle = {
+  id: number;
+  angle: number;
+};
+
+export default function ScrollToTop(): JSX.Element {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,23 +22,24 @@ export default function ScrollToTop() {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(Math.min(100, Math.max(0, progress)));
 
       setIsVisible(scrollTop > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // init
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const createParticles = () => {
-    const newParticles = Array.from({ length: 8 }, (_, i) => ({
+    const newParticles: Particle[] = Array.from({ length: 8 }, (_, i) => ({
       id: Date.now() + i,
       angle: (i * 360) / 8,
     }));
     setParticles(newParticles);
+    // clear after animation (1s)
     setTimeout(() => setParticles([]), 1000);
   };
 
@@ -49,10 +56,13 @@ export default function ScrollToTop() {
     return <ArrowUp className="w-7 h-7 text-white" />;
   };
 
+  // SVG progress circle math
+  const R = 28;
+  const C = 2 * Math.PI * R;
+  const dashOffset = C - (scrollProgress / 100) * C;
+
   return (
     <>
-      
-
       {/* Enhanced Interactive Scroll to Top Button */}
       <div
         className={`fixed bottom-8 right-8 z-[999] transition-all duration-500 ${
@@ -67,6 +77,7 @@ export default function ScrollToTop() {
           onMouseLeave={() => setIsHovered(false)}
           className="relative group"
           aria-label="Scroll to top"
+          type="button"
         >
           {/* Animated particles on click */}
           {particles.map((particle) => (
@@ -86,11 +97,15 @@ export default function ScrollToTop() {
               isHovered ? "opacity-100 animate-spin" : "opacity-60"
             }`}
             style={{ animationDuration: "3s" }}
+            aria-hidden
           />
 
           {/* Pulsing ring on hover */}
           {isHovered && (
-            <div className="absolute inset-0 rounded-full border-2 border-[#188FFB] animate-ping opacity-75" />
+            <div
+              className="absolute inset-0 rounded-full border-2 border-[#188FFB] animate-ping opacity-75"
+              aria-hidden
+            />
           )}
 
           {/* Main button container */}
@@ -110,62 +125,52 @@ export default function ScrollToTop() {
               </div>
 
               {/* Progress Ring */}
-              <svg className="absolute inset-0 w-full h-full -rotate-90">
+              <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 64 64" aria-hidden>
                 {/* Background ring */}
                 <circle
                   cx="32"
                   cy="32"
-                  r="28"
+                  r={R}
                   stroke="rgba(255,255,255,0.1)"
                   strokeWidth="3"
                   fill="none"
                 />
                 {/* Progress ring with gradient */}
-                <circle
-                  cx="32"
-                  cy="32"
-                  r="28"
-                  stroke="url(#gradient)"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeDasharray={2 * Math.PI * 28}
-                  strokeDashoffset={
-                    2 * Math.PI * 28 -
-                    (scrollProgress / 100) * (2 * Math.PI * 28)
-                  }
-                  strokeLinecap="round"
-                  className="transition-all duration-300"
-                  style={{
-                    filter: "drop-shadow(0 0 8px rgba(24, 143, 251, 0.8))",
-                  }}
-                />
-                {/* Gradient definition */}
                 <defs>
-                  <linearGradient
-                    id="gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#007BFF" />
                     <stop offset="50%" stopColor="#188FFB" />
                     <stop offset="100%" stopColor="#007BFF" />
                   </linearGradient>
                 </defs>
+                <circle
+                  cx="32"
+                  cy="32"
+                  r={R}
+                  stroke="url(#gradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray={C}
+                  strokeDashoffset={dashOffset}
+                  strokeLinecap="round"
+                  className="transition-all duration-300"
+                  style={{ filter: "drop-shadow(0 0 8px rgba(24, 143, 251, 0.8))" }}
+                />
               </svg>
 
               {/* Sparkle effect on hover */}
               {isHovered && (
                 <>
-                  <div className="absolute top-2 right-2 w-1 h-1 bg-white rounded-full animate-ping" />
+                  <div className="absolute top-2 right-2 w-1 h-1 bg-white rounded-full animate-ping" aria-hidden />
                   <div
                     className="absolute bottom-3 left-3 w-1 h-1 bg-white rounded-full animate-ping"
                     style={{ animationDelay: "0.2s" }}
+                    aria-hidden
                   />
                   <div
                     className="absolute top-4 left-2 w-1 h-1 bg-white rounded-full animate-ping"
                     style={{ animationDelay: "0.4s" }}
+                    aria-hidden
                   />
                 </>
               )}
@@ -175,10 +180,10 @@ export default function ScrollToTop() {
           {/* Enhanced tooltip with animation */}
           <div
             className={`absolute -top-14 left-1/2 -translate-x-1/2 transition-all duration-300 ${
-              isHovered
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-2 scale-95"
+              isHovered ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-2 scale-95"
             }`}
+            role="status"
+            aria-hidden={!isHovered}
           >
             <div className="relative bg-black border-2 border-[#007BFF] text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap shadow-xl">
               <div className="flex items-center gap-2">
@@ -190,7 +195,7 @@ export default function ScrollToTop() {
           </div>
 
           {/* Ripple effect on click */}
-          <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none" aria-hidden>
             <div
               className={`absolute inset-0 bg-[#188FFB] rounded-full transition-all duration-500 ${
                 isClicked ? "scale-150 opacity-0" : "scale-0 opacity-50"
@@ -200,7 +205,7 @@ export default function ScrollToTop() {
 
           {/* Progress percentage indicator ring */}
           {scrollProgress > 50 && (
-            <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#007BFF] border-2 border-black rounded-full flex items-center justify-center animate-bounce">
+            <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#007BFF] border-2 border-black rounded-full flex items-center justify-center animate-bounce" aria-hidden>
               <Zap className="w-3 h-3 text-white" />
             </div>
           )}
