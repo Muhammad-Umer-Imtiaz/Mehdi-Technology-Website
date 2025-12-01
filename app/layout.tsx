@@ -6,6 +6,7 @@ import Navbar from "@/Components/Navbar";
 import NewsLetter from "@/Components/LandingPage/NewsLetter";
 import Footer from "@/Components/LandingPage/Footer";
 import LayoutWrapper from "@/Components/LayoutWrapper";
+import ScrollToTop from "@/Components/ScrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -114,6 +115,7 @@ export default function RootLayout({
 
         <Navbar />
         {children}
+        <ScrollToTop />
         <LayoutWrapper />
         <NewsLetter />
         <Footer />

@@ -63,20 +63,23 @@ export default function WhoWeAre() {
 
       {/* Right content */}
       <div className=" ">
-        <h4 className="text-[#007BFF] border border-[#00000030] px-6 py-1 inline-block font-extralight rounded-full   tracking-widest">
+        <h2 className="text-[#007BFF] border border-[#00000030] px-6 py-1 inline-block font-extralight rounded-full   tracking-widest">
           WHO WE ARE
-        </h4>
+        </h2 >
 
         <h2 className="text-3xl md:text-6xl font-bold mt-2">
           Your partner in <span className="text-[#007BFF] mr-2">Software</span>
           excellence
         </h2>
 
-        <p className="text-gray-600 mt-1 text-base">
+        <p className="text-gray-600 mt-8 text-xl">
           We specialize in creating custom web and mobile applications. With
           extensive experience in website design and development, we offer a
           full range of services including web and app design, development,
           testing, deployment, and ongoing maintenance.
+        </p>
+         <p className="text-gray-600 mt-8 text-xl">
+          Our team blends creativity with technical excellence to deliver solutions that are fast, secure, and future-ready. We’re passionate about helping brands stay ahead in a rapidly evolving digital world through smart technology and impactful design.
         </p>
         <div className="inline relative md:hidden flex-shrink-0">
           <div className="absolute -z-10 "></div>
@@ -90,11 +93,11 @@ export default function WhoWeAre() {
         </div>
 
         {/* Services list */}
-        <div className="space-y-1 pt-4">
+        {/* <div className="space-y-1 pt-4">
           {data.map((item) => (
             <AnimatedBar key={item.id} item={item} />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

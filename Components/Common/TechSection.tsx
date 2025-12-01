@@ -33,7 +33,7 @@ export default function TechSection({
         {highlight && <span className="text-[#007BFF]">{highlight}</span>}
       </h2>
       {/* Tech Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 gap-10 justify-center items-center mx-auto text-center">
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 gap-10 justify-center items-center mx-auto text-center md:mt-20 mt-10">
         {technologies.map((tech, index) => {
           const Icon = tech.icon;
           return (
@@ -52,29 +52,7 @@ export default function TechSection({
           );
         })}
       </div>
-      <div className="flex flex-col items-start md:mt-40 mt-10">
-        <h2 className="text-2xl 2xl:text-4xl xl:text-4xl mb-6 font-medium ">
-          {data.Title}{" "}
-        </h2>
-        {/* Description */}
-        {data.des && (
-          <p
-            className="text-black text-xl mb-6"
-            // style={{ wordSpacing: "1rem" }}
-          >
-            {data.des}
-          </p>
-        )}
-
-        {/* Points */}
-        {data.points && data.points.length > 0 && (
-          <ul className="text-black max-w-2xl text-lg  mb-12 space-y-2 ">
-            {data.points.map((point, idx) => (
-              <li key={idx}>• {point}</li>
-            ))}
-          </ul>
-        )}
-      </div>
+     
     </section>
   );
 }

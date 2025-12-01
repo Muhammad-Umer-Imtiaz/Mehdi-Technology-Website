@@ -55,8 +55,8 @@ export default function OurVision() {
             Our Vision
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-sm sm:text-base text-white/90">
-            We believe in leveraging the power of innovation to simplify
-            complexity, enhance performance, and drive real business outcomes.
+            To create technology that empowers businesses, enhances efficiency, and elevates user experiences.
+
           </p>
         </div>
 

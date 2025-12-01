@@ -65,7 +65,7 @@ export const projects = [
 export const jobs = [
   {
     _id: 1,
-    job: "Frontend Developer (React)",
+    job: "Frontend Developer",
     date: "23 Sep 2025",
     status: "Full-time",
     city: "Islamabad",
@@ -76,7 +76,7 @@ export const jobs = [
   },
   {
     _id: 2,
-    job: "Full Stack Developer (MERN)",
+    job: "Full Stack Developer",
     date: "23 Sep 2025",
     status: "Full-time",
     city: "Islamabad",
@@ -87,35 +87,35 @@ export const jobs = [
   },
   {
     _id: 3,
-    job: "Full Stack Developer (React, Django)",
+    job: "AI Engineer",
     date: "23 Sep 2025",
     status: "Internship",
     city: "Islamabad",
     mode: ["Hybrid", "Remote"],
-    description: `We are offering an internship for a Full Stack Developer with React and Django skills. 
-    The intern will assist in developing web applications, writing clean and maintainable code, 
-    and collaborating with the team. This is a great opportunity to gain hands-on experience in full stack development.`,
+    description: `We are offering an internship for an AI Engineer with strong foundations in machine learning and neural networks. 
+    The intern will work on model training, data processing, and AI-powered web applications. 
+    This is a great opportunity to gain hands-on experience in AI development.`,
   },
   {
     _id: 4,
-    job: "Frontend Developer (React)",
+    job: "Project Manager",
     date: "24 Sep 2025",
     status: "Part-time",
     city: "Islamabad",
     mode: ["Remote"],
-    description: `We are seeking a Frontend Developer proficient in React for a part-time role. 
-    The developer will create user-friendly web interfaces, optimize performance, and collaborate with the design team. 
-    Strong attention to detail and problem-solving skills are required.`,
+    description: `We are seeking a talented Project Manager to oversee project timelines, 
+    coordinate with cross-functional teams, and ensure delivery of high-quality software solutions. 
+    Strong communication, leadership, and planning skills are required.`,
   },
   {
     _id: 5,
-    job: "Backend Developer (Node.js)",
+    job: "UI/UX Designer",
     date: "25 Sep 2025",
     status: "Full-time",
     city: "Islamabad",
     mode: ["Onsite"],
-    description: `Looking for a Backend Developer specializing in Node.js and Express. 
-    Responsibilities include designing and maintaining APIs, database integration (MongoDB/MySQL), 
-    and ensuring server-side scalability and performance. Experience with RESTful services is required.`,
+    description: `Looking for a creative UI/UX Designer to craft intuitive user interfaces, 
+    perform user research, create wireframes/prototypes, and collaborate closely with product teams. 
+    Experience with Figma, Adobe XD, or similar tools is required.`,
   },
 ];

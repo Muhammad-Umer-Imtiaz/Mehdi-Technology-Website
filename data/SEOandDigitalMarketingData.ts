@@ -5,9 +5,30 @@ import {
   FaEnvelope,
   FaUsers,
 } from "react-icons/fa";
-import { SiGoogleads, SiMeta, SiHubspot } from "react-icons/si";
+import { SiGoogleanalytics, SiSemrush } from "react-icons/si";
+// import {Google} from "lucide-react"
+import { 
+  FaCogs, 
+  FaFileAlt, 
+  FaChartPie, 
+  FaRocket,
+  FaCheckCircle 
+} from "react-icons/fa";
+import { SiGoogleads, SiMeta, SiHubspot ,} from "react-icons/si";
+import { FaMeta } from "react-icons/fa6";
+
 import { FaChartBar } from "react-icons/fa";
 import type { IconType } from "react-icons";
+import { 
+  FaShoppingCart, 
+  FaHeartbeat, 
+  FaBuilding, 
+  FaLaptopCode, 
+  FaMoneyCheckAlt, 
+  FaStore, 
+  FaBook, 
+  FaPlane 
+} from "react-icons/fa";
 
 export interface Tech {
   icon: IconType;
@@ -28,29 +49,82 @@ export interface HowWeServeItem {
   colSpan?: string;
 }
 
+export interface SEOindustries {
+  icon: IconType;
+  name: string;
+  color: string;
+}
 /* 📈 Digital Marketing Services */
 export const DigitalMarketingServices: Service[] = [
   {
-    title: "Social Media Campaigns",
-    desc: "Creative, data-driven campaigns to boost reach, engagement, and conversions.",
-    points: ["Cross-Platform Strategy", "Trend-Based Content"],
+    title: "Search Engine Optimization (SEO)",
+    desc: "Rank higher, attract qualified traffic, and build long-term visibility.",
+    points: [
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Backlink Strategy",
+      "Keywords Research & Competitor Analysis",
+      "SEO Audits",
+    ],
   },
   {
-    title: "Content Strategy & Branding",
+    title: "Local SEO (Google Maps & Local Ranking)",
+    desc: "Be found by customers near you.",
+    points: [
+      "Google Business Profile Optimization",
+      "Local Citations",
+      "Geo-specific Keywords",
+      "Local Backlinks",
+      "Map Pack Ranking Strategy",
+    ],
+  },
+  {
+    title: "Content Marketing & Blog Strategy",
+    desc: "High-quality content that ranks and converts.",
+    points: [
+      "Content Strategy",
+      "Topic Clusters & Pillar Pages",
+      "3-Month Blog Calendar",
+      "SEO Articles Written for Ranking",
+      "AI-Assisted Content Optimization",
+    ],
+  },
+  {
+    title: "Social Media Management & Growth",
+    desc: "Build a brand that people follow and engage with.",
+    points: [
+      "Instagram, Facebook, LinkedIn Content",
+      "Social Media Captions, Reels, Creatives",
+      "Brand Voice & Theme Building",
+      "Engagement & Page Optimization",
+    ],
+  },
+  {
+    title: "Paid Ads & Performance Marketing (Google Ads + Meta Ads)",
+    desc: "Fast results through targeted advertising.",
+    points: [
+      "Campaign Setup & Optimization",
+      "Performance Tracking",
+      "Google Search Ads",
+      "Google Display & YouTube Ads",
+      "Facebook & Instagram Ads",
+      "Retargeting Campaigns",
+      "ROI-Focused Ad Optimization",
+    ],
+  },
+  {
+    title: "Branding & Creative Strategy",
     desc: "Consistent and impactful branding powered by content that converts.",
-    points: ["SEO Copywriting", "Brand Voice Development"],
-  },
-  {
-    title: "Paid Marketing (Google & Meta Ads)",
-    desc: "ROI-focused paid ad campaigns across all major platforms.",
-    points: ["Campaign Setup & Optimization", "Performance Tracking"],
-  },
-  {
-    title: "Performance Analytics",
-    desc: "We analyze your performance metrics to improve visibility and audience retention.",
-    points: ["SEO Reports & KPIs", "Marketing Dashboards"],
+    points: [
+      "Brand Messaging",
+      "Visual Identity Guidance",
+      "Brand Voice Development",
+      "SEO Copywriting",
+      "Creative Direction for Ads & Social",
+    ],
   },
 ];
+
 
 /* 🧠 How We Serve You (Digital Marketing) */
 export const HowWeServeDM: HowWeServeItem[] = [
@@ -93,12 +167,190 @@ export const HowWeServeDM: HowWeServeItem[] = [
 
 /* 💡 SEO & Digital Marketing Tech / Tools */
 export const SEOAndMarketingTech: Tech[] = [
+  { icon: SiGoogleanalytics, name: "Google Analytics 4", color: "#4285F4" },
   { icon: SiGoogleads, name: "Google Ads", color: "#4285F4" },
-  { icon: SiMeta, name: "Meta Ads", color: "#1877F2" },
-  { icon: SiHubspot, name: "HubSpot", color: "#FF7A59" },
+  { icon: SiSemrush, name: "SEMrush", color: "#EB5424" },
   { icon: FaSearch, name: "Ahrefs", color: "#0F4B8F" },
-  { icon: FaChartBar, name: "Moz", color: "#FF9900" },
-  { icon: FaSearch, name: "SEO Tools", color: "#00B0FF" },
-  { icon: FaChartLine, name: "Analytics", color: "#6C63FF" },
-  { icon: FaBullhorn, name: "Marketing Automation", color: "#FF3366" },
+  { icon: FaBullhorn, name: "Screaming Frog", color: "#7FFF00" }, // placeholder
+  { icon: FaMeta, name: "Meta Ads Manager", color: "#1877F2" }, // placeholder
+  { icon: FaChartLine, name: "Google Search Console", color: "#0F9D58" }, // placeholder
+];
+
+
+export const SEOindustries = [
+  {
+    name: "E-commerce",
+    desc: "Boost online sales and customer engagement.",
+    icon: FaShoppingCart ,
+  },
+  {
+    name: "Healthcare",
+    desc: "Enhance patient experience and digital presence.",
+    icon: FaHeartbeat ,
+  },
+  {
+    name: "Real Estate",
+    desc: "Showcase properties and generate leads online.",
+    icon: FaBuilding ,
+  },
+  {
+    name: "SaaS & Tech",
+    desc: "Promote innovative solutions and user growth.",
+    icon: FaLaptopCode ,
+  },
+  {
+    name: "Finance & Insurance",
+    desc: "Build trust and attract clients digitally.",
+    icon: FaMoneyCheckAlt ,
+  },
+  {
+    name: "Retail",
+    desc: "Drive footfall and online sales effectively.",
+    icon: FaStore,
+  },
+  {
+    name: "Education & EdTech",
+    desc: "Engage students and enhance learning experience.",
+    icon: FaBook,
+  },
+  {
+    name: "Travel & Hospitality",
+    desc: "Attract travelers and boost bookings online.",
+    icon: FaPlane,
+  },
+];
+
+
+
+export const seoProcess = [
+  {
+    phase: "Discovery & Analysis",
+    duration: "Week 1-2",
+    title: "Comprehensive SEO Audit & Research",
+    description: "We begin with an in-depth analysis of your current digital presence, competitive landscape, and market opportunities.",
+    icon: FaSearch ,
+    deliverables: [
+      "Technical SEO audit",
+      "Competitor analysis report",
+      "Current rankings assessment",
+      "Website performance evaluation"
+    ],
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    phase: "Strategy Development",
+    duration: "Week 2-3",
+    title: "Data-Driven Strategy & Planning",
+    description: "Leveraging audit insights, we craft a customized SEO roadmap with clear objectives, KPIs, and actionable tactics.",
+    icon: FaChartLine ,
+    deliverables: [
+      "Keyword strategy & opportunity map",
+      "Content gap analysis",
+      "Link building strategy",
+      "Quarterly milestone planning"
+    ],
+    color: "from-cyan-500 to-teal-500"
+  },
+  {
+    phase: "Technical Optimization",
+    duration: "Week 3-5",
+    title: "On-Page & Technical SEO Implementation",
+    description: "Our team executes critical technical improvements to ensure your site meets search engine best practices and user experience standards.",
+    icon: FaCogs,
+    deliverables: [
+      "Site structure optimization",
+      "Page speed enhancements",
+      "Schema markup implementation",
+      "Mobile optimization"
+    ],
+    color: "from-teal-500 to-green-500"
+  },
+  {
+    phase: "Content Excellence",
+    duration: "Ongoing",
+    title: "Strategic Content Creation & Optimization",
+    description: "We develop and optimize high-value content assets designed to rank, engage, and convert your target audience.",
+    icon: FaFileAlt,
+    deliverables: [
+      "SEO-optimized blog content",
+      "Landing page development",
+      "Existing content refresh",
+      "Content calendar management"
+    ],
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    phase: "Authority Building",
+    duration: "Ongoing",
+    title: "Off-Page SEO & Link Acquisition",
+    description: "Strategic link building and digital PR campaigns to establish your domain authority and brand presence across the web.",
+    icon: FaBullhorn ,
+    deliverables: [
+      "High-quality backlink acquisition",
+      "Digital PR outreach",
+      "Local SEO & citations",
+      "Brand mention monitoring"
+    ],
+    color: "from-emerald-500 to-lime-500"
+  },
+  {
+    phase: "Performance Tracking",
+    duration: "Monthly",
+    title: "Analytics, Reporting & Insights",
+    description: "Transparent, data-driven reporting that demonstrates ROI and informs strategic decisions for continuous improvement.",
+    icon: FaChartPie ,
+    deliverables: [
+      "Monthly performance reports",
+      "Ranking & traffic analysis",
+      "Conversion tracking",
+      "Competitive positioning updates"
+    ],
+    color: "from-lime-500 to-yellow-500"
+  },
+  {
+    phase: "Continuous Growth",
+    duration: "Ongoing",
+    title: "Optimization & Scaling",
+    description: "We continuously refine strategies based on performance data, algorithm updates, and emerging opportunities to maximize your growth.",
+    icon: FaRocket ,
+    deliverables: [
+      "A/B testing & experimentation",
+      "Algorithm adaptation",
+      "Strategy refinement",
+      "Quarterly strategy reviews"
+    ],
+    color: "from-yellow-500 to-orange-500"
+  },
+];
+
+
+
+export const SEOFaqData = [
+  {
+    question: "How long until SEO results?",
+    answer: "2–3 months for improvements, 4–6 months for strong rankings.",
+  },
+  {
+    question: "Do you offer monthly SEO plans?",
+    answer: "Yes, we provide flexible monthly and project-based packages.",
+  },
+  {
+    question: "Can you manage SEO + social media + ads together?",
+    answer: "Yes, we provide full 360° digital marketing.",
+  },
+  {
+    question: "Do you work with global brands?",
+    answer: "Yes, we provide services in Pakistan, UAE, USA, UK, and beyond.",
+  },
+];
+
+
+
+export const whyChooseMehdiTechnologies = [
+  "Expertise across Pakistan, UAE, USA markets",
+  "SEO + content + ads + social all under one roof",
+  "AI-driven optimization strategies",
+  "Transparent reporting",
+  "Fast communication & professional execution",
+  "Proven track record scaling brands online",
 ];

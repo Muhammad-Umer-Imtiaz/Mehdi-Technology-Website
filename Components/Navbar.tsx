@@ -29,7 +29,7 @@ const navLinks = [
   { name: "Service", href: "/services", dropdown: serviceData },
   { name: "Testimonial", href: "/#testimonial" },
   { name: "Blogs", href: "/blogs" },
-  { name: "FAQs", href: "/#faqs" },
+  { name: "Career", href: "/careers" },
   { name: "About Us", href: "/about-us" },
 ];
 
@@ -40,7 +40,7 @@ const Navbar = () => {
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
 
   return (
-    <nav className="h-16 sm:h-20 flex items-center justify-between bg-[#000000] rounded-full text-white shadow-md px-4 sm:px-6 lg:px-5 my-4 sm:my-4 fixed z-50 w-[95%] sm:w-[90%] lg:w-[97%] left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-opacity-95 border-2 border-[#FFFFFF]/50">
+    <nav className="h-16 sm:h-20 flex items-center justify-between bg-[#000000] rounded-full text-white shadow-md px-4 sm:px-6 lg:px-5 my-4 sm:my-4 fixed z-50 w-[95%] sm:w-[90%] 2xl:max-w-7xl xl:max-w-5xl left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-opacity-95 border-2 border-[#FFFFFF]/50">
       {/* Logo */}
       <div
         className="cursor-pointer flex items-center"

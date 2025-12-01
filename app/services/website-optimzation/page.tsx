@@ -1,3 +1,4 @@
+'use client'
 import HeroSection from "@/Components/Common/HeroSection";
 import TechSection from "@/Components/Common/TechSection";
 import ServicesSection from "@/Components/Common/ServicesSection";
@@ -6,31 +7,53 @@ import {
   SEOAndMarketingTech,
   DigitalMarketingServices,
   HowWeServeDM,
+  SEOindustries,
+  seoProcess,
+  SEOFaqData,
+  whyChooseMehdiTechnologies
 } from "@/data/SEOandDigitalMarketingData";
+import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
+import OurProcess from "@/Components/Common/OurProcess";
+import FAQS from "@/Components/Common/FAQS";
+import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 
 export default function UIUX() {
   return (
     <section>
       <HeroSection
         bgImage="/BackgroundPictures/SEOBG.webp"
-        title="SEO & Digital Marketing"
-        description="We build & integrate Artificial Intelligence driven solutions to make your business smarter, faster, and more efficient."
+        title="SEO & Digital Marketing Services That Help You Rank Faster, Grow Smarter, and Win Online"
+        description="We help brands get seen, trusted, and chosen. From SEO and content strategy to performance marketing and social media growth — Mehdi Technologies builds digital systems that bring real traffic, real leads, and real revenue."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
           { name: "SEO & Digital Marketing" },
         ]}
       />
-      <TechSection
-        title="SEO & Digital "
-        highlight="Marketing"
-        technologies={SEOAndMarketingTech}
-      />
       <ServicesSection
         title="Building the Future, One App at a Time — Your Partner in Mobile Innovation"
         description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."
         services={DigitalMarketingServices}
       />
+      <OurProcess
+      title="Our SEO & Marketing Process"
+      description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
+      process={seoProcess}/>
+      <IndustriesWeServe
+  title="Industries We Serve"
+  Industry={SEOindustries}
+/>
+      <TechSection
+        title="Tools & Platforms "
+        highlight="We Use "
+        technologies={SEOAndMarketingTech}
+      />
+      
+     <FAQS
+     data={SEOFaqData}/>
+      
+    <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies}/>
+      
       <HowWeServeSection
         title="How We Serve You (Digital Marketing)"
         description="We help your brand grow online with data-driven marketing strategies, creative content, and measurable results. From SEO to social media campaigns, our goal is to increase your visibility, attract the right audience, and convert visitors into loyal customers."

@@ -97,9 +97,12 @@ export default function ContactUS() {
           backgroundImage: "url('/BackgroundPictures/ContactPageBG.webp')",
         }}
       >
-        <h1 className="absolute md:top-38 top-30 text-3xl md:text-6xl font-semibold mb-4 drop-shadow-lg text-white   ">
-          Contact <span className="text-blue-400">Us</span>
+        <div className="absolute md:top-38 top-30">
+          <h1 className=" text-3xl md:text-6xl font-semibold drop-shadow-lg mb-2 text-white   ">
+          Let’s <span className="text-blue-400">Build</span> Something Powerful 
         </h1>
+          <p className="max-w-3xl mx-auto text-base">Have a project or just want to talk about options? Fill out the form and we’ll get back to you.</p>
+        </div>
         {/* Contact US Section */}
         <section
           className="absolute md:top-76 top-52 py-12 z-10 lg:py-16 w-full bg-cover bg-center bg-no-repeat max-w-6xl rounded-4xl border-2 border-white  mx-auto"

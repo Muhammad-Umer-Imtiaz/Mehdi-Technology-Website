@@ -8,12 +8,12 @@ export default function Career() {
     <div>
       <HeroSection
         bgImage="/BackgroundPictures/JobsBG.webp"
-        title="Work With Us"
-        description="Join our team and be part of a dynamic, innovative environment where your skills are valued, your growth is supported, and together we create meaningful impact."
+        title="Careers at Mehdi Technologies"
+        description="Join a team that builds smart, meaningful technology. We work fast, think big, and push boundaries every day."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
-          { name: "Work With Us" },
+          { name: "Careers at Mehdi Technologies" },
         ]}
       />
       <JobSection />

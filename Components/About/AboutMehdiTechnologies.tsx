@@ -15,15 +15,9 @@ export default function AboutMehdiTechnologies() {
             About <span className="text-[#007BFF]">Mehdi</span> Technologies
           </h2>
 
-          <p className="mt-4 mx-auto text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl">
-            <strong>With 10 years of experience</strong> in the digital and IT
-            industry, Mehdi Technologies has built a strong reputation for
-            delivering reliable, innovative, and high-quality solutions. From
-            branding to development, automation to design—we transform your
-            ideas into powerful digital experiences that help your business grow
-            faster and smarter. Our journey is driven by dedication, creativity,
-            and a commitment to push boundaries. Your success isn’t just our
-            goal—it’s our promise.
+          <p className="mt-4 mx-auto text-sm md:text-base text-gray-600 leading-relaxed max-w-5xl">
+         Mehdi Technologies is a full-stack software and AI company building modern solutions for businesses worldwide. From product strategy to full-cycle engineering, we turn complex ideas into scalable, high-impact digital systems.h boundaries. Your success isn’t just our
+            goal it’s our promise.
           </p>
         </div>
 
@@ -36,7 +30,7 @@ export default function AboutMehdiTechnologies() {
                 <Image
                   src="/AboutPagePicture.jpg"
                   alt="Team"
-                  width={1000}
+                  width={2000}
                   height={900}
                   className="object-cover block"
                   priority

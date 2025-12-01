@@ -20,7 +20,7 @@ export default function HeroSection({
       {/* <div className="absolute inset-0 bg-black/40" /> */}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-5 md:px-12 md:mt-36 ">
+      <div className="relative z-10 text-center px-5 md:px-12 md:mt-36 2xl:max-w-7xl xl:max-w-5xl">
         {/* Breadcrumb */}
         <div className="bg-white/10 backdrop-blur-md text-[#ffffff]/70 md:px-6 px-3 py-2 md:text-base inline-flex items-center gap-2 font-light rounded-full mb-4 tracking-wide shadow-sm border-2 border-white/50">
           {breadcrumbs.map((item, index) => (
@@ -45,12 +45,12 @@ export default function HeroSection({
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-6xl font-semibold mb-4 drop-shadow-lg text-white">
+        <h1 className="text-3xl md:text-5xl font-semibold mb-4 drop-shadow-lg text-white">
           {title}
         </h1>
 
         {/* Description */}
-        <p className="text-center md:text-2xl text-base text-white leading-relaxed font-light">
+        <p className="text-center md:max-w-6xl md:text-xl text-base text-white leading-relaxed font-light">
           {description}
         </p>
       </div>

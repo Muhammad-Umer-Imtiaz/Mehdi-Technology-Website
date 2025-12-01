@@ -8,7 +8,7 @@ import AiSolution from "@/Components/LandingPage/AiSolution";
 import TechStack from "@/Components/LandingPage/TechStack";
 import Blogs from "@/Components/LandingPage/Blogs";
 import Clients from "@/Components/LandingPage/Clients";
-// import BreakpointDebugger from "@/Components/BreakpointDebugger";
+import BreakpointDebugger from "@/Components/BreakpointDebugger";
 
 export default function Home() {
   return (

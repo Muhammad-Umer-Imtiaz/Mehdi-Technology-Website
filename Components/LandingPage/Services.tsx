@@ -148,13 +148,10 @@ export default function Services() {
           BEST FEATURES
         </h4>
         <h2 className="md:text-6xl text-3xl my-2 font-semibold mt-4 text-black">
-          SERVICES
+          Smart, Scalable Software Solutions Built for Your Business 
         </h2>
-        <p className="mt-3 text-gray-600">
-          At Mehdi Technologies, we deliver smart digital solutions that empower
-          businesses to grow. From web development to AI{" "}
-          <br className="hidden md:block" /> automation, our services simplify
-          operations, boost performance, and drive lasting success.
+        <p className="mt-3 text-gray-600 max-w-3xl mx-auto">
+          We engineer high-performance digital products with a focus on clean code, modern design, and long-term scalability. Backed by cross-industry experience, our team delivers solutions that accelerate growth, automate workflows, and help you stay ahead in a competitive market.
         </p>
       </div>
 

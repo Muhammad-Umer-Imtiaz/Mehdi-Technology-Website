@@ -24,10 +24,10 @@ export default function Achievement() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
         {/* Left Text Section */}
         <div className="max-w-2xl space-y-6">
-          <h4 className="text-[#007BFF] bg-white border border-[#00000030] py-1 px-3 text-base inline-block font-light rounded-full tracking-[0.5em]">
+          <span className="text-[#007BFF] bg-white border border-[#00000030] py-1 px-3 text-base inline-block font-light rounded-full tracking-[0.5em]">
             PROVEN SUCCESS
-          </h4>
-          <h2 className="md:text-5xl text-3xl font-bold">Achievement</h2>
+          </span>
+          <h2 className="md:text-5xl text-3xl font-bold">Our Achievements</h2>
 
           <div className="grid grid-cols-2 gap-8 py-6">
             {data.map((item) => (
@@ -47,10 +47,7 @@ export default function Achievement() {
           </div>
 
           <p className="text-gray-200 2xl:text-lg leading-relaxed">
-            At <span className="text-[#00D1FF]">Mehdi Technologies,</span> our
-            achievements reflect innovation, reliability, and excellence. We
-            take pride in empowering businesses worldwide with cutting-edge
-            digital solutions that inspire growth and lasting impact.
+            At <span className="text-[#00D1FF]">Mehdi Technologies,</span> our achievements reflect innovation, reliability, and excellence. We take pride in empowering businesses worldwide with cutting-edge digital solutions that inspire growth and lasting impact.
           </p>
         </div>
 
