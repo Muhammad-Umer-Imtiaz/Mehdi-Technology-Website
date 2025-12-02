@@ -89,7 +89,7 @@ export default function Testimonial() {
   return (
     <section
       id="testimonial"
-      className="relative min-h-screen py-16 px-4 md:px-10 lg:px-28 w-full bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen py-16 px-6  w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
           "url('/BackgroundPictures/LandingPageBG/TestimonialBG.webp')",
@@ -111,7 +111,7 @@ export default function Testimonial() {
       </div>
 
       {/* Desktop / Tablet layout (md and up) */}
-      <div className="hidden md:flex relative items-center justify-center w-full mt-10 gap-6">
+      <div className="hidden md:flex relative items-center justify-center max-w-7xl mx-auto w-full mt-10 gap-6">
         {/* Left arrow */}
         <button
           onClick={() => {

@@ -1,3 +1,4 @@
+'use client'
 import HeroSection from "@/Components/Common/HeroSection";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
@@ -6,7 +7,17 @@ import {
   BlockchainTech,
   BlockchainServices,
   HowWeServeBlockChain,
+  BlockchainProcess,
+  BlockchainIndustriesData,
+  BlockchainFaqData,
+  WhyChooseMehdiTechBlockchain,
+  BlockchainTechStack,
 } from "@/data/BlockChainData";
+import OurProcess from "@/Components/Common/OurProcess";
+import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
+import FAQS from "@/Components/Common/FAQS";
+import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import TechStack from "@/Components/Common/TechStack";
 
 export default function WebDevelopment() {
   return (
@@ -14,28 +25,49 @@ export default function WebDevelopment() {
       {/* 🌐 Hero */}
       <HeroSection
         bgImage="/BackgroundPictures/BlackChainBG.webp"
-        title="Blockchain, Web3.0 & NFT Development"
-        description="We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces."
+        title="Blockchain & Web3.0 Solutions That Build Trust, Security, and Real Value"
+        description="We design and develop secure, scalable, and future-ready blockchain solutions that help businesses move from traditional systems to decentralized, transparent, and automated digital ecosystems. Whether you're launching a token, building a dApp, or integrating smart contracts—our Web3 experts deliver end-to-end development with enterprise-grade reliability."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
           { name: "Blockchain" },
         ]}
       />
-
-      {/* 🧠 Technologies */}
-      <TechSection
-        title="Blockchain"
-        highlight="Tech Stack"
-        technologies={BlockchainTech}
-      />
-
       {/* 🛠 Services */}
       <ServicesSection
-        title="Building the Future, One App at a Time — Your Partner in Web Development"
+        title="Our Blockchain & Web3 Development Services"
         description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."
         services={BlockchainServices}
       />
+
+
+      <OurProcess
+              title="Our SEO & Marketing Process"
+              // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
+              process={BlockchainProcess} />
+<IndustriesWeServe
+        title="Industries We Serve"
+        Industry={BlockchainIndustriesData}
+      />
+       <TechStack
+        title="Tech Stack We Work With"
+        highlight="Tech Stack"
+        technologies={BlockchainTechStack}
+        initialCategory="blockchains"
+      />
+
+
+      {/* 🧠 Technologies */}
+      {/* <TechSection
+        title="Blockchain"
+        highlight="Tech Stack"
+        technologies={BlockchainTech}
+      /> */}
+ <FAQS
+        data={BlockchainFaqData} />
+
+              <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechBlockchain} />
+        
 
       {/* 🤝 How We Serve */}
       <HowWeServe

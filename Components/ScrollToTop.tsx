@@ -167,7 +167,7 @@ export default function ScrollToTop(): JSX.Element {
                     style={{ animationDelay: "0.2s" }}
                     aria-hidden
                   />
-                  <div
+                  <div  
                     className="absolute top-4 left-2 w-1 h-1 bg-white rounded-full animate-ping"
                     style={{ animationDelay: "0.4s" }}
                     aria-hidden
@@ -208,7 +208,7 @@ export default function ScrollToTop(): JSX.Element {
             <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#007BFF] border-2 border-black rounded-full flex items-center justify-center animate-bounce" aria-hidden>
               <Zap className="w-3 h-3 text-white" />
             </div>
-          )}
+          )} 
         </button>
       </div>
     </>

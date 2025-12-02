@@ -238,7 +238,7 @@ export const AIFaqData = [
   },
 ];
 
-
+/*Not Confirm yet */
 export const WhyChooseMehdiTechAI = [
   "Domain-trained AI models",
   "Fast development cycles",
