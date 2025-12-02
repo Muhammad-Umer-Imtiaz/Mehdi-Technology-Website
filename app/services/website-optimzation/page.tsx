@@ -39,7 +39,7 @@ export default function UIUX() {
 
       <OurProcess
         title="Our SEO & Marketing Process"
-        description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
+        // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
         process={seoProcess} />
 
       <IndustriesWeServe

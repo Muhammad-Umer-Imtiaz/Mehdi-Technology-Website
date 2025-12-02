@@ -15,7 +15,7 @@ export interface ProcessStep {
 
 interface OurProcessProps {
   title: string;
-  // description: string;
+  description?: string;
   process: ProcessStep[];
 }
 

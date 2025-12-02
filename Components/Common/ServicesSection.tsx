@@ -11,11 +11,13 @@ interface ServiceItem {
 
 interface ServicesSectionProps {
   title: string;
+  description?: string;
   services: ServiceItem[];
 }
 
 export default function ServicesSection({
   title,
+  description,
   services,
 }: ServicesSectionProps) {
   const [active, setActive] = useState<string>(services[0]?.title || "");
@@ -39,9 +41,9 @@ export default function ServicesSection({
           <h2 className="2xl:text-3xl xl:text-2xl text-white font-bold mb-3">
             {title}
           </h2>
-          {/* <p className="text-white text-center md:text-lg text-sm">
+          <p className="text-white text-center md:text-lg text-sm">
             {description}
-          </p> */}
+          </p>
         </div>
 
         {/* Layout */}
