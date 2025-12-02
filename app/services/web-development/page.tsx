@@ -9,9 +9,8 @@ export default function WebDevelopment() {
     <section>
       <HeroSection
         bgImage="/BackgroundPictures/WebsiteDevelopmentBG.webp"
-        title="Modern Web Development"
-        description="We craft high-performing, visually stunning websites using modern frameworks and 
-secure architectures. From corporate websites to complex web apps, our development process ensures speed, scalability, and flawless user experience."
+        title="Mobile App Development That Scales With Your Business"
+        description="We design and build high-performance mobile apps that deliver real results—fast, secure, and built to grow."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },

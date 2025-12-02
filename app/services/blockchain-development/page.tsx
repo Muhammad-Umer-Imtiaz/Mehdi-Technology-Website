@@ -64,6 +64,7 @@ export default function WebDevelopment() {
         technologies={BlockchainTech}
       /> */}
  <FAQS
+ title="Frequently Asked Questions"
         data={BlockchainFaqData} />
 
               <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechBlockchain} />

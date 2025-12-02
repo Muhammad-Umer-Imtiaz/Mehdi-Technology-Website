@@ -45,6 +45,8 @@ export default function AiDevelopment() {
       />
 
        <FAQS
+               title="AI FAQS"
+
               data={AIFaqData} />
 
 

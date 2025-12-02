@@ -47,6 +47,7 @@ export default function UIUX() {
       />
 <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies} />
         <FAQS
+         title="UI/UX Design FAQs"
               data={UIFaqData} />
       
       <HowWeServeSection

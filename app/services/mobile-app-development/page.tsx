@@ -1,9 +1,14 @@
+'use client'
 import HeroSection from "@/Components/Common/HeroSection";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
 import HowWeServe from "@/Components/Common/HowWeServe";
 
-import { AppServices, AppTech, HowWeServeApp } from "@/data/AppDevelopmentData";
+import { AppDevelopmentFAQ, appDevelopmentHighlights, AppIndustries, appProcess, AppServices, AppTech, HowWeServeApp } from "@/data/AppDevelopmentData";
+import OurProcess from "@/Components/Common/OurProcess";
+import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
+import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import FAQS from "@/Components/Common/FAQS";
 
 export default function MobileAppDevelopment() {
   return (
@@ -11,8 +16,8 @@ export default function MobileAppDevelopment() {
       {/* 🌐 Hero */}
       <HeroSection
         bgImage="/BackgroundPictures/AppDevelopmentBG.webp"
-        title="Mobile App Development"
-        description="We build powerful, scalable, and intuitive mobile apps that combine stunning design with robust functionality. From startups to enterprises, our mobile solutions help brands engage users and grow faster in the digital space."
+        title="Mobile App Development That Scales With Your Business"
+        description="We design and build high-performance mobile apps that deliver real results—fast, secure, and built to grow."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
@@ -20,20 +25,38 @@ export default function MobileAppDevelopment() {
         ]}
       />
 
-      {/* 🧠 Technologies */}
+     
+
+      {/* 🛠 Services */}
+      <ServicesSection
+        title="Complete Mobile App Development Solutions"
+        description="End-to-end mobile app development tailored to your business."
+        services={AppServices}
+      />
+
+<OurProcess
+              title=" Our Mobile App Development Process "
+              // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
+              process={appProcess} />
+
+ <IndustriesWeServe
+        title="Industries We Serve"
+        Industry={AppIndustries}
+      />
+ <FAQS
+      title="Mobile App Development FAQs"
+        data={AppDevelopmentFAQ} />
+      <WhyChooseMehdiTechnologies data={appDevelopmentHighlights} />
+      
+ {/* 🧠 Technologies */}
       <TechSection
         title="Mobile App"
         highlight="Technologies"
         technologies={AppTech}
       />
 
-      {/* 🛠 Services */}
-      <ServicesSection
-        title="Building the Future, One App at a Time — Your Partner in Mobile Innovation"
-        description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."
-        services={AppServices}
-      />
 
+       
       {/* 🤝 How We Serve */}
       <HowWeServe
         title="How We Serve You (App Development)"

@@ -54,9 +54,10 @@ export default function UIUX() {
         highlight="We Use "
         technologies={SEOAndMarketingTech}
       />
-      <Faq/>
-<FaqsTest/>
+      {/* <Faq/>
+<FaqsTest/> */}
       <FAQS
+      title="SEO FAQs"
         data={SEOFaqData} />
 
       <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies} />

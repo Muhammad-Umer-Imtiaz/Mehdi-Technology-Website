@@ -9,9 +9,10 @@ interface FAQ {
 }
 
 interface FAQSProps {
+  title: string;
   data: FAQ[];
 }
-export default function FAQS({data}:FAQSProps) {
+export default function FAQS({title,data}:FAQSProps) {
   /** `null` = nothing open, otherwise the index of the open FAQ */
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -22,9 +23,12 @@ export default function FAQS({data}:FAQSProps) {
   };
 
   return (
-    <section className="flex flex-col h-contain lg:flex-row items-center justify-between px-5 mx-auto 2xl:max-w-7xl md:py-16 py-0 bg-white md:gap-12">
+    <section className=" px-5 mx-auto 2xl:max-w-7xl mx-auto md:py-16 py-0 bg-white ">
       {/* ────── LEFT: VIDEO (fixed height) ────── */}
-      <div className="lg:w-1/2 flex justify-center items-start">
+<h2 className="text-4xl font-bold text-center mb-12 text-[#007BFF]">
+          {title}
+        </h2>      <div className="flex flex-col lg:flex-row items-center justify-between md:gap-12">
+        <div className="lg:w-1/2 flex justify-center items-start">
         <div className="w-full md:h-[550px]  flex justify-center items-center">
           <video
             className="object-contain w-full h-full"
@@ -77,6 +81,7 @@ export default function FAQS({data}:FAQSProps) {
             );
           })}
         </div>
+      </div>
       </div>
     </section>
   );
