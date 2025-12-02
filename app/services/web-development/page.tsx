@@ -9,23 +9,26 @@ export default function WebDevelopment() {
     <section>
       <HeroSection
         bgImage="/BackgroundPictures/WebsiteDevelopmentBG.webp"
-        title="Mobile App Development That Scales With Your Business"
-        description="We design and build high-performance mobile apps that deliver real results—fast, secure, and built to grow."
+        title="Web Development Services That Build Fast, Secure & Scalable Digital Experiences"
+        description="Your website is your business’s first impression — and we make it unforgettable. Mehdi Technologies builds high-performance websites that load fast, look modern, and convert visitors into customers."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
           { name: "Web Development" },
         ]}
       />
-      <TechSection
+     
+      <ServicesSection
+        title=" Our Web Development Services"
+        description="End-to-end Website development tailored to your business."
+        services={WebServices}
+      />
+
+
+       <TechSection
         title="Website"
         highlight="Development"
         technologies={webTech}
-      />
-      <ServicesSection
-        title="Building the Future, One App at a Time — Your Partner in Web Development"
-        description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."
-        services={WebServices}
       />
       <HowWeServe
         title="How We Serve You (Website Development)"

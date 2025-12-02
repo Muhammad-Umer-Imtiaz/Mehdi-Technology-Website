@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import Link from "next/link";
 
 export default function HeroSection({
@@ -12,6 +13,11 @@ export default function HeroSection({
   ],
 }) {
   return (
+    <>
+       <Head>
+        <link rel="preload" as="image" href={bgImage} />
+      </Head>
+
     <section
       className="relative h-screen w-full bg-cover bg-center flex items-center justify-center text-white"
       style={{ backgroundImage: `url(${bgImage})` }}
@@ -55,5 +61,6 @@ export default function HeroSection({
         </p>
       </div>
     </section>
+    </>
   );
 }
