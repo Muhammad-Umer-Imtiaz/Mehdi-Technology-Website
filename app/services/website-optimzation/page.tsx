@@ -16,6 +16,8 @@ import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import OurProcess from "@/Components/Common/OurProcess";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import FaqsTest from "@/Components/Test/FaqsTest";
+import Faq from "@/Components/Test/Faqs";
 
 export default function UIUX() {
   return (
@@ -52,7 +54,8 @@ export default function UIUX() {
         highlight="We Use "
         technologies={SEOAndMarketingTech}
       />
-
+      <Faq/>
+<FaqsTest/>
       <FAQS
         data={SEOFaqData} />
 

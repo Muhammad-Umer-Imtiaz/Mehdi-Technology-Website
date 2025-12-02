@@ -8,7 +8,7 @@ export default function AiAutomation() {
     <div>
       <HeroSection
         bgImage="/BackgroundPictures/aiChatbotBG.webp"
-        title="AI Automation Systems"
+        title="AI, Machine Learning & Generative AI Solutions That Drive Real Business Impact"
         description="We develop smart automation systems that streamline workflows, reduce manual effort, and improve operational efficiency. Our AI solutions handle repetitive tasks, optimize processes, and help your business scale faster with reliable, real-time automation."
         breadcrumbs={[
           { name: "Home", href: "/" },
