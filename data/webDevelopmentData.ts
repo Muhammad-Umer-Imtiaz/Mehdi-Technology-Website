@@ -13,7 +13,38 @@ import {
   FaShoppingCart,
   FaRocket,
   FaBriefcase,
+  FaLaptopCode,
+  FaHeartbeat,
+  FaBuilding,
+  FaBook,
+  FaPlane,
+   FaSearch,
+  FaPenNib,
+  FaTools,
+  FaCloudUploadAlt,
+  FaChartLine,
+  FaDatabase,
 } from "react-icons/fa";
+import {
+  
+  FaShopify,
+  FaAws,
+} from "react-icons/fa";
+
+import {
+
+  SiVuedotjs,
+  SiLaravel,
+  SiPython,
+  
+  SiWoocommerce,
+  SiStrapi,
+  SiWebflow,
+  SiDigitalocean,
+  SiCloudflare,
+  SiCpanel,
+} from "react-icons/si";
+
 import {
   SiShopify,
   SiJavascript,
@@ -69,87 +100,333 @@ export const webTech: Tech[] = [
 
 export const WebServices: Service[] = [
   {
-    title: "Front-End Development",
-    desc: "We create responsive, engaging, and modern user interfaces that bring designs to life with pixel-perfect precision.",
+    title: "Custom Website Development",
+    desc: "Bespoke websites tailored to your brand, functionality needs, and business goals.",
     points: [
-      "HTML, CSS, JavaScript Development",
-      "React, Vue.js & Angular Applications",
-      "Responsive & Interactive Design",
-      "Cross-Browser Compatibility",
-      "Performance Optimization",
+      "Custom frontend development",
+      "Tailored backend architecture",
+      "Responsive layouts",
+      "Modern animations & UI interactions",
+      "High-performance code",
     ],
   },
+
   {
-    title: "Back-End Development",
-    desc: "We develop robust, secure, and scalable server-side systems that power modern web applications.",
+    title: "WordPress Development",
+    desc: "Fast, SEO-ready websites built with the world’s most flexible CMS.",
     points: [
-      "Node.js, Python (Django/Flask), PHP (Laravel)",
-      "REST & GraphQL API Development",
-      "Database Design & Optimization",
-      "Authentication & Authorization Systems",
-      "Cloud Hosting & Deployment",
+      "WordPress custom themes",
+      "Elementor, Divi & Gutenberg builds",
+      "Plugin development",
+      "Blog & content websites",
+      "Ecommerce & business sites",
     ],
   },
+
   {
-    title: "Full-Stack Development",
-    desc: "Our team delivers complete end-to-end web applications from architecture to deployment.",
+    title: "E-Commerce Website Development",
+    desc: "Scalable online stores designed for conversions, easy management, and secure transactions.",
     points: [
-      "Complete Web Application Development",
-      "REST & GraphQL API Integration",
-      "UI/UX Design Integration",
-      "Database & Server Management",
-      "Ongoing Maintenance & Support",
+      "WooCommerce development",
+      "Shopify store setup",
+      "Custom e-commerce solutions",
+      "Payment gateway integration",
+      "Inventory & order management",
+      "Speed & UX optimization",
     ],
   },
+
   {
-    title: "E-Commerce Development",
-    desc: "We build conversion-focused online stores designed for performance, scalability, and seamless user experience.",
+    title: "Web App Development (Full-Stack)",
+    desc: "High-performance applications built using modern frameworks with scalable backend engineering.",
     points: [
-      "Shopify, WooCommerce, Custom Stores",
-      "Secure Payment Gateway Integration",
-      "Product Management & Inventory Systems",
-      "SEO & Analytics Integration",
-      "Maintenance & Support",
+      "React.js & Next.js web apps",
+      "Node.js, Laravel & Python backend",
+      "API integrations",
+      "Role-based systems & dashboards",
+      "Enterprise-grade architecture",
     ],
   },
+
   {
-    title: "Shopify Stores Development",
-    desc: "We specialize in custom Shopify design and development for brands looking to scale online.",
+    title: "Landing Page Design & Development",
+    desc: "Fast, conversion-focused landing pages for marketing campaigns, SaaS, events, and product launches.",
     points: [
-      "Theme Customization",
-      "Store Setup & Launch",
-      "Shopify App Integration",
-      "Speed Optimization",
+      "High-converting layouts",
+      "SEO-friendly content",
+      "A/B testing setup",
+      "Speed optimization",
+      "Mobile-friendly design",
     ],
   },
+
   {
-    title: "Progressive Web Apps (PWA)",
-    desc: "We build lightning-fast PWAs that blend the best of web and mobile experiences.",
+    title: "Corporate & Business Website Development",
+    desc: "Professional websites that strengthen brand credibility and improve business presence.",
     points: [
-      "Offline Access & Push Notifications",
-      "App-Like User Interface",
-      "Cross-Platform Compatibility",
+      "Service-based websites",
+      "Company profile sites",
+      "Portfolio websites",
+      "Branding-focused layouts",
+      "Professional content structure",
     ],
   },
+
   {
-    title: "API & Integration",
-    desc: "Seamless integration of third-party APIs, services, and automation systems to expand your app's functionality.",
+    title: "CMS Development (Custom Content Systems)",
+    desc: "Flexible and easy-to-manage content systems tailored to your workflows.",
+    points: [
+      "Custom CMS dashboards",
+      "Multi-user content roles",
+      "Media management",
+      "Workflow automation",
+    ],
+  },
+
+  {
+    title: "API Development & System Integrations",
+    desc: "Connect your website to apps, CRMs, ERPs, payment systems, and third-party tools.",
     points: [
       "REST & GraphQL APIs",
-      "Payment Gateway & CRM Integration",
-      "Custom API Development",
-    ],
-  },
-  {
-    title: "Website Maintenance & Support",
-    desc: "We ensure your website remains fast, secure, and updated 24/7 with ongoing support and maintenance.",
-    points: [
-      "Regular Backups & Updates",
-      "Security Patches & Uptime Monitoring",
-      "Bug Fixes & Performance Tuning",
+      "Payment gateways",
+      "CRM/ERP integrations",
+      "AI & automation integrations",
     ],
   },
 ];
+
+export const WebIndustries = [
+  {
+    name: "E-commerce",
+    desc: "High-converting online stores, product catalogs, checkout systems, and scalable e-commerce platforms.",
+    icon: FaShoppingCart,
+  },
+  {
+    name: "SaaS & Tech",
+    desc: "Dashboard-driven web apps, authentication systems, admin portals, and modern SaaS platform development.",
+    icon: FaLaptopCode,
+  },
+  {
+    name: "Healthcare",
+    desc: "Hospital websites, patient portals, appointment systems, and HIPAA-friendly digital experiences.",
+    icon: FaHeartbeat,
+  },
+  {
+    name: "Real Estate",
+    desc: "Property listing platforms, agent dashboards, booking systems, and location-based search experiences.",
+    icon: FaBuilding,
+  },
+  {
+    name: "Education & E-Learning",
+    desc: "Learning portals, LMS systems, course dashboards, quizzes, and student/teacher management tools.",
+    icon: FaBook,
+  },
+  {
+    name: "Travel & Hospitality",
+    desc: "Booking websites, hotel portals, travel listing platforms, and customer experience focused UI/UX.",
+    icon: FaPlane,
+  },
+  {
+    name: "Finance & Insurance",
+    desc: "Secure portals, policy management systems, financial dashboards, and customer onboarding flows.",
+    icon: FaDatabase,
+  },
+  {
+    name: "Startups & Enterprises",
+    desc: "Modern corporate websites, pitch landing pages, dashboards, and scalable full-stack platforms.",
+    icon: FaRocket,
+  },
+];
+export const webDevProcess = [
+  {
+    phase: "Discovery & Requirements",
+    duration: "Week 1",
+    title: "Understanding Your Goals & Technical Needs",
+    description:
+      "We analyze your business goals, audience, content needs, and required features to define the full project scope.",
+    icon: FaSearch,
+    deliverables: [
+      "Project requirements",
+      "Feature list",
+      "Technical plan",
+      "Timeline & milestones",
+    ],
+    color: "from-sky-500 to-indigo-500",
+  },
+
+  {
+    phase: "UI/UX Wireframes & Design",
+    duration: "Week 1-2",
+    title: "Modern, Clean, User-Centered Designs",
+    description:
+      "We create intuitive wireframes, layout structures, and visually polished UI screens for all pages.",
+    icon: FaPenNib,
+    deliverables: [
+      "Wireframes",
+      "Clickable prototype",
+      "Full UI design kit",
+      "Brand styling",
+    ],
+    color: "from-indigo-500 to-rose-500",
+  },
+
+  {
+    phase: "Frontend + Backend Development",
+    duration: "Week 2-6",
+    title: "High-Performance Frontend & Scalable Backend",
+    description:
+      "We develop clean, optimized code with secure backend logic, API integrations, and responsive frontend.",
+    icon: FaCode,
+    deliverables: [
+      "Frontend development",
+      "Backend development",
+      "API integrations",
+      "Database setup",
+    ],
+    color: "from-emerald-500 to-lime-500",
+  },
+
+  {
+    phase: "Testing & QA",
+    duration: "Week 3-7",
+    title: "Quality Assurance, Speed & Responsiveness",
+    description:
+      "We test across browsers and devices to ensure flawless performance, fast loading, and smooth functionality.",
+    icon: FaTools,
+    deliverables: [
+      "Browser testing",
+      "Mobile responsiveness",
+      "Bug fixing",
+      "Performance optimization",
+    ],
+    color: "from-yellow-500 to-orange-500",
+  },
+
+  {
+    phase: "Deployment & Launch",
+    duration: "Week 4-8",
+    title: "Server Setup, Optimization & Go-Live",
+    description:
+      "We deploy your website on a secure hosting environment with full SEO & performance optimization.",
+    icon: FaCloudUploadAlt,
+    deliverables: [
+      "Hosting setup",
+      "Domain & SSL",
+      "Live deployment",
+      "SEO optimization",
+    ],
+    color: "from-purple-500 to-fuchsia-500",
+  },
+
+  {
+    phase: "Ongoing Maintenance & Optimization",
+    duration: "Ongoing",
+    title: "Updates, Monitoring & Feature Enhancements",
+    description:
+      "We provide continuous support, SEO updates, performance tuning, and new feature rollouts.",
+    icon: FaChartLine,
+    deliverables: [
+      "Monthly updates",
+      "New features",
+      "SEO improvements",
+      "Security patches",
+    ],
+    color: "from-teal-500 to-cyan-500",
+  },
+];
+
+
+export const WebTechStack = {
+  Frontend: [
+    { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
+    { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+    { name: "React.js", icon: FaReact, color: "#61DAFB" },
+    { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+    { name: "Vue.js", icon: SiVuedotjs, color: "#42B883" },
+  ],
+
+  Backend: [
+    { name: "Node.js", icon: FaNodeJs, color: "#339933" },
+    { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+    { name: "Python", icon: SiPython, color: "#306998" },
+    { name: "Django", icon: SiDjango, color: "#092E20" },
+    { name: "PHP", icon: FaPhp, color: "#777BB4" },
+    { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+  ],
+
+  CMS_Ecommerce: [
+    { name: "WordPress", icon: FaWordpress, color: "#21759B" },
+    { name: "Shopify", icon: FaShopify, color: "#96BF48" },
+    { name: "WooCommerce", icon: SiWoocommerce, color: "#96588A" },
+    { name: "Strapi", icon: SiStrapi, color: "#2F2E8B" },
+    { name: "Webflow", icon: SiWebflow, color: "#146EF5" },
+  ],
+
+  Hosting_Infrastructure: [
+    { name: "AWS", icon: FaAws, color: "#FF9900" },
+    { name: "DigitalOcean", icon: SiDigitalocean, color: "#0080FF" },
+    { name: "Cloudflare", icon: SiCloudflare, color: "#F38020" },
+    { name: "cPanel & VPS", icon: SiCpanel, color: "#FF6C2C" },
+  ],
+};
+
+export const WhyChooseMehdiTechWeb = [
+  "Expert full-stack developers",
+  "Custom, high-quality web development",
+  "Fast-loading and SEO-optimized websites",
+  "Clean, scalable code with secure backend systems",
+  "UI/UX + frontend + backend — everything in one place",
+  "Pixel-perfect and fully responsive design",
+  "Transparent communication & timely delivery",
+  "Affordable solutions for startups and enterprises",
+];
+
+
+
+export const WebDevFaqData = [
+  {
+    question: "How long does a website take to build?",
+    answer:
+      "Simple websites with API integration take 1–2 weeks. Full websites or web apps take 3–8 weeks depending on complexity.",
+  },
+  {
+    question: "How much does a website or web app cost?",
+    answer:
+      "Pricing depends on features and complexity. We provide flexible packages for startups and enterprises.",
+  },
+  {
+    question: "Do you provide content writing?",
+    answer: "Yes — we offer SEO-optimized website content writing.",
+  },
+  {
+    question: "Do you provide SEO?",
+    answer: "Yes — every website is SEO-ready and we also offer full SEO services.",
+  },
+  {
+    question: "Will the website be mobile-responsive?",
+    answer:
+      "Yes — all websites developed at Mehdi Technologies are fully responsive across all devices.",
+  },
+  {
+    question: "Do you provide ongoing support?",
+    answer:
+      "Yes — monthly support and maintenance packages are available.",
+  },
+  {
+    question: "Can you redesign my existing website?",
+    answer: "Yes — we modernize, rebuild, and upgrade old websites.",
+  },
+  {
+    question: "Can you build custom portals and dashboards?",
+    answer:
+      "Yes — we specialize in advanced custom portals, dashboards, and full web applications.",
+  },
+];
+
+
+
+
 
 export const HowWEServe: HowWeServeItem[] = [
    {

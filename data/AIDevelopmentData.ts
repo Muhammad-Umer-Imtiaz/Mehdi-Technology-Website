@@ -13,7 +13,13 @@ import {
   FaBolt,
   FaVideo,
 } from "react-icons/fa";
+import {
 
+  FaHeartbeat,
+  FaBuilding,
+
+  FaRocket
+} from "react-icons/fa";
 import { SiPython, SiTensorflow, SiPytorch } from "react-icons/si";
 import type { IconType } from "react-icons";
 import { FaBrain, FaCogs, FaLaptopCode, FaCloud } from "react-icons/fa";

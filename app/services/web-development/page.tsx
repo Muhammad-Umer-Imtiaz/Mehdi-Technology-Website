@@ -1,8 +1,13 @@
+'use client'
+import FAQS from "@/Components/Common/FAQS";
 import HeroSection from "@/Components/Common/HeroSection";
 import HowWeServe from "@/Components/Common/HowWeServe";
+import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
+import OurProcess from "@/Components/Common/OurProcess";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
-import { webTech, WebServices, HowWEServe } from "@/data/webDevelopmentData";
+import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import { webTech, WebServices, HowWEServe, webDevProcess, WebIndustries, WebDevFaqData, WhyChooseMehdiTechWeb } from "@/data/webDevelopmentData";
 
 export default function WebDevelopment() {
   return (
@@ -23,7 +28,22 @@ export default function WebDevelopment() {
         description="End-to-end Website development tailored to your business."
         services={WebServices}
       />
+<OurProcess
+              title="  Our Web Development Process"
+              // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
+              process={webDevProcess} />
 
+ <IndustriesWeServe
+        title="Industries We Serve"
+        Industry={WebIndustries}
+      />
+
+
+       <FAQS
+            title="Mobile App Development FAQs"
+              data={WebDevFaqData} />
+            <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechWeb} />
+            
 
        <TechSection
         title="Website"
