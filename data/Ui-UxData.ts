@@ -167,97 +167,55 @@ export const UIDesignTech: Tech[] = [
 ];
 
 
-export const uiuxProcess = [
+export const uxUiProcess = [
   {
-    phase: "Discovery & Requirements Gathering",
-    duration: "Week 1",
-    title: "Understanding your business, audience, and goals",
-    description: "We begin by comprehensively understanding your brand, target audience, and business objectives to align design strategies.",
-    icon: FaLightbulb,
-    deliverables: [
-      "Business goals analysis",
-      "Audience profiling",
-      "Project requirement documentation"
-    ],
-    color: "from-blue-500 to-cyan-500",
+    id: 1,
+    title: "Discovery & Requirements Gathering",
+    subtitle:
+      "Understanding your business, audience, and goals.",
+    image: "/OurProcess/UX1.webp",
   },
   {
-    phase: "UX Research & Flow Mapping",
-    duration: "Week 2",
-    title: "User journeys, sitemaps, competitor study",
-    description: "Conducting research to map user flows, analyze competitors, and ensure a seamless user experience.",
-    icon: FaUsers,
-    deliverables: [
-      "User journey mapping",
-      "Sitemap creation",
-      "Competitor analysis report"
-    ],
-    color: "from-cyan-500 to-teal-500",
+    id: 2,
+    title: "UX Research & Flow Mapping",
+    subtitle:
+      "User journeys, sitemaps, competitor study.",
+    image: "/OurProcess/UX2.webp",
   },
   {
-    phase: "Wireframing",
-    duration: "Week 2-3",
-    title: "Structure-focused layouts for fast approvals",
-    description: "Creating low and high-fidelity wireframes to visualize layouts and ensure alignment before visual design.",
-    icon: FaDraftingCompass,
-    deliverables: [
-      "Low-fidelity wireframes",
-      "High-fidelity wireframes",
-      "Layout approval documentation"
-    ],
-    color: "from-teal-500 to-green-500",
+    id: 3,
+    title: "Wireframing",
+    subtitle:
+      "Structure-focused layouts for fast approvals.",
+    image: "/OurProcess/UX3.webp",
   },
   {
-    phase: "UI Design & Branding",
-    duration: "Week 3-5",
-    title: "High-end visual design and component styling",
-    description: "Designing visually appealing interfaces aligned with branding and UX principles.",
-    icon: FaPalette,
-    deliverables: [
-      "Visual design concepts",
-      "UI component libraries",
-      "Brand style guide integration"
-    ],
-    color: "from-green-500 to-emerald-500",
+    id: 4,
+    title: "UI Design & Branding",
+    subtitle:
+      "High-end visual design and component styling.",
+    image: "/OurProcess/UX4.webp",
   },
   {
-    phase: "Prototyping",
-    duration: "Week 5-6",
-    title: "Interactive user testing-ready demo",
-    description: "Creating interactive prototypes for user testing and stakeholder feedback before development.",
-    icon: FaCogs,
-    deliverables: [
-      "Clickable prototypes",
-      "Interactive flows",
-      "User testing readiness"
-    ],
-    color: "from-emerald-500 to-lime-500",
+    id: 5,
+    title: "Prototyping",
+    subtitle:
+      "Interactive user testing-ready demo.",
+    image: "/OurProcess/UX5.webp",
   },
   {
-    phase: "Developer Handoff",
-    duration: "Week 6",
-    title: "Figma specs, design systems, assets, and support",
-    description: "Providing developers with detailed specs, assets, and design systems to ensure smooth implementation.",
-    icon: FaLaptopCode,
-    deliverables: [
-      "Figma design handoff",
-      "Component libraries",
-      "Asset package & documentation"
-    ],
-    color: "from-lime-500 to-yellow-500",
+    id: 6,
+    title: "Developer Handoff",
+    subtitle:
+      "Figma specs, design systems, assets, and support.",
+    image: "/OurProcess/UX6.webp",
   },
   {
-    phase: "Iteration & Optimization",
-    duration: "Ongoing",
-    title: "Performance-driven improvements after launch",
-    description: "Continuously improving the UI/UX based on user feedback and performance metrics.",
-    icon: FaChartLine,
-    deliverables: [
-      "Post-launch analysis",
-      "User feedback integration",
-      "Design refinements and updates"
-    ],
-    color: "from-yellow-500 to-orange-500",
+    id: 7,
+    title: "Iteration & Optimization",
+    subtitle:
+      "Performance-driven improvements after launch.",
+    image: "/OurProcess/UX7.webp",
   },
 ];
 

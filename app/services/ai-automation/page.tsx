@@ -29,10 +29,10 @@ export default function AiDevelopment() {
               services={AIServices}
             />
 
-        <OurProcess
+        {/* <OurProcess
                 title="Our SEO & Marketing Process"
                 // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
-                process={aiProcess} />
+                process={aiProcess} /> */}
 
                 <IndustriesWeServe
                         title="Industries We Serve"

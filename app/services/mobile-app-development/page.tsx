@@ -4,7 +4,7 @@ import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
 import HowWeServe from "@/Components/Common/HowWeServe";
 
-import { AppDevelopmentFAQ, appDevelopmentHighlights, AppIndustries, appProcess, AppServices, AppTech, HowWeServeApp } from "@/data/AppDevelopmentData";
+import { AppDevelopmentFAQ, appDevelopmentHighlights, appDevProcess, AppIndustries, AppServices, AppTech, HowWeServeApp } from "@/data/AppDevelopmentData";
 import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
@@ -37,7 +37,10 @@ export default function MobileAppDevelopment() {
 <OurProcess
               title=" Our Mobile App Development Process "
               // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
-              process={appProcess} />
+              process={appDevProcess} />
+              
+
+              
 
  <IndustriesWeServe
         title="Industries We Serve"

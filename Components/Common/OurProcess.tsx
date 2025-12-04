@@ -1,144 +1,126 @@
-// 'use client'
-import { useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
-import type { IconType } from "react-icons";
-import { useRouter } from "next/navigation";
-export interface ProcessStep {
-  phase: string;
-  duration: string;
+// components/WebProcessAccordion.tsx
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+
+interface Step {
+  id: number;
   title: string;
-  description: string;
-  icon: IconType;
-  deliverables: string[];
-  color: string;
+  subtitle: string;
+  image: string;
 }
 
-interface OurProcessProps {
-  title: string;
-  description?: string;
-  process: ProcessStep[];
+interface WebProcessAccordionProps {
+  title?: string;
+  process: Step[];
 }
+export default function WebProcess({title,process}: WebProcessAccordionProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-export default function OurProcess({ title, process }: OurProcessProps) {
-  const [activePhase, setActivePhase] = useState<number | null>(null);
-const router =useRouter()
   return (
-    <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-20 px-6 md:px-20 relative overflow-hidden">
-      {/* Background grid effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full mb-4">
-            <span className="text-cyan-400 text-sm font-semibold tracking-wide">OUR METHODOLOGY</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-            {title}
-          </h2>
-          {/* <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            {description}
-          </p> */}
-        </div>
+    <div className="min-h-screen py-16 bg-white px-6">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl md:text-6xl font-bold text-center mb-16">{title}</h1>
+        {/* <p className="text-2xl md:text-3xl text-center text-blue-600 font-medium mb-16">How We Build Your Web Solution</p> */}
 
-        {/* Process Timeline */}
-        <div className="relative">
-          {/* Connecting line - desktop */}
-          <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-teal-500 to-orange-500 hidden lg:block"></div>
+        {/* Mobile: Vertical Stack | Desktop: Horizontal Row */}
+        <div className="flex flex-col lg:flex-row gap-8 justify-center items-center lg:items-start">
+          {process.map((step, index) => {
+            const isOpen = activeIndex === index;
 
-          <div className="space-y-8">
-            {process.map((item, index) => (
-              <div
+            return (
+              <motion.div
                 key={index}
-                className="relative"
-                onMouseEnter={() => setActivePhase(index)}
-                onMouseLeave={() => setActivePhase(null)}
+                layout
+                onClick={() => setActiveIndex(isOpen ? -1 : index)}
+                className="relative cursor-pointer w-full  lg:w-auto "
+                animate={{
+                  width: isOpen ? (window.innerWidth < 1024 ? '100%' : 460) : window.innerWidth < 1024 ? '100%' : 110,
+                  height: window.innerWidth < 1024 ? (isOpen ? 280 : 70) : 500,
+                }}
+                transition={{
+                  duration: 0.9,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
-                <div className="flex items-start gap-6 lg:gap-12">
-                  {/* Icon with number */}
-                  <div className="relative flex-shrink-0 hidden lg:flex">
-                    <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${item.color} p-0.5 transition-all duration-300 ${activePhase === index ? 'scale-110 shadow-2xl shadow-cyan-500/30' : ''}`}>
-                      <div className="w-full h-full rounded-2xl bg-gray-950 flex flex-col items-center justify-center">
-                        {(() => {
-                          const Icon = item.icon;
-                          return <Icon className="w-8 h-8 text-white/90 mb-1" />;
-                        })()}
-                        <span className="text-xs font-bold text-white/70">STEP {index + 1}</span>
-                      </div>
-                    </div>
-                  </div>
+                <motion.div
+                  className="relative rounded-3xl overflow-hidden shadow-2xl bg-linear-to-t from-[#003C7D] to-[#58C9EC]"
+                  initial={false}
+                  animate={{
+                    boxShadow: isOpen
+                      ? "0 25px 60px rgba(0,0,0,0.35), 0 0 0 5px rgba(59,130,246,0.4)"
+                      : "0 10px 30px rgba(0,0,0,0.15)",
+                  }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  style={{ height: '100%' }}
+                >
+                  {/* Background Image when open */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.05 }}
+                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src={step.image}
+                          alt={step.title}
+                          fill
+                          className="object-cover"
+                        />
+                        {/* <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/90" /> */}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
-                  {/* Mobile icon */}
-                  <div className={`lg:hidden w-16 h-16 rounded-xl bg-gradient-to-br ${item.color} p-0.5 flex-shrink-0`}>
-                    <div className="w-full h-full rounded-xl bg-gray-950 flex items-center justify-center">
-                      {(() => {
-                        const Icon = item.icon;
-                        return <Icon className="w-6 h-6 text-white/90" />;
-                      })()}
-                    </div>
-                  </div>
-
-                  {/* Content Card */}
-                  <div className={`flex-1 transition-all duration-300 ${activePhase === index ? 'translate-x-2' : ''}`}>
-                    <div className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/5">
-                      {/* Phase label */}
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${item.color} text-white`}>
-                          {item.phase}
+                  {/* Content when open */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute bottom-0 left-0 right-0 p-10 text-white z-10"
+                      >
+                        <h3 className="text-3xl font-bold mb-3 leading-tight">{step.title}</h3>
+                        <p className="text-lg leading-relaxed opacity-95">{step.subtitle}</p>
+                        <span className="absolute bottom-1 right-6 text-[#838180] text-7xl font-bold opacity-70">
+                          {step.id}
                         </span>
-                        <span className="text-gray-500 text-sm font-medium">{item.duration}</span>
-                      </div>
+                      </motion.div>
+                      
+                    )}
+                  </AnimatePresence>
+                  {/* <motion.div
+                    className="md:hidden absolute bottom-6 right-1 z-20"
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <ChevronDown className="w-6 h-6 text-white drop-shadow-lg" />
+                  </motion.div> */}
 
-                      {/* Title */}
-                      <h3 className="text-2xl font-bold mb-3 text-white">
-                        {item.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-gray-400 leading-relaxed mb-6">
-                        {item.description}
-                      </p>
-
-                      {/* Deliverables */}
-                      <div>
-                        <h4 className="text-sm font-semibold text-cyan-400 mb-3 uppercase tracking-wide">
-                          Key Deliverables
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {item.deliverables.map((deliverable, idx) => (
-                            <div key={idx} className="flex items-start gap-2 text-sm">
-                              <FaCheckCircle className="text-cyan-500 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-300">{deliverable}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Connector for next item */}
-                {index !== process.length - 1 && (
-                  <div className="h-8 lg:hidden"></div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 rounded-2xl p-8 max-w-2xl">
-            <h3 className="text-2xl font-bold mb-3">Ready to Scale Your Organic Growth?</h3>
-            <p className="text-gray-400 mb-6">
-              Let's discuss how our proven SEO methodology can drive measurable results for your business.
-            </p>
-            <button onClick={()=>{router.push("/contact-us")}} className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
-              Schedule a Strategy Call
-            </button>
-          </div>
+                  {/* Closed State - Mobile & Desktop */}
+                        {!isOpen && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 0.9 }}
+    className="absolute inset-0 w-full h-full z-10 flex items-end justify-center md:items-center md:justify-center"
+  >
+    <span className="text-white text-base md:text-xl font-black text-center px-4 whitespace-nowrap pb-6 md:pb-0 md:-rotate-90 origin-center">
+        <span>{step.id}-</span>{" "}
+      {step.title}
+    </span>
+  </motion.div>
+)}
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

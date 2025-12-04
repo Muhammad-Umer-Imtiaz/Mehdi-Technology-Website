@@ -2,7 +2,7 @@
 import HeroSection from "@/Components/Common/HeroSection";
 import TechSection from "@/Components/Common/TechSection";
 import HowWeServeSection from "@/Components/Common/HowWeServe";
-import { UIDesignTech, UIDesignServices, HowWeServeUI, uiuxProcess, UiUxindustries, UIFaqData, whyChooseMehdiTechnologies } from "@/data/Ui-UxData";
+import { UIDesignTech, UIDesignServices, HowWeServeUI, UiUxindustries, UIFaqData, whyChooseMehdiTechnologies, uxUiProcess } from "@/data/Ui-UxData";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
@@ -33,7 +33,7 @@ export default function UIUX() {
  <OurProcess
         title="Our UI/UX Design Process"
         // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
-        process={uiuxProcess} />
+        process={uxUiProcess} />
 
           <IndustriesWeServe
                 title="Industries We Serve"

@@ -183,93 +183,51 @@ export const HowWeServeApp: HowWeServeItem[] = [
   },
 ];
 
-export const appProcess = [
+export const appDevProcess = [
   {
-    phase: "Discovery & Planning",
-    duration: "Week 1-2",
-    title: "Define features, user flows, and architecture",
-    description: "We kick off by understanding your app idea, defining core features, user journeys, and overall architecture for scalable development.",
-    icon: FaLightbulb,
-    deliverables: [
-      "Feature list & prioritization",
-      "User flow diagrams",
-      "Technical architecture outline",
-      "Project roadmap"
-    ],
-    color: "from-blue-500 to-cyan-500"
+    id: 1,
+    title: "Discovery & Planning",
+    subtitle:
+      "Define features, user flows, and architecture.",
+    image: "/OurProcess/App1.webp",
   },
   {
-    phase: "UI/UX Design",
-    duration: "Week 2-4",
-    title: "Wireframes → Prototype → Final UI",
-    description: "Designing intuitive and visually appealing interfaces with a focus on usability and brand consistency.",
-    icon: FaPencilRuler,
-    deliverables: [
-      "Wireframes & mockups",
-      "Interactive prototypes",
-      "Design system & UI kit",
-      "Final visual design"
-    ],
-    color: "from-cyan-500 to-teal-500"
+    id: 2,
+    title: "UI/UX Design",
+    subtitle:
+      "Wireframes → Prototype → Final UI.",
+    image: "/OurProcess/App2.webp",
   },
   {
-    phase: "Mobile Development (Frontend + Backend)",
-    duration: "Week 4-12",
-    title: "Building the app using modern frameworks",
-    description: "We implement the app using the latest frontend and backend technologies, integrating APIs and third-party services for full functionality.",
-    icon: FaMobileAlt,
-    deliverables: [
-      "Frontend development (iOS & Android)",
-      "Backend & API integrations",
-      "Third-party service integration",
-      "Shared codebase for cross-platform apps"
-    ],
-    color: "from-teal-500 to-green-500"
+    id: 3,
+    title: "Mobile Development (Frontend + Backend)",
+    subtitle:
+      "Building the app using modern frameworks. Frontend + backend + integrations.",
+    image: "/OurProcess/App3.webp",
   },
   {
-    phase: "Quality Assurance & Testing",
-    duration: "Week 10-14",
-    title: "Functional, performance, UI, security, and device-level testing",
-    description: "Comprehensive testing to ensure a bug-free, secure, and smooth experience across devices.",
-    icon: FaCheckCircle,
-    deliverables: [
-      "Functional testing",
-      "Performance & stress testing",
-      "UI & UX validation",
-      "Security & compliance testing",
-      "Device-level testing"
-    ],
-    color: "from-green-500 to-emerald-500"
+    id: 4,
+    title: "Quality Assurance & Testing",
+    subtitle:
+      "Functional, performance, UI, security, and device-level testing.",
+    image: "/OurProcess/App4.webp",
   },
   {
-    phase: "Deployment",
-    duration: "Week 14-15",
-    title: "App Store + Play Store publishing",
-    description: "Publishing your app on relevant platforms, ensuring compliance with guidelines and smooth launch support.",
-    icon: FaCloudUploadAlt,
-    deliverables: [
-      "App Store & Play Store submission",
-      "Compliance & guideline checks",
-      "Beta testing & feedback",
-      "Launch support"
-    ],
-    color: "from-emerald-500 to-lime-500"
+    id: 5,
+    title: "Deployment",
+    subtitle:
+      "App Store + Play Store publishing, compliance, and launch support.",
+    image: "/OurProcess/App5.webp",
   },
   {
-    phase: "Ongoing Support",
-    duration: "Ongoing",
-    title: "Continuous improvements, monitoring, and new features",
-    description: "Post-launch support, monitoring, and iterative updates to enhance app performance and user satisfaction.",
-    icon: FaTools,
-    deliverables: [
-      "Bug fixes & updates",
-      "Performance monitoring",
-      "New feature implementation",
-      "Regular maintenance & improvements"
-    ],
-    color: "from-lime-500 to-yellow-500"
+    id: 6,
+    title: "Ongoing Support",
+    subtitle:
+      "Continuous improvements, monitoring, and new features.",
+    image: "/OurProcess/App6.webp",
   },
 ];
+
 
 
 export const AppIndustries = [

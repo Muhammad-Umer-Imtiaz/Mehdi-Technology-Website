@@ -228,104 +228,56 @@ export const SEOindustries = [
 
 export const seoProcess = [
   {
-    phase: "Discovery & Analysis",
-    duration: "Week 1-2",
-    title: "Comprehensive SEO Audit & Research",
-    description: "We begin with an in-depth analysis of your current digital presence, competitive landscape, and market opportunities.",
-    icon: FaSearch ,
-    deliverables: [
-      "Technical SEO audit",
-      "Competitor analysis report",
-      "Current rankings assessment",
-      "Website performance evaluation"
-    ],
-    color: "from-blue-500 to-cyan-500"
+    id: 1,
+    title: "Discovery & Audit",
+    subtitle:
+      "Understand your business, target market, and current performance.",
+    image: "/OurProcess/SEO1.webp",
   },
   {
-    phase: "Strategy Development",
-    duration: "Week 2-3",
-    title: "Data-Driven Strategy & Planning",
-    description: "Leveraging audit insights, we craft a customized SEO roadmap with clear objectives, KPIs, and actionable tactics.",
-    icon: FaChartLine ,
-    deliverables: [
-      "Keyword strategy & opportunity map",
-      "Content gap analysis",
-      "Link building strategy",
-      "Quarterly milestone planning"
-    ],
-    color: "from-cyan-500 to-teal-500"
+    id: 2,
+    title: "Keyword & Competitor Research",
+    subtitle:
+      "Identify ranking opportunities and industry gaps.",
+    image: "/OurProcess/SEO2.webp",
   },
   {
-    phase: "Technical Optimization",
-    duration: "Week 3-5",
-    title: "On-Page & Technical SEO Implementation",
-    description: "Our team executes critical technical improvements to ensure your site meets search engine best practices and user experience standards.",
-    icon: FaCogs,
-    deliverables: [
-      "Site structure optimization",
-      "Page speed enhancements",
-      "Schema markup implementation",
-      "Mobile optimization"
-    ],
-    color: "from-teal-500 to-green-500"
+    id: 3,
+    title: "SEO Setup & Optimization",
+    subtitle:
+      "On-page, off-page, technical, and local SEO improvements.",
+    image: "/OurProcess/SEO3.webp",
   },
   {
-    phase: "Content Excellence",
-    duration: "Ongoing",
-    title: "Strategic Content Creation & Optimization",
-    description: "We develop and optimize high-value content assets designed to rank, engage, and convert your target audience.",
-    icon: FaFileAlt,
-    deliverables: [
-      "SEO-optimized blog content",
-      "Landing page development",
-      "Existing content refresh",
-      "Content calendar management"
-    ],
-    color: "from-green-500 to-emerald-500"
+    id: 4,
+    title: "Content Planning & Execution",
+    subtitle:
+      "Blogs, landing pages, and keyword-based content.",
+    image: "/OurProcess/SEO4.webp",
   },
   {
-    phase: "Authority Building",
-    duration: "Ongoing",
-    title: "Off-Page SEO & Link Acquisition",
-    description: "Strategic link building and digital PR campaigns to establish your domain authority and brand presence across the web.",
-    icon: FaBullhorn ,
-    deliverables: [
-      "High-quality backlink acquisition",
-      "Digital PR outreach",
-      "Local SEO & citations",
-      "Brand mention monitoring"
-    ],
-    color: "from-emerald-500 to-lime-500"
+    id: 5,
+    title: "Paid Ads & Social Campaigns",
+    subtitle:
+      "Fast traffic + long-term organic growth.",
+    image: "/OurProcess/SEO5.webp",
   },
   {
-    phase: "Performance Tracking",
-    duration: "Monthly",
-    title: "Analytics, Reporting & Insights",
-    description: "Transparent, data-driven reporting that demonstrates ROI and informs strategic decisions for continuous improvement.",
-    icon: FaChartPie ,
-    deliverables: [
-      "Monthly performance reports",
-      "Ranking & traffic analysis",
-      "Conversion tracking",
-      "Competitive positioning updates"
-    ],
-    color: "from-lime-500 to-yellow-500"
+    id: 6,
+    title: "Tracking, Analytics & Reporting",
+    subtitle:
+      "Monthly reports with performance insights.",
+    image: "/OurProcess/SEO6.webp",
   },
   {
-    phase: "Continuous Growth",
-    duration: "Ongoing",
-    title: "Optimization & Scaling",
-    description: "We continuously refine strategies based on performance data, algorithm updates, and emerging opportunities to maximize your growth.",
-    icon: FaRocket ,
-    deliverables: [
-      "A/B testing & experimentation",
-      "Algorithm adaptation",
-      "Strategy refinement",
-      "Quarterly strategy reviews"
-    ],
-    color: "from-yellow-500 to-orange-500"
+    id: 7,
+    title: "Continuous Improvement",
+    subtitle:
+      "Scaling your visibility, leads, and conversions.",
+    image: "/OurProcess/SEO7.webp",
   },
 ];
+
 
 
 

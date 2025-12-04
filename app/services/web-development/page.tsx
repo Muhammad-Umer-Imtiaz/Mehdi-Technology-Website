@@ -37,7 +37,7 @@ export default function WebDevelopment() {
         services={WebServices}
       />
 
-      <WebProcess title="Our Web Development Process"
+      <OurProcess title="Our Web Development Process"
         process={webDevProcess}/>
       {/* <Webdevelopment /> */}
 
