@@ -7,6 +7,8 @@ import OurProcess from "@/Components/Common/OurProcess";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import Webdevelopment from "@/Components/Webdevelopment";
+import WebProcess from "@/Components/WebProcess";
 import { webTech, WebServices, HowWEServe, webDevProcess, WebIndustries, WebDevFaqData, WhyChooseMehdiTechWeb } from "@/data/webDevelopmentData";
 
 export default function WebDevelopment() {
@@ -28,6 +30,8 @@ export default function WebDevelopment() {
         description="End-to-end Website development tailored to your business."
         services={WebServices}
       />
+      <WebProcess/>
+      <Webdevelopment/>
 <OurProcess
               title="  Our Web Development Process"
               // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
