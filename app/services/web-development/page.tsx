@@ -3,7 +3,6 @@ import FAQS from "@/Components/Common/FAQS";
 import HeroSection from "@/Components/Common/HeroSection";
 import HowWeServe from "@/Components/Common/HowWeServe";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
-import OurProcess from "@/Components/Common/OurProcess";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
@@ -14,7 +13,7 @@ import { webTech, WebServices, HowWEServe, webDevProcess, WebIndustries, WebDevF
 import dynamic from "next/dynamic";
 
 // Client-only components
-const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
+const OurProcess = dynamic(() => import("@/Components/Common/OurProcess"), { ssr: false });
 // const Webdevelopment = dynamic(() => import("@/Components/Webdevelopment"), { ssr: false });
 
 export default function WebDevelopment() {

@@ -13,7 +13,6 @@ import {
   whyChooseMehdiTechnologies
 } from "@/data/SEOandDigitalMarketingData";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
-import OurProcess from "@/Components/Common/OurProcess";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import FaqsTest from "@/Components/Test/FaqsTest";
@@ -21,7 +20,7 @@ import Faq from "@/Components/Test/Faqs";
 import dynamic from "next/dynamic";
 
 // Client-only components
-const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
+const OurProcess = dynamic(() => import("@/Components/Common/OurProcess"), { ssr: false });
 export default function UIUX() {
   return (
     <section>

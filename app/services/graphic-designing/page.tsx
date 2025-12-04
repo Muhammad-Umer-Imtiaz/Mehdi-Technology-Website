@@ -4,14 +4,13 @@ import TechSection from "@/Components/Common/TechSection";
 import HowWeServeSection from "@/Components/Common/HowWeServe";
 import { UIDesignTech, UIDesignServices, HowWeServeUI, UiUxindustries, UIFaqData, whyChooseMehdiTechnologies, uxUiProcess } from "@/data/Ui-UxData";
 import ServicesSection from "@/Components/Common/ServicesSection";
-import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import dynamic from "next/dynamic";
 
 // Client-only components
-const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
+const OurProcess = dynamic(() => import("@/Components/Common/OurProcess"), { ssr: false });
 export default function UIUX() {
   return (
     <section>

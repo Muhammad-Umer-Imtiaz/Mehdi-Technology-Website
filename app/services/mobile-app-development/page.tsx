@@ -5,14 +5,13 @@ import TechSection from "@/Components/Common/TechSection";
 import HowWeServe from "@/Components/Common/HowWeServe";
 
 import { AppDevelopmentFAQ, appDevelopmentHighlights, appDevProcess, AppIndustries, AppServices, AppTech, HowWeServeApp } from "@/data/AppDevelopmentData";
-import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import FAQS from "@/Components/Common/FAQS";
 import dynamic from "next/dynamic";
 
 // Client-only components
-const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
+const OurProcess = dynamic(() => import("@/Components/Common/OurProcess"), { ssr: false });
 export default function MobileAppDevelopment() {
   return (
     <section>
