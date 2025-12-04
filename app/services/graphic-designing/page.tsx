@@ -8,6 +8,7 @@ import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import dynamic from "next/dynamic";
+import TechStack from "@/Components/LandingPage/TechStack";
 
 // Client-only components
 const OurProcess = dynamic(() => import("@/Components/Common/OurProcess"), { ssr: false });
@@ -41,12 +42,12 @@ export default function UIUX() {
                 title="Industries We Serve"
                 Industry={UiUxindustries}
               />
-      
-      <TechSection
+      <TechStack/>
+      {/* <TechSection
         title="Tools & "
         highlight="Technologies"
         technologies={UIDesignTech}
-      />
+      /> */}
 <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies} />
         <FAQS
          title="UI/UX Design FAQs"

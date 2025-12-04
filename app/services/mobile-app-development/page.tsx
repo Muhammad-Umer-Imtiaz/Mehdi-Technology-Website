@@ -9,6 +9,7 @@ import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import FAQS from "@/Components/Common/FAQS";
 import dynamic from "next/dynamic";
+import TechStack from "@/Components/LandingPage/TechStack";
 
 // Client-only components
 const OurProcess = dynamic(() => import("@/Components/Common/OurProcess"), { ssr: false });
@@ -48,17 +49,19 @@ export default function MobileAppDevelopment() {
         title="Industries We Serve"
         Industry={AppIndustries}
       />
- <FAQS
-      title="Mobile App Development FAQs"
-        data={AppDevelopmentFAQ} />
-      <WhyChooseMehdiTechnologies data={appDevelopmentHighlights} />
-      
+      <TechStack/>
  {/* 🧠 Technologies */}
-      <TechSection
+      {/* <TechSection
         title="Mobile App"
         highlight="Technologies"
         technologies={AppTech}
-      />
+      /> */}
+      <WhyChooseMehdiTechnologies data={appDevelopmentHighlights} />
+      
+
+       <FAQS
+      title="Mobile App Development FAQs"
+        data={AppDevelopmentFAQ} />
 
 
        

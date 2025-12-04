@@ -43,6 +43,7 @@ export default function AiDevelopment() {
         highlight="Technologies"
         technologies={AITech}
       />
+              <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechAI } />
 
        <FAQS
                title="AI FAQS"
@@ -50,7 +51,6 @@ export default function AiDevelopment() {
               data={AIFaqData} />
 
 
-              <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechAI } />
       {/* <ServicesSection
         title="Building the Future, One App at a Time — Your Partner in Mobile Innovation"
         description="From startups to global enterprises, we build mobile apps that combine sleek design, powerful performance, and seamless user experience. Our focus on innovation, scalability, and reliability makes us a trusted partner for businesses worldwide."

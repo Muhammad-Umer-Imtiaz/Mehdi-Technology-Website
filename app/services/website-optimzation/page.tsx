@@ -56,12 +56,12 @@ export default function UIUX() {
       />
       {/* <Faq/>
 <FaqsTest/> */}
-      <FAQS
-      title="SEO FAQs"
-        data={SEOFaqData} />
+      
 
       <WhyChooseMehdiTechnologies data={whyChooseMehdiTechnologies} />
-
+<FAQS
+      title="SEO FAQs"
+        data={SEOFaqData} />
       <HowWeServeSection
         title="How We Serve You (Digital Marketing)"
         description="We help your brand grow online with data-driven marketing strategies, creative content, and measurable results. From SEO to social media campaigns, our goal is to increase your visibility, attract the right audience, and convert visitors into loyal customers."

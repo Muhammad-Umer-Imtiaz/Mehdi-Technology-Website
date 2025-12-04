@@ -55,6 +55,18 @@ export default function WebProcess({title,process}: WebProcessAccordionProps) {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   style={{ height: '100%' }}
                 >
+                     {!isOpen && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 0.9 }}
+    className=" w-full h-full  flex items-end justify-center md:items-center md:justify-center"
+  >
+    <span className="text-white text-base md:text-xl font-black text-center px-4 whitespace-nowrap pb-6 md:pb-0 md:-rotate-90 origin-center">
+        <span>{step.id}-</span>{" "}
+      {step.title}
+    </span>
+  </motion.div>
+)}
                   {/* Background Image when open */}
                   <AnimatePresence>
                     {isOpen && (
@@ -103,18 +115,18 @@ export default function WebProcess({title,process}: WebProcessAccordionProps) {
                   </motion.div> */}
 
                   {/* Closed State - Mobile & Desktop */}
-                        {!isOpen && (
+                        {/* {!isOpen && (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 0.9 }}
-    className="absolute inset-0 w-full h-full z-10 flex items-end justify-center md:items-center md:justify-center"
+    className="absolute top-0 inset-0 w-full h-full z-10 flex items-end justify-center md:items-center md:justify-center"
   >
     <span className="text-white text-base md:text-xl font-black text-center px-4 whitespace-nowrap pb-6 md:pb-0 md:-rotate-90 origin-center">
         <span>{step.id}-</span>{" "}
       {step.title}
     </span>
   </motion.div>
-)}
+)} */}
                 </motion.div>
               </motion.div>
             );

@@ -23,9 +23,9 @@ export default function FAQS({title,data}:FAQSProps) {
   };
 
   return (
-    <section className=" px-5 mx-auto 2xl:max-w-7xl mx-auto md:py-16 py-0 bg-white ">
+    <section className=" px-5 mx-auto 2xl:max-w-7xl  py-16 bg-white ">
       {/* ────── LEFT: VIDEO (fixed height) ────── */}
-<h2 className="text-4xl font-bold text-center mb-12 text-[#007BFF]">
+<h2 className="text-3xl md:text-6xl font-bold text-black mb-16 md:mb-10 drop-shadow-2xl text-center">
           {title}
         </h2>      <div className="flex flex-col lg:flex-row items-center justify-between md:gap-12">
         <div className="lg:w-1/2 flex justify-center items-start">

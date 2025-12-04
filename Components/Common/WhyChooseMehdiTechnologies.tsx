@@ -8,7 +8,7 @@ export default function WhyChooseMehdiTechnologies({data}:WhyChooseProps) {
       className="relative py-12 lg:py-16 w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
-          "url('/BackgroundPictures/LandingPageBG/ContactBG.webp')",
+          "url('/BackgroundPictures/BGWhyChoose.webp')",
       }}
     >
       <h2 className="text-3xl lg:text-5xl font-bold leading-tight mx-auto text-white text-center">

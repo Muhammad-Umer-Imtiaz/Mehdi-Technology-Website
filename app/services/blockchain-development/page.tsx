@@ -52,6 +52,7 @@ export default function WebDevelopment() {
         title="Industries We Serve"
         Industry={BlockchainIndustriesData}
       />
+  
        <TechStack
         title="Tech Stack We Work With"
         highlight="Tech Stack"
@@ -66,11 +67,12 @@ export default function WebDevelopment() {
         highlight="Tech Stack"
         technologies={BlockchainTech}
       /> */}
+                    <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechBlockchain} />
+
  <FAQS
  title="Frequently Asked Questions"
         data={BlockchainFaqData} />
 
-              <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechBlockchain} />
         
 
       {/* 🤝 How We Serve */}

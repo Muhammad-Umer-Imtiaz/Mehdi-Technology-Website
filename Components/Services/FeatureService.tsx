@@ -269,7 +269,7 @@ export default function FeatureService() {
               />
             </div>
           </div>
-          <div className="flex md:gap-4 gap-2 justify-evenly mt-3">
+          <div className="flex md:gap-4 gap-2 justify-evenly md:mt-0 mt-3">
             <button className="md:px-10 px-3 py-2 rounded-full md:text-2xl text-base text-[#007BFF] bg-white shadow-black shadow-lg">
               <FaPhoneAlt className="inline md:w-5 md:h-5 w-4 h-4 mb-0.5 md:mr-3 mr-1" />
               Book a Call
