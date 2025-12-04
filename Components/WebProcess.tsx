@@ -2,28 +2,31 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
-const steps = [
-  { id: 1, title: 'Discovery & Requirements', subtitle: 'Understanding your goals, audience, and technical needs.', image: 'https://picsum.photos/800/600?random=1' },
-  { id: 2, title: 'UI/UX Wireframes & Design', subtitle: 'Creating intuitive and beautiful user experiences.', image: 'https://picsum.photos/800/600?random=2' },
-  { id: 3, title: 'Frontend + Backend Development', subtitle: 'Building robust, scalable, and fast web applications.', image: 'https://picsum.photos/800/600?random=3' },
-  { id: 4, title: 'Testing & Quality Assurance', subtitle: 'Ensuring everything works perfectly before launch.', image: 'https://picsum.photos/800/600?random=4' },
-  { id: 5, title: 'Deployment & Launch', subtitle: 'Going live with confidence and zero downtime.', image: 'https://picsum.photos/800/600?random=5' },
-  { id: 6, title: 'Ongoing Maintenance & Optimization', subtitle: 'Keeping your site fast, secure, and up-to-date.', image: 'https://picsum.photos/800/600?random=6' },
-];
+interface Step {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+}
 
-export default function WebProcessAccordion() {
+interface WebProcessAccordionProps {
+  title?: string;
+  process: Step[];
+}
+export default function WebProcess({title,process}: WebProcessAccordionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="min-h-screen bg-white py-20 px-5">
+    <div className="min-h-screen py-16 bg-white px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold text-center mb-4">Our Web Development Process</h1>
-        <p className="text-2xl md:text-3xl text-center text-blue-600 font-medium mb-16">How We Build Your Web Solution</p>
+        <h1 className="text-3xl md:text-6xl font-bold text-center mb-16">{title}</h1>
+        {/* <p className="text-2xl md:text-3xl text-center text-blue-600 font-medium mb-16">How We Build Your Web Solution</p> */}
 
         {/* Mobile: Vertical Stack | Desktop: Horizontal Row */}
         <div className="flex flex-col lg:flex-row gap-8 justify-center items-center lg:items-start">
-          {steps.map((step, index) => {
+          {process.map((step, index) => {
             const isOpen = activeIndex === index;
 
             return (
@@ -31,10 +34,10 @@ export default function WebProcessAccordion() {
                 key={index}
                 layout
                 onClick={() => setActiveIndex(isOpen ? -1 : index)}
-                className="relative cursor-pointer w-full lg:w-auto"
+                className="relative cursor-pointer w-full  lg:w-auto "
                 animate={{
                   width: isOpen ? (window.innerWidth < 1024 ? '100%' : 460) : window.innerWidth < 1024 ? '100%' : 110,
-                  height: window.innerWidth < 1024 ? (isOpen ? 480 : 100) : 384,
+                  height: window.innerWidth < 1024 ? (isOpen ? 280 : 70) : 500,
                 }}
                 transition={{
                   duration: 0.9,
@@ -42,7 +45,7 @@ export default function WebProcessAccordion() {
                 }}
               >
                 <motion.div
-                  className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-t from-[#003C7D] to-[#58C9EC]"
+                  className="relative rounded-3xl overflow-hidden shadow-2xl bg-linear-to-t from-[#003C7D] to-[#58C9EC]"
                   initial={false}
                   animate={{
                     boxShadow: isOpen
@@ -68,7 +71,7 @@ export default function WebProcessAccordion() {
                           fill
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
+                        {/* <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/90" /> */}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -84,21 +87,29 @@ export default function WebProcessAccordion() {
                       >
                         <h3 className="text-3xl font-bold mb-3 leading-tight">{step.title}</h3>
                         <p className="text-lg leading-relaxed opacity-95">{step.subtitle}</p>
-                        <span className="absolute bottom-6 right-6 text-[#838180] text-7xl font-bold opacity-70">
+                        <span className="absolute bottom-1 right-6 text-[#838180] text-7xl font-bold opacity-70">
                           {step.id}
                         </span>
                       </motion.div>
+                      
                     )}
                   </AnimatePresence>
+                  {/* <motion.div
+                    className="md:hidden absolute bottom-6 right-1 z-20"
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <ChevronDown className="w-6 h-6 text-white drop-shadow-lg" />
+                  </motion.div> */}
 
                   {/* Closed State - Mobile & Desktop */}
                         {!isOpen && (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 0.9 }}
-    className="absolute inset-0 h-full flex items-center justify-center z-10"
+    className="absolute inset-0 w-full h-full z-10 flex items-end justify-center md:items-center md:justify-center"
   >
-    <span className="text-white text-lg font-black transform md:rotate-[-90deg] whitespace-nowrap">
+    <span className="text-white text-base md:text-xl font-black text-center px-4 whitespace-nowrap pb-6 md:pb-0 md:-rotate-90 origin-center">
         <span>{step.id}-</span>{" "}
       {step.title}
     </span>

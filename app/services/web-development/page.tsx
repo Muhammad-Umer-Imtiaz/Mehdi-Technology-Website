@@ -7,6 +7,7 @@ import OurProcess from "@/Components/Common/OurProcess";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import TechStack from "@/Components/LandingPage/TechStack";
 
 import { webTech, WebServices, HowWEServe, webDevProcess, WebIndustries, WebDevFaqData, WhyChooseMehdiTechWeb } from "@/data/webDevelopmentData";
 
@@ -36,31 +37,33 @@ export default function WebDevelopment() {
         services={WebServices}
       />
 
-      <WebProcess />
-      <Webdevelopment />
+      <WebProcess title="Our Web Development Process"
+        process={webDevProcess}/>
+      {/* <Webdevelopment /> */}
 
-      <OurProcess
-        title="Our Web Development Process"
-        process={webDevProcess}
-      />
+      {/* <OurProcess
+        
+      /> */}
 
       <IndustriesWeServe
         title="Industries We Serve"
         Industry={WebIndustries}
       />
+       <TechStack/> 
+       {/* <TechSection
+        title="Website"
+        highlight="Development"
+        technologies={webTech}
+      /> */}
+      <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechWeb} />
 
       <FAQS
         title="Web Development FAQs"
         data={WebDevFaqData}
       />
 
-      <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechWeb} />
 
-      <TechSection
-        title="Website"
-        highlight="Development"
-        technologies={webTech}
-      />
+     
 
       <HowWeServe
         title="How We Serve You (Website Development)"

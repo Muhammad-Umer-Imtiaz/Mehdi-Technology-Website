@@ -239,100 +239,47 @@ export const WebIndustries = [
 ];
 export const webDevProcess = [
   {
-    phase: "Discovery & Requirements",
-    duration: "Week 1",
-    title: "Understanding Your Goals & Technical Needs",
-    description:
+    id: 1,
+    title: "Discovery & Requirements",
+    subtitle:
       "We analyze your business goals, audience, content needs, and required features to define the full project scope.",
-    icon: FaSearch,
-    deliverables: [
-      "Project requirements",
-      "Feature list",
-      "Technical plan",
-      "Timeline & milestones",
-    ],
-    color: "from-sky-500 to-indigo-500",
+    image: "/OurProcess/Step1.webp",
   },
 
   {
-    phase: "UI/UX Wireframes & Design",
-    duration: "Week 1-2",
-    title: "Modern, Clean, User-Centered Designs",
-    description:
+    id: 2,
+    title: "UI/UX Wireframes & Design",
+    subtitle:
       "We create intuitive wireframes, layout structures, and visually polished UI screens for all pages.",
-    icon: FaPenNib,
-    deliverables: [
-      "Wireframes",
-      "Clickable prototype",
-      "Full UI design kit",
-      "Brand styling",
-    ],
-    color: "from-indigo-500 to-rose-500",
-  },
+  image: "/OurProcess/Step2.webp"  },
 
   {
-    phase: "Frontend + Backend Development",
-    duration: "Week 2-6",
-    title: "High-Performance Frontend & Scalable Backend",
-    description:
+    id: 3,
+    title: "Frontend + Backend Development",
+    subtitle:
       "We develop clean, optimized code with secure backend logic, API integrations, and responsive frontend.",
-    icon: FaCode,
-    deliverables: [
-      "Frontend development",
-      "Backend development",
-      "API integrations",
-      "Database setup",
-    ],
-    color: "from-emerald-500 to-lime-500",
-  },
+  image: "/OurProcess/Step3.webp"  },
 
   {
-    phase: "Testing & QA",
-    duration: "Week 3-7",
-    title: "Quality Assurance, Speed & Responsiveness",
-    description:
+    id: 4,
+    title: "Testing & QA",
+    subtitle:
       "We test across browsers and devices to ensure flawless performance, fast loading, and smooth functionality.",
-    icon: FaTools,
-    deliverables: [
-      "Browser testing",
-      "Mobile responsiveness",
-      "Bug fixing",
-      "Performance optimization",
-    ],
-    color: "from-yellow-500 to-orange-500",
-  },
+  image: "/OurProcess/Step4.webp"  },
 
   {
-    phase: "Deployment & Launch",
-    duration: "Week 4-8",
-    title: "Server Setup, Optimization & Go-Live",
-    description:
+    id: 5,
+    title: "Deployment & Launch",
+    subtitle:
       "We deploy your website on a secure hosting environment with full SEO & performance optimization.",
-    icon: FaCloudUploadAlt,
-    deliverables: [
-      "Hosting setup",
-      "Domain & SSL",
-      "Live deployment",
-      "SEO optimization",
-    ],
-    color: "from-purple-500 to-fuchsia-500",
-  },
+  image: "/OurProcess/Step5.webp"  },
 
   {
-    phase: "Ongoing Maintenance & Optimization",
-    duration: "Ongoing",
-    title: "Updates, Monitoring & Feature Enhancements",
-    description:
+    id: 6,
+    title: "Ongoing Maintenance & Optimization",
+    subtitle:
       "We provide continuous support, SEO updates, performance tuning, and new feature rollouts.",
-    icon: FaChartLine,
-    deliverables: [
-      "Monthly updates",
-      "New features",
-      "SEO improvements",
-      "Security patches",
-    ],
-    color: "from-teal-500 to-cyan-500",
-  },
+  image: "/OurProcess/Step6.webp"  },
 ];
 
 
