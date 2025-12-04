@@ -9,7 +9,10 @@ import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import FAQS from "@/Components/Common/FAQS";
+import dynamic from "next/dynamic";
 
+// Client-only components
+const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
 export default function MobileAppDevelopment() {
   return (
     <section>

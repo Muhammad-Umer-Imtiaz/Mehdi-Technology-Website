@@ -8,7 +8,10 @@ import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import dynamic from "next/dynamic";
 
+// Client-only components
+const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
 export default function UIUX() {
   return (
     <section>

@@ -18,7 +18,10 @@ import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
 import TechStack from "@/Components/Common/TechStack";
+import dynamic from "next/dynamic";
 
+// Client-only components
+const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
 export default function WebDevelopment() {
   return (
     <section>

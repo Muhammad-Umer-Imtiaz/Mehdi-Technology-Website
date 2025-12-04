@@ -14,8 +14,8 @@ import { webTech, WebServices, HowWEServe, webDevProcess, WebIndustries, WebDevF
 import dynamic from "next/dynamic";
 
 // Client-only components
-const Webdevelopment = dynamic(() => import("@/Components/Webdevelopment"), { ssr: false });
 const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
+// const Webdevelopment = dynamic(() => import("@/Components/Webdevelopment"), { ssr: false });
 
 export default function WebDevelopment() {
   return (
