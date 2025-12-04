@@ -7,9 +7,14 @@ import OurProcess from "@/Components/Common/OurProcess";
 import ServicesSection from "@/Components/Common/ServicesSection";
 import TechSection from "@/Components/Common/TechSection";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
-import Webdevelopment from "@/Components/Webdevelopment";
-import WebProcess from "@/Components/WebProcess";
+
 import { webTech, WebServices, HowWEServe, webDevProcess, WebIndustries, WebDevFaqData, WhyChooseMehdiTechWeb } from "@/data/webDevelopmentData";
+
+import dynamic from "next/dynamic";
+
+// Client-only components
+const Webdevelopment = dynamic(() => import("@/Components/Webdevelopment"), { ssr: false });
+const WebProcess = dynamic(() => import("@/Components/WebProcess"), { ssr: false });
 
 export default function WebDevelopment() {
   return (
@@ -24,36 +29,39 @@ export default function WebDevelopment() {
           { name: "Web Development" },
         ]}
       />
-     
+
       <ServicesSection
         title=" Our Web Development Services"
         description="End-to-end Website development tailored to your business."
         services={WebServices}
       />
-      <WebProcess/>
-      <Webdevelopment/>
-<OurProcess
-              title="  Our Web Development Process"
-              // description="A proven, systematic approach to achieving sustainable organic growth and measurable ROI through strategic SEO implementation."
-              process={webDevProcess} />
 
- <IndustriesWeServe
+      <WebProcess />
+      <Webdevelopment />
+
+      <OurProcess
+        title="Our Web Development Process"
+        process={webDevProcess}
+      />
+
+      <IndustriesWeServe
         title="Industries We Serve"
         Industry={WebIndustries}
       />
 
+      <FAQS
+        title="Web Development FAQs"
+        data={WebDevFaqData}
+      />
 
-       <FAQS
-            title="Mobile App Development FAQs"
-              data={WebDevFaqData} />
-            <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechWeb} />
-            
+      <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechWeb} />
 
-       <TechSection
+      <TechSection
         title="Website"
         highlight="Development"
         technologies={webTech}
       />
+
       <HowWeServe
         title="How We Serve You (Website Development)"
         description="At Mehdi Technologies, we design and develop high-performance websites that perfectly balance creativity, functionality, and technology. From sleek business sites to powerful enterprise applications, our web solutions are built for speed, security, and scalability ensuring a flawless digital experience across every device."
