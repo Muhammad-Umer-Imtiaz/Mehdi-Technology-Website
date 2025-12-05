@@ -21,7 +21,7 @@ export default function WebProcess({title,process}: WebProcessAccordionProps) {
   return (
     <div className="min-h-screen py-16 bg-white px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-6xl font-bold text-center mb-16">{title}</h1>
+        <h2 className="text-3xl md:text-6xl font-bold text-center mb-16">{title}</h2>
         {/* <p className="text-2xl md:text-3xl text-center text-blue-600 font-medium mb-16">How We Build Your Web Solution</p> */}
 
         {/* Mobile: Vertical Stack | Desktop: Horizontal Row */}
