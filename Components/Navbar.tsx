@@ -62,7 +62,7 @@ const [exploreDataDropdownOpen, setExploreDataDropdownOpen] = useState(false);
 
    
       {/* Desktop Navigation Links */}
-<ul className="hidden lg:flex gap-16 text-lg font-medium">
+<ul className="hidden lg:flex gap-12 text-lg font-medium">
   {navLinks.map((link) => (
     <li
       key={link.name}

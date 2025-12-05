@@ -71,7 +71,7 @@ export default function Achievement() {
   <button
     className="
       bg-linear-to-r from-[#007BFF] to-[#58C9EC]
-      rounded-lg md:text-xl text-white font-semibold md:px-6 px-3 py-3
+      rounded-lg md:text-xl text-white font-semibold md:px-6 px-3 md:py-3 py-3
       transition-all duration-500 ease-in-out
       shadow-[0_0_7px_0_rgba(255,255,255,0.8)]
       
@@ -92,7 +92,7 @@ export default function Achievement() {
            <Link href="/contact-us" className="block w-fit">
   <button
     className="
-      bg-white md:px-6 px-3 py-3 md:text-xl ml-6
+      bg-white md:px-6 px-3 py-3 md:text-xl md:ml-6 ml-3
       text-[#007BFF] font-semibold rounded-lg
       shadow-[0_0_8px_0_rgba(255,255,255,0.8)]
       transition-all duration-500 ease-in-out
