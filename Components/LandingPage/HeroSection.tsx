@@ -5,7 +5,7 @@ import TextType from "../Animation/TextType";
 import { FiArrowRight } from "react-icons/fi"
 export default function HeroSection() {
   return (
-    <section className="relative h-[100vh] w-full md:flex md:pt-0 pt-36 md:items-center md:justify-center text-white overflow-hidden">
+    <section className="relative h-screen w-full md:flex md:pt-0 pt-48 md:items-center md:justify-center text-white overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -26,10 +26,11 @@ export default function HeroSection() {
 
       
       <div className="relative z-10 md:text-center  xl:max-w-5xl 2xl:max-w-7xl md:mt-28 px-5   mx-auto">
-        <TextType
+        <div className="md:block hidden">
+          <TextType
   className="
-    inline-flex items-center gap-3 text-2xl font-medium mb-6 
-    bg-gradient-to-r from-white/20 to-white/5 
+   inline-flex  items-center gap-3 text-xs font-medium mb-6 
+    bg-linear-to-r from-white/20 to-white/5 
     text-white/80 px-5 py-2.5 md:text-xl 
     rounded-full shadow-lg border border-white/20 
     backdrop-blur-xl tracking-wide"
@@ -40,6 +41,7 @@ export default function HeroSection() {
   cursorCharacter="|"
 />
 
+        </div>
         {/* <p className="block bg-white/10 backdrop-blur-md text-[#ffffff]/70 md:px-6 px-3 py-2 md:text-base inline-flex items-center gap-2 font-light rounded-full mb-4 tracking-wide shadow-sm border-2 border-white/50">
   Build 
   <FiArrowRight className="inline-block text-white" />
@@ -79,16 +81,16 @@ Everything your business needs to scale.
       inline-flex items-center 
       bg-white 
       md:px-8 px-4 py-2 
-      md:mt-10 mt-6 
+      md:mt-10  mt-10 
       rounded-md 
       font-semibold 
-      text-2xl 
+      md:text-2xl text-xl
       text-[#007BFF] 
       shadow-[0_0_7px_0_rgba(255,255,255,0.8)]
       transition-all duration-300
-      hover:bg-gradient-to-r hover:from-[#007BFF] hover:to-[#58C9EC]
+      hover:bg-linear-to-r hover:from-[#007BFF] hover:to-[#58C9EC]
       hover:text-white hover:rounded-lg
-      active:bg-gradient-to-r active:from-[#007BFF] active:to-[#58C9EC]
+      active:bg-linear-to-r active:from-[#007BFF] active:to-[#58C9EC]
       active:text-white active:rounded-lg
     "
           >

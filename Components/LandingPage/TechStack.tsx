@@ -116,7 +116,7 @@ export default function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="mx-auto py-16 2xl:px-4 px-4 xl:px-28 bg-white"
+      className="mx-auto py-16  min-h-screen px-5 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

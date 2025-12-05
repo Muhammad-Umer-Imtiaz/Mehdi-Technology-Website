@@ -20,13 +20,15 @@ export default function Home() {
       <WhoWeAre />
       <Achivement />
       <Services />
+      <AiSolution />
+   
+      <TechStack />
       <Testimonial />
       <Testimonial2/>
-      <FAQS />
-      <AiSolution />
-      <TechStack />
+          <Clients />
       <Blogs />
-      <Clients />
+          <FAQS />
+ 
     </div>
   );
 }
