@@ -48,7 +48,7 @@ const testimonials = [
   },
 ];
 
-export default function Testimonial() {
+export default function Testimonial2() {
   const [index, setIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -84,7 +84,7 @@ export default function Testimonial() {
   return (
     <section
       id="testimonial"
-      className="relative min-h-[100vh] py-16 md:py-6 px-6 w-full bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen py-16 px-6 w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
           "url('/BackgroundPictures/LandingPageBG/TestimonialBG.webp')",
@@ -108,73 +108,52 @@ export default function Testimonial() {
       {/* Desktop / Tablet */}
       <div className="hidden md:flex relative items-center justify-center max-w-7xl mx-auto w-full mt-10 gap-6">
         <button
-          onClick={() => {
-            handlePrev();
-            resetInterval();
-          }}
+          onClick={() => { handlePrev(); resetInterval(); }}
           aria-label="Previous"
-          className="absolute left-4 md:-left-14 top-50 text-white bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm z-20 transition-all"
+          className="absolute left-4 md:-left-14 text-white bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm z-20 transition-all"
         >
           <FiChevronLeft size={28} />
         </button>
 
-        <div className="relative w-full flex px-5">
-          {/* reserve height so layout doesn't jump when cards overlap */}
-          <div className="relative w-[70%] ">
-            <AnimatePresence mode="sync">
-              <motion.div
-                key={firstTestimonial.id}
-                initial={{ x: 600, opacity: 1 }}
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: {
-                    x: { type: "spring", stiffness: 20, damping: 12 }, // softer spring
-                    opacity: { duration: 45, ease: "linear" }, // slow fade-in over 4s
-                  },
-                }}
-                exit={{
-                  x: 0,
-                  opacity: 0,
-                  transition: {
-                    opacity: { duration: 2, ease: "easeOut" },
-                    x: { type: "spring", stiffness: 100 },
-                  },
-                }}
-                // make the big card absolutely positioned inside the reserved container
-                className="absolute left-0 top-0 bg-linear-to-r from-[#007BFF] to-[#58C9EC] text-white rounded-3xl p-8 flex gap-8 w-full shadow-xl z-10"
-              >
-                <div className="flex-shrink-0">
-                  <Image
-                    src={firstTestimonial.image}
-                    alt={firstTestimonial.name}
-                    width={300}
-                    height={350}
-                    className="object-contain rounded-3xl h-80 w-auto mb-4 md:mb-2 md:mr-3"
-                  />
-                  <h4 className="text-lg font-semibold text-center">
-                    {firstTestimonial.name}
-                  </h4>
-                  <p className="text-sm opacity-80 text-center">
-                    {firstTestimonial.title}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm md:text-xl font-light leading-relaxed mb-3">
-                    {firstTestimonial.feedback}
-                  </p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        <div className="relative w-full flex">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={firstTestimonial.id}
+              initial={{ x: 400, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -400, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 200, damping: 30 }}
+              className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] text-white rounded-3xl p-8 flex gap-8 w-[70%] shadow-xl z-10 relative"
+            >
+              <div className="flex-shrink-0">
+                <Image
+                  src={firstTestimonial.image}
+                  alt={firstTestimonial.name}
+                  width={300}
+                  height={350}
+                  className="object-contain rounded-3xl h-80 w-auto mb-4 md:mb-2 md:mr-3"
+                />
+                <h4 className="text-lg font-semibold text-center">
+                  {firstTestimonial.name}
+                </h4>
+                <p className="text-sm opacity-80 text-center">
+                  {firstTestimonial.title}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm md:text-xl font-light leading-relaxed mb-3">
+                  {firstTestimonial.feedback}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-          {/* small/next card — keep as-is (absolute) so its animation is unaffected */}
           <motion.div
             key={secondTestimonial.id + "next"}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="bg-linear-to-r from-[#007BFF]/70 to-[#58C9EC]/70 text-white rounded-3xl p-6 flex flex-col items-center shadow-xl w-[25%] absolute right-0 top-0 z-0"
+            transition={{ duration: 0.8 }}
+            className="bg-gradient-to-r from-[#007BFF]/70 to-[#58C9EC]/70 text-white rounded-3xl p-6 flex flex-col items-center shadow-xl w-[25%] absolute right-0 top-0 z-0"
           >
             <Image
               src={secondTestimonial.image}
@@ -193,12 +172,9 @@ export default function Testimonial() {
         </div>
 
         <button
-          onClick={() => {
-            handleNext();
-            resetInterval();
-          }}
+          onClick={() => { handleNext(); resetInterval(); }}
           aria-label="Next"
-          className="absolute right-4 md:-right-14 top-50 text-white bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm z-20 transition-all"
+          className="absolute right-4 md:-right-14 text-white bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm z-20 transition-all"
         >
           <FiChevronRight size={28} />
         </button>
@@ -221,7 +197,7 @@ export default function Testimonial() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -300, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="bg-linear-to-r from-[#007BFF]/70 to-[#58C9EC]/70 text-white rounded-3xl p-6 flex flex-col items-center shadow-xl"
+                className="bg-gradient-to-r from-[#007BFF]/70 to-[#58C9EC]/70 text-white rounded-3xl p-6 flex flex-col items-center shadow-xl"
               >
                 <Image
                   src={firstTestimonial.image}
@@ -239,9 +215,7 @@ export default function Testimonial() {
                 <p className="text-sm font-light leading-relaxed text-center">
                   {firstTestimonial.feedback}
                 </p>
-                <div className="mt-4 text-xs opacity-80">
-                  Swipe left or right
-                </div>
+                <div className="mt-4 text-xs opacity-80">Swipe left or right</div>
               </motion.div>
             </AnimatePresence>
           </motion.div>
@@ -249,10 +223,7 @@ export default function Testimonial() {
 
         <div className="mt-4 flex items-center justify-center gap-4">
           <button
-            onClick={() => {
-              handlePrev();
-              resetInterval();
-            }}
+            onClick={() => { handlePrev(); resetInterval(); }}
             className="p-2 rounded-full bg-white/20 text-white backdrop-blur-sm"
             aria-label="Previous"
           >
@@ -262,10 +233,7 @@ export default function Testimonial() {
             {index + 1}/{testimonials.length}
           </div>
           <button
-            onClick={() => {
-              handleNext();
-              resetInterval();
-            }}
+            onClick={() => { handleNext(); resetInterval(); }}
             className="p-2 rounded-full bg-white/20 text-white backdrop-blur-sm"
             aria-label="Next"
           >

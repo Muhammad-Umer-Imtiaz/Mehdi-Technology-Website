@@ -9,6 +9,7 @@ import TechStack from "@/Components/LandingPage/TechStack";
 import Blogs from "@/Components/LandingPage/Blogs";
 import Clients from "@/Components/LandingPage/Clients";
 import BreakpointDebugger from "@/Components/BreakpointDebugger";
+import Testimonial2 from "@/Components/LandingPage/Testimonial2";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Achivement />
       <Services />
       <Testimonial />
+      <Testimonial2/>
       <FAQS />
       <AiSolution />
       <TechStack />
