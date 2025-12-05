@@ -13,9 +13,9 @@ export default function Clients() {
     <section className="mx-auto py-16 md:px-4 px-5 bg-white">
       {/* Header */}
       <div className="md:text-center md:mb-16 mb-12">
-        <h4 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 md:px-6 px-3 py-1.5 text-base  font-medium rounded-full tracking-[0.4em] mb-4">
+        <h2 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 md:px-6 px-3 py-1.5 text-base  font-medium rounded-full tracking-[0.4em] mb-4">
           MEET OUR CLIENTS
-        </h4>
+        </h2>
         <h2 className="text-2xl md:text-6xl font-bold text-black mb-4">
           Trusted by innovators, startups, and <br />
           enterprises worldwide.

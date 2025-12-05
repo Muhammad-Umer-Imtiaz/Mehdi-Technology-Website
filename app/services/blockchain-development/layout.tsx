@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "dApps & Web3.0 Development by Mehdi Technologies",
+  title: "Blockchain & Web3 Development Services | Smart Contracts, dApps & NFTs",
   description:
-    "We provide secure, transparent, and scalable blockchain solutions including smart contracts, DApps, NFT marketplaces, and wallet integrations.",
+    "We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces.",
   robots: {
     index: true,
     follow: true,
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://www.mehditechnologies.com/services/blockchain-development",
   },
   openGraph: {
-    title: "dApps & Web3.0 Development by Mehdi Technologies",
+    title: "Blockchain & Web3 Development Services | Smart Contracts, dApps & NFTs",
     description:
-      "We provide secure, transparent, and scalable blockchain solutions including smart contracts, DApps, NFT marketplaces, and wallet integrations.",
+      "We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces.",
     type: "website",
     url: "https://www.mehditechnologies.com/services/blockchain-development",
     images: [
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "dApps & Web3.0 Development by Mehdi Technologies",
+    title: "Blockchain & Web3 Development Services | Smart Contracts, dApps & NFTs",
     description:
-      "We provide secure, transparent, and scalable blockchain solutions including smart contracts, DApps, NFT marketplaces, and wallet integrations.",
+      "We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces.",
     images: ["https://www.mehditechnologies.com/Logo.png"],
     creator: "@MehdiTechnologies",
   },
@@ -77,8 +77,7 @@ export default function BlockchainLayout({
                 ],
               },
               description:
-                "Secure, transparent, and scalable blockchain solutions: smart contracts, decentralized applications (DApps), NFT marketplaces, token development, and wallet integrations.",
-              serviceType: "Blockchain Development",
+                "We help businesses step into the decentralized future with end-to-end blockchain development from smart contracts to NFT marketplaces.",
               areaServed: "Worldwide",
               audience: {
                 "@type": "Audience",

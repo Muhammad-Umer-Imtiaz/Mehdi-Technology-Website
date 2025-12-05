@@ -144,9 +144,10 @@ export default function Services() {
     >
       {/* Header */}
       <div className="md:text-center text-start mb-8">
-        <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm font-light rounded-full tracking-[0.5em]">
-          BEST FEATURES
-        </h4>
+     
+         <h2 className="text-[#007BFF] bg-white/90 inline-block border border-[#00000030] px-8 py-2 text-xs md:text-base font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">
+         BEST FEATURES
+        </h2>
         <h2 className="md:text-6xl text-3xl my-2 font-semibold mt-4 text-black">
           Smart, Scalable Software Solutions Built for Your Business 
         </h2>

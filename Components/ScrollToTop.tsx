@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { ArrowUp, Rocket, Zap } from "lucide-react";
+import { ArrowDown, ArrowUp, Rocket, Zap } from "lucide-react";
 import type { JSX } from "react";
 
 type Particle = {
@@ -53,7 +53,7 @@ export default function ScrollToTop(): JSX.Element {
   const getIconForProgress = () => {
     if (isClicked) return <Zap className="w-7 h-7 text-white animate-bounce" />;
     if (isHovered) return <Rocket className="w-7 h-7 text-white" />;
-    return <ArrowUp className="w-7 h-7 text-white" />;
+    return <ArrowDown className="w-7 h-7 text-white" />;
   };
 
   // SVG progress circle math
@@ -65,7 +65,7 @@ export default function ScrollToTop(): JSX.Element {
     <>
       {/* Enhanced Interactive Scroll to Top Button */}
       <div
-        className={`fixed bottom-8 right-8 z-[999] transition-all duration-500 ${
+        className={`fixed md:bottom-8 md:right-8 bottom-6 right-3 z-[999] transition-all duration-500 ${
           isVisible
             ? "opacity-100 translate-y-0 scale-100"
             : "opacity-0 translate-y-16 scale-50 pointer-events-none"

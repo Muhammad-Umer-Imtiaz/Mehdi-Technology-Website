@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SEO & Digital Marketing Services | Rank Higher, Get More Leads | Mehdi Technologies",
+  title: "Telegram Mini App Development | Bot & Mini App Experts",
   description:
-    "We help brands get seen, trusted, and chosen. From SEO and content strategy to performance marketing and social media growth — Mehdi Technologies builds digital systems that bring real traffic, real leads, and real revenue.",
+    "We develop powerful Telegram Mini Apps, bots, automation tools, Web3 integrations, and gamified experiences for startups and enterprise projects.",
   robots: {
     index: true,
     follow: true,
@@ -20,35 +20,35 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.mehditechnologies.com/services/website-optimzation",
+    canonical: "https://www.mehditechnologies.com/services/telegram-mini-apps",
   },
   openGraph: {
-    title: "SEO & Digital Marketing Services | Rank Higher, Get More Leads | Mehdi Technologies",
+    title: "Telegram Mini App Development | Bot & Mini App Experts",
     description:
-      "We help brands get seen, trusted, and chosen. From SEO and content strategy to performance marketing and social media growth — Mehdi Technologies builds digital systems that bring real traffic, real leads, and real revenue.",
+      "We develop powerful Telegram Mini Apps, bots, automation tools, Web3 integrations, and gamified experiences for startups and enterprise projects.",
     type: "website",
-    url: "https://www.mehditechnologies.com/services/website-optimzation",
+    url: "https://www.mehditechnologies.com/services/telegram-mini-apps",
     images: [
       {
         url: "https://www.mehditechnologies.com/Logo.png",
         width: 800,
         height: 600,
-        alt: "SEO & Digital Marketing Services",
+        alt: "Telegram Mini Apps Development",
       },
     ],
     siteName: "Mehdi Technologies",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO & Digital Marketing Services | Rank Higher, Get More Leads | Mehdi Technologies",
+    title: "Telegram Mini App Development | Bot & Mini App Experts",
     description:
-      "We help brands get seen, trusted, and chosen. From SEO and content strategy to performance marketing and social media growth — Mehdi Technologies builds digital systems that bring real traffic, real leads, and real revenue.",
+      "We develop powerful Telegram Mini Apps, bots, automation tools, Web3 integrations, and gamified experiences for startups and enterprise projects.",
     images: ["https://www.mehditechnologies.com/Logo.png"],
     creator: "@MehdiTechnologies",
   },
 };
 
-export default function SEOLayout({
+export default function TelegramLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -56,14 +56,14 @@ export default function SEOLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        {/* JSON-LD Structured Data for SEO & Digital Marketing Service */}
+        {/* JSON-LD Structured Data for Telegram Mini Apps Service */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              name: "SEO & Digital Marketing Services | Rank Higher, Get More Leads | Mehdi Technologies",
+              name: "Telegram Mini Apps Development",
               provider: {
                 "@type": "Organization",
                 name: "Mehdi Technologies",
@@ -77,14 +77,14 @@ export default function SEOLayout({
                 ],
               },
               description:
-                "We provide SEO and digital marketing services that help your brand rank faster, grow smarter, and win online. Drive real traffic, leads, and revenue.",
-              serviceType: "SEO & Digital Marketing",
+                "We develop powerful Telegram Mini Apps, bots, automation tools, Web3 integrations, and gamified experiences for startups and enterprise projects.",
+              serviceType: "Telegram Mini Apps Development",
               areaServed: "Worldwide",
               audience: {
                 "@type": "Audience",
-                audienceType: "Businesses and startups seeking SEO and digital marketing solutions",
+                audienceType: "Businesses and startups seeking Telegram bot and mini-app solutions",
               },
-              sameAs: "https://www.mehditechnologies.com/services/website-optimzation",
+              sameAs: "https://www.mehditechnologies.com/services/telegram-mini-apps",
             }),
           }}
         />

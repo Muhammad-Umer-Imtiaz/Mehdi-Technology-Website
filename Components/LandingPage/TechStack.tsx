@@ -121,9 +121,9 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="md:text-center mb-16">
-          <h4 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 px-6 py-1.5 text-base font-medium rounded-full tracking-[0.4em] mb-4">
+          <h2 className="text-[#007BFF] bg-white inline-block border-2 border-gray-500 px-6 py-1.5 text-base font-medium rounded-full tracking-[0.4em] mb-4">
             OUR FOUNDATION
-          </h4>
+          </h2>
           <h2 className="text-5xl md:text-6xl font-bold text-black mb-4">
             Tech Stack & Tools
           </h2>

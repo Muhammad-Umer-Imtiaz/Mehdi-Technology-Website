@@ -2,7 +2,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Website Development | Mehdi Technologies",
+  title: "Web Development Srevices | Mehdi Technolgies",
   description:
     "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
   robots: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mehditechnologies.com/services/web-development",
   },
   openGraph: {
-    title: "Custom Website Development | Mehdi Technologies",
+    title: "Web Development Srevices | Mehdi Technolgies",
     description:
       "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Website Development | Mehdi Technologies",
+    title: "Web Development Srevices | Mehdi Technolgies",
     description:
       "Mehdi Technologies builds modern, fast, scalable web applications using React, Next.js, Node.js, Laravel, and cloud-ready architecture.",
     images: ["https://www.mehditechnologies.com/Logo.png"],

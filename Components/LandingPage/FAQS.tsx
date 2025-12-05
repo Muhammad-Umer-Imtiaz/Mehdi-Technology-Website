@@ -52,8 +52,12 @@ export default function FAQS() {
   };
 
   return (
-    <section className="flex flex-col h-contain lg:flex-row items-start justify-between px-5 mx-auto 2xl:max-w-7xl md:py-16 py-0 bg-white md:gap-12">
-      {/* ────── LEFT: VIDEO (fixed height) ────── */}
+    <section className=" h-contain  px-5 mx-auto 2xl:max-w-7xl md:py-16 py-0 bg-white ">
+    <h2 className="text-3xl md:text-6xl font-bold text-black mb-16 md:mb-10 drop-shadow-2xl text-center">
+          Frequetly Asked Questions
+        </h2> 
+      <div className="flex flex-col md:gap-12 lg:flex-row items-start justify-between">
+        {/* ────── LEFT: VIDEO (fixed height) ────── */}
       <div className="lg:w-1/2 flex justify-center items-start">
         <div className="w-full md:h-[550px]  flex justify-center items-center">
           <video
@@ -107,6 +111,7 @@ export default function FAQS() {
             );
           })}
         </div>
+      </div>
       </div>
     </section>
   );

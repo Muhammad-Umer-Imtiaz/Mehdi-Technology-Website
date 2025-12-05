@@ -84,18 +84,18 @@ export default function Testimonial() {
   return (
     <section
       id="testimonial"
-      className="relative min-h-[100vh] py-16 md:py-6 px-6 w-full bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen py-16 md:py-6 px-6 w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
           "url('/BackgroundPictures/LandingPageBG/TestimonialBG.webp')",
       }}
     >
       <div className="text-center mb-8">
-        <h4 className="text-[#007BFF] bg-white/90 inline-block border border-[#00000030] px-8 py-2 text-xs md:text-sm font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">
+        <h2 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-8 py-2 text-xs md:text-base font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">
           OUR CLIENTS
-        </h4>
+        </h2>
 
-        <h2 className="text-4xl md:text-6xl my-2 font-semibold mt-4 text-white">
+        <h2 className="text-4xl md:text-6xl my-2 font-semibold mt-2 text-white">
           Testimonial
         </h2>
         <p className="max-w-2xl mx-auto mt-3 font-extralight text-white">
@@ -106,8 +106,8 @@ export default function Testimonial() {
       </div>
 
       {/* Desktop / Tablet */}
-      <div className="hidden md:flex relative items-center justify-center max-w-7xl mx-auto w-full mt-10 gap-6">
-        <button
+      <div className="hidden md:flex relative items-center justify-center max-w-7xl mx-auto w-full md:mt-5 mt-10 gap-6">
+        {/* <button
           onClick={() => {
             handlePrev();
             resetInterval();
@@ -116,7 +116,7 @@ export default function Testimonial() {
           className="absolute left-4 md:-left-14 top-50 text-white bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm z-20 transition-all"
         >
           <FiChevronLeft size={28} />
-        </button>
+        </button> */}
 
         <div className="relative w-full flex px-5">
           {/* reserve height so layout doesn't jump when cards overlap */}
@@ -192,7 +192,7 @@ export default function Testimonial() {
           </motion.div>
         </div>
 
-        <button
+        {/* <button
           onClick={() => {
             handleNext();
             resetInterval();
@@ -201,7 +201,7 @@ export default function Testimonial() {
           className="absolute right-4 md:-right-14 top-50 text-white bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm z-20 transition-all"
         >
           <FiChevronRight size={28} />
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile */}
@@ -226,9 +226,9 @@ export default function Testimonial() {
                 <Image
                   src={firstTestimonial.image}
                   alt={firstTestimonial.name}
-                  width={320}
+                  width={400}
                   height={360}
-                  className="object-contain rounded-2xl h-64 w-full mb-4"
+                  className="object-fill rounded-2xl h-72 w-full mb-4"
                 />
                 <h4 className="text-lg font-semibold text-center">
                   {firstTestimonial.name}
@@ -239,15 +239,15 @@ export default function Testimonial() {
                 <p className="text-sm font-light leading-relaxed text-center">
                   {firstTestimonial.feedback}
                 </p>
-                <div className="mt-4 text-xs opacity-80">
+                {/* <div className="mt-4 text-xs opacity-80">
                   Swipe left or right
-                </div>
+                </div> */}
               </motion.div>
             </AnimatePresence>
           </motion.div>
         </div>
 
-        <div className="mt-4 flex items-center justify-center gap-4">
+        {/* <div className="mt-4 flex items-center justify-center gap-4">
           <button
             onClick={() => {
               handlePrev();
@@ -271,7 +271,7 @@ export default function Testimonial() {
           >
             <FiChevronRight size={20} />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

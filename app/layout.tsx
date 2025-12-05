@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Mehdi Technologies - Custom Software Development & AI Solutions",
   description:
-    "Build your custom web apps, mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on. Get a free consultation today.",
+    "Build your custom web apps,mobile app, AI SaaS, or blockchain product with Mehdi Technologies. Fast delivery, modern design, and expert development your business can rely on. Get a free consultation today.",
   alternates: {
     canonical: "https://www.mehditechnologies.com",
   },

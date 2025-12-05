@@ -1,3 +1,6 @@
+'use client'
+import { useRouter } from "next/navigation";
+
 export default function Blogs() {
   const blogData = [
     {
@@ -32,6 +35,8 @@ export default function Blogs() {
     },
   ];
 
+  const router = useRouter()
+
   return (
     <section
       id="blogs"
@@ -47,9 +52,9 @@ export default function Blogs() {
       <div className="2xl:max-w-7xl xl:max-w-5xl mx-auto">
         {/* Header */}
         <div className="relative z-10 md:text-center mb-16">
-          <h4 className="text-[#00A6FF] bg-white inline-block border border-gray-200 px-6 py-2 text-xs font-medium rounded-full tracking-[0.4em] uppercase shadow-sm mb-6">
+          <h2 className="text-[#00A6FF] bg-white inline-block border border-gray-200 px-6 py-2 text-xs md:text-base font-medium rounded-full tracking-[0.4em] uppercase shadow-sm mb-6">
             INSIGHTS & UPDATES
-          </h4>
+          </h2>
 
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
             From Our <span className="text-[#00A6FF]">Blog</span>
@@ -102,7 +107,7 @@ export default function Blogs() {
                 </p>
 
                 {/* Learn More Button */}
-                <button className="bg-gradient-to-r from-[#58C9EC] to-[#007BFF] text-white px-10 py-3 border-2 border-white shadow-black shadow-md rounded-full font-semibold text-sm hover:bg-[#0088cc] transition-all duration-300 flex items-center gap-2 group">
+                <button className="bg-linear-to-r from-[#58C9EC] to-[#007BFF] text-white px-10 py-3 border-2 border-white shadow-black shadow-md rounded-full font-semibold text-sm hover:bg-[#0088cc] transition-all duration-300 flex items-center gap-2 group">
                   Learn more
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -125,7 +130,7 @@ export default function Blogs() {
 
         {/* See All Blogs Button */}
         <div className="relative z-10 text-center">
-          <button className="text-white text-lg font-semibold border-b-2 border-white pb-1 hover:text-[#00A6FF] hover:border-[#00A6FF] transition-all duration-300 inline-flex items-center gap-2 group">
+          <button onClick={()=>{router.push("/blogs")}} className="text-white text-lg font-semibold border-b-2 border-white pb-1 hover:text-[#00A6FF] hover:border-[#00A6FF] transition-all duration-300 inline-flex items-center gap-2 group">
             SEE ALL BLOGS
             <svg
               className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"

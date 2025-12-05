@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ui/UX for Web and Mobile Apps | Mehdi Technologies",
   description:
-    "We provide beautiful, user-centric UI/UX design services for websites, mobile apps, SaaS dashboards, Web3 platforms, and AI-powered products.",
+    "We design beautiful, user-centric digital experiences that feel effortless, look premium, and perform flawlessly. Whether you need a website, mobile app, SaaS dashboard, Web3 platform, or AI-powered product",
   robots: {
     index: true,
     follow: true,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ui/UX for Web and Mobile Apps | Mehdi Technologies",
     description:
-      "We provide beautiful, user-centric UI/UX design services for websites, mobile apps, SaaS dashboards, Web3 platforms, and AI-powered products.",
+      "We design beautiful, user-centric digital experiences that feel effortless, look premium, and perform flawlessly. Whether you need a website, mobile app, SaaS dashboard, Web3 platform, or AI-powered product",
     type: "website",
     url: "https://www.mehditechnologies.com/services/graphic-designing",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ui/UX for Web and Mobile Apps | Mehdi Technologies",
     description:
-      "We provide beautiful, user-centric UI/UX design services for websites, mobile apps, SaaS dashboards, Web3 platforms, and AI-powered products.",
+      "We design beautiful, user-centric digital experiences that feel effortless, look premium, and perform flawlessly. Whether you need a website, mobile app, SaaS dashboard, Web3 platform, or AI-powered product",
     images: ["https://www.mehditechnologies.com/Logo.png"],
     creator: "@MehdiTechnologies",
   },
@@ -77,7 +77,7 @@ export default function UIUXLayout({
                 ],
               },
               description:
-                "User-centric UI/UX design services: website design, mobile app design, SaaS dashboards, Web3 interfaces, AI-powered product design, and high-converting digital experiences.",
+                "UWe design beautiful, user-centric digital experiences that feel effortless, look premium, and perform flawlessly. Whether you need a website, mobile app, SaaS dashboard, Web3 platform, or AI-powered product",
               serviceType: "UI/UX Design",
               areaServed: "Worldwide",
               audience: {

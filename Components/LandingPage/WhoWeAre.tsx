@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import CountUp from "react-countup";
+import { FaPhoneAlt } from "react-icons/fa";
+import Link from "next/link";
 
 export default function WhoWeAre() {
   const data = [
@@ -81,6 +83,14 @@ export default function WhoWeAre() {
          <p className="text-gray-600 mt-8 text-xl">
           Our team blends creativity with technical excellence to deliver solutions that are fast, secure, and future-ready. We’re passionate about helping brands stay ahead in a rapidly evolving digital world through smart technology and impactful design.
         </p>
+       <div className="flex items-center justify-center md:mt-8 mt-4">
+          <Link href="/contact-us" >
+  <button className="bg-[#007BFF] rounded-lg md:text-xl text-white font-semibold md:px-6 px-3 py-3 hover:opacity-90 transition-all duration-300 hover:shadow-[0_0_10px_0_rgba(0,0,0,0.8)]">
+    <FaPhoneAlt className="inline w-5 h-5 mb-0.5 mr-3" />
+    Contact Us
+  </button>
+</Link>
+       </div>
         <div className="inline relative md:hidden flex-shrink-0">
           <div className="absolute -z-10 "></div>
           <Image
@@ -88,9 +98,11 @@ export default function WhoWeAre() {
             alt="Who we are Image"
             width={550}
             height={500}
-            className="relative z-10"
+            className="md:relative hidden z-10"
           />
         </div>
+      
+
 
         {/* Services list */}
         {/* <div className="space-y-1 pt-4">

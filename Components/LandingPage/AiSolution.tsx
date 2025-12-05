@@ -37,9 +37,9 @@ export default function AiSolution() {
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 md:text-center mb-12">
-          <h4 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm md:text-base font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">
+          <h2 className="text-[#007BFF] bg-white inline-block border border-[#00000030] px-6 py-1 text-sm md:text-base font-medium rounded-full tracking-[0.5em] uppercase shadow-sm backdrop-blur-sm">
             NEXT-GEN TECH
-          </h4>
+          </h2>
 
           <h2 className="text-5xl md:text-6xl my-4 font-semibold text-white drop-shadow-lg">
             Our <span className="text-[#007BFF]">AI Solution</span>

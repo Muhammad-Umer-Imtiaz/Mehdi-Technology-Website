@@ -24,7 +24,7 @@ export default function Home() {
    
       <TechStack />
       <Testimonial />
-      <Testimonial2/>
+      {/* <Testimonial2/> */}
           <Clients />
       <Blogs />
           <FAQS />

@@ -8,6 +8,7 @@ import OurProcess from "@/Components/Common/OurProcess";
 import IndustriesWeServe from "@/Components/Common/IndustriesWeServe";
 import FAQS from "@/Components/Common/FAQS";
 import WhyChooseMehdiTechnologies from "@/Components/Common/WhyChooseMehdiTechnologies";
+import TechStack from "@/Components/LandingPage/TechStack";
 
 export default function AiDevelopment() {
   return (
@@ -38,11 +39,12 @@ export default function AiDevelopment() {
                         title="Industries We Serve"
                         Industry={AIIndustries}
                       />
-      <TechSection
+                      <TechStack/>
+      {/* <TechSection
         title="AI Development"
         highlight="Technologies"
         technologies={AITech}
-      />
+      /> */}
               <WhyChooseMehdiTechnologies data={WhyChooseMehdiTechAI } />
 
        <FAQS

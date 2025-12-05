@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import CountUp from "react-countup";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
@@ -24,9 +25,9 @@ export default function Achievement() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
         {/* Left Text Section */}
         <div className="max-w-2xl space-y-6">
-          <span className="text-[#007BFF] bg-white border border-[#00000030] py-1 px-3 text-base inline-block font-light rounded-full tracking-[0.5em]">
+          <h2 className="text-[#007BFF] bg-white border border-[#00000030] py-1 px-3 text-base inline-block font-light rounded-full tracking-[0.5em]">
             PROVEN SUCCESS
-          </span>
+          </h2>
           <h2 className="md:text-5xl text-3xl font-bold">Our Achievements</h2>
 
           <div className="grid grid-cols-2 gap-8 py-6">
@@ -61,14 +62,52 @@ export default function Achievement() {
             className="hidden lg:block"
           />
           <div className="flex flex-row items-center justify-center md:mt-6">
-            <button className="bg-gradient-to-r from-[#007BFF] to-[#58C9EC] rounded-lg md:text-xl text-white font-semibold md:px-6 px-3 py-3 hover:opacity-90 transition-all duration-300 shadow-[0_0_7px_0_rgba(255,255,255,0.8)]">
-              <FaPhoneAlt className="inline w-5 h-5 mb-0.5 mr-3" />
-              Book a Call
-            </button>
-            <button className="bg-white md:px-6 px-3 py-3 md:text-xl ml-6 text-[#007BFF] rounded-lg shadow-[0_0_8px_0_rgba(255,255,255,0.8)]">
-              <IoMail className="inline w-6 h-6 mb-0.5 mr-3 text-black" />
-              Contact Us
-            </button>
+
+            <Link
+  href="https://calendly.com/arslan-mumtaz04/new-meeting?month=2025-12"
+  target="_blank"
+  className="block w-fit mx-auto"
+>
+  <button
+    className="
+      bg-linear-to-r from-[#007BFF] to-[#58C9EC]
+      rounded-lg md:text-xl text-white font-semibold md:px-6 px-3 py-3
+      transition-all duration-500 ease-in-out
+      shadow-[0_0_7px_0_rgba(255,255,255,0.8)]
+      
+      hover:shadow-[0_0_15px_3px_rgba(255,255,255,0.9)]
+      hover:from-white hover:to-white hover:text-[#007BFF]
+      
+      active:scale-95 active:shadow-[0_0_5px_0_rgba(0,0,0,0.6)]
+    "
+  >
+    <FaPhoneAlt
+      className="inline w-5 h-5 mr-3 transition-colors duration-500 ease-in-out"
+    />
+    Book a Call
+  </button>
+</Link>
+
+           
+           <Link href="/contact-us" className="block w-fit">
+  <button
+    className="
+      bg-white md:px-6 px-3 py-3 md:text-xl ml-6
+      text-[#007BFF] font-semibold rounded-lg
+      shadow-[0_0_8px_0_rgba(255,255,255,0.8)]
+      transition-all duration-500 ease-in-out
+
+      hover:bg-linear-to-r hover:from-[#007BFF] hover:to-[#58C9EC]
+      hover:text-white hover:shadow-[0_0_15px_3px_rgba(255,255,255,0.9)]
+
+      active:scale-95 active:shadow-[0_0_5px_0_rgba(0,0,0,0.6)]
+    "
+  >
+    <IoMail className="inline w-6 h-6 mb-0.5 mr-3 transition-colors duration-500 ease-in-out" />
+    Contact Us
+  </button>
+</Link>
+
           </div>
         </div>
       </div>

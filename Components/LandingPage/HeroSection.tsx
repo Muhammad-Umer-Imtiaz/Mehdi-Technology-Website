@@ -74,30 +74,32 @@ Everything your business needs to scale.
 
         </h2>
 
-        <div className="flex justify-center w-full">
-          <Link
-            href="/services"
-            className="
+      <div className="flex justify-center w-full">
+  <Link
+    href="/services"
+    className="
       inline-flex items-center 
-      bg-white 
       md:px-8 px-4 py-2 
-      md:mt-10  mt-10 
+      md:mt-10 mt-10 
       rounded-md 
       font-semibold 
       md:text-2xl text-xl
       text-[#007BFF] 
+      bg-white 
       shadow-[0_0_7px_0_rgba(255,255,255,0.8)]
-      transition-all duration-300
+      transition-all duration-300 ease-in-out
       hover:bg-linear-to-r hover:from-[#007BFF] hover:to-[#58C9EC]
       hover:text-white hover:rounded-lg
-      active:bg-linear-to-r active:from-[#007BFF] active:to-[#58C9EC]
-      active:text-white active:rounded-lg
+      active:bg-linear-to-r active:from-[#005FCC] active:to-[#3EB6DB]
+      active:text-white active:scale-[0.97]
+      hover:shadow-[0_0_15px_2px_rgba(255,255,255,0.6)]
     "
-          >
-            <Mail className="w-7 h-7 mr-3  active:text-white" />
-            Our Services
-          </Link>
-        </div>
+  >
+    <Mail className="w-7 h-7 mr-3 transition-all duration-300" />
+    Our Services
+  </Link>
+</div>
+
       </div>
     </section>
   );
